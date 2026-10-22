@@ -81,6 +81,10 @@ English (default), Hungarian, German, Russian, Simplified Chinese, Brazilian Por
 
 Bug reports and suggestions: **saworksl1dev@gmail.com** (or use *Report a problem or suggestion* in the app).
 
+## Support
+
+If PBlock helps you, you can support development on Ko-fi: [ko-fi.com/haxicgamerhun83232](https://ko-fi.com/haxicgamerhun83232). The app is and stays free, with no ads.
+
 ## License
 
 Licensed under GPL-3.0. See [LICENSE](LICENSE).
@@ -98,3 +102,5 @@ Libraries: AndroidX (Core, AppCompat, SplashScreen) and Material Components for 
 ## Magyarul
 
 A PBlock egy Android-alkalmazás, amely segít a fiataloknak végigcsinálni a **No Nut November** kihívást, és amelyet szülők vagy bárki más **általános tartalomszűrőként** is használhat. Helyi DNS-VPN-nel tiltja a felnőtt oldalakat, bezárja a kiválasztott alkalmazásokat, és a kihívás alatt (vagy idő- / szülői PIN-zárral) zárolja a saját védelmeit. Nincs fiók, nincs analitika. Az eszközt csak a DNS-lekérdezések továbbítása (Cloudflare családi DNS) és az időszinkron hagyja el. Hibabejelentés: saworksl1dev@gmail.com. Licenc: GPL-3.0. A beépített tiltólista forrása a [StevenBlack/hosts](https://github.com/StevenBlack/hosts) (MIT licenc), köszönet érte.
+
+Támogatás: ha hasznos neked a PBlock, a fejlesztést a Ko-fi-on támogathatod: [ko-fi.com/haxicgamerhun83232](https://ko-fi.com/haxicgamerhun83232). Az alkalmazás ingyenes, és az is marad, reklámok nélkül.
