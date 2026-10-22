@@ -25,6 +25,7 @@ local.properties
 *.pk8
 *.pem
 keystore.properties
+*signing.properties
 signing.properties
 
 # --- Editors / OS ---
@@ -39,3 +40,6 @@ Thumbs.db
 
 # --- Local backups (history is in Git) ---
 _backup_*/
+
+# --- Local release outputs (APKs, notes) ---
+release/

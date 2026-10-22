@@ -55,7 +55,7 @@ Requirements: Android Studio (or JDK 17+ and the Android SDK) with compileSdk 36
 ./gradlew assembleRelease
 ```
 
-The release build is **unsigned**. Sign it with your own keystore. Keystores and `local.properties` are git-ignored and must never be committed.
+By default the release build is **unsigned**. To sign it with your own keystore, point the Gradle property `pblockSigningProps` (for example in `~/.gradle/gradle.properties`) or the `PBLOCK_SIGNING_PROPS` environment variable at a properties file kept outside the repository, containing `storeFile`, `storePassword`, `keyAlias` and `keyPassword`. Keystores, signing properties and `local.properties` are git-ignored and must never be committed.
 
 ## Languages
 

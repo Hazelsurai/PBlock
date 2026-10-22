@@ -1,6 +1,19 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
+
+// Optional release signing. Point the Gradle property pblockSigningProps (e.g. in
+// ~/.gradle/gradle.properties) or the environment variable PBLOCK_SIGNING_PROPS at a
+// properties file with storeFile, storePassword, keyAlias and keyPassword.
+// Without it, assembleRelease produces an unsigned APK. Never commit keys or passwords.
+val releaseSigningProps: Properties? =
+    (providers.gradleProperty("pblockSigningProps").orNull
+        ?: providers.environmentVariable("PBLOCK_SIGNING_PROPS").orNull)
+        ?.let { file(it) }
+        ?.takeIf { it.isFile }
+        ?.let { f -> Properties().apply { f.inputStream().use { load(it) } } }
 
 android {
     namespace = "com.saworks.pblock"
@@ -18,8 +31,20 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        releaseSigningProps?.let { p ->
+            create("release") {
+                storeFile = file(p.getProperty("storeFile"))
+                storePassword = p.getProperty("storePassword")
+                keyAlias = p.getProperty("keyAlias")
+                keyPassword = p.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfigs.findByName("release")?.let { signingConfig = it }
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
