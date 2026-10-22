@@ -45,6 +45,8 @@ android {
     buildTypes {
         release {
             signingConfigs.findByName("release")?.let { signingConfig = it }
+            // Reproducible builds (F-Droid): no git commit info in META-INF.
+            vcsInfo.include = false
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -55,6 +57,11 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    dependenciesInfo {
+        // F-Droid: no encrypted dependency metadata blob in the APK / bundle signing block.
+        includeInApk = false
+        includeInBundle = false
     }
     lint {
         // Every user-facing string must exist in all shipped languages.
