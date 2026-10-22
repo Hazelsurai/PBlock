@@ -1,0 +1,8 @@
+# Same bytes on every OS: F-Droid builds on Linux, so keep LF line endings in the
+# working tree (the APK packs assets such as the blocklist verbatim).
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary
+*.webp binary
+*.jpg binary
