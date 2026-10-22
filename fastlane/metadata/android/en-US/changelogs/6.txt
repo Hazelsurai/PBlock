@@ -1,0 +1,1 @@
+First public release: No Nut November mode, content-filter mode with time or parent-PIN lock, local DNS filter, app blocker, uninstall protection, calendar and statistics, 7 languages.

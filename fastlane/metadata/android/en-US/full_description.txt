@@ -1,0 +1,32 @@
+PBlock helps you get through No Nut November, and also works as a general content filter for parents or anyone who wants one.
+
+<b>Two modes</b>
+<ul>
+<li><b>No Nut November:</b> once you start the challenge, the protections stay locked until November 30, 2026, 23:59 (Budapest time). After that everything unlocks automatically.</li>
+<li><b>Content filter:</b> the same protections without the challenge, with an optional time lock or a parent-PIN lock. The PIN is needed to turn protections off or loosen the filter.</li>
+</ul>
+
+<b>Features</b>
+<ul>
+<li>Site filter: a built-in adult blocklist (StevenBlack/hosts "porn-only", with subdomains and the .xxx/.porn/.sex/.adult endings), your own blocked sites and exceptions.</li>
+<li>Optional Cloudflare for Families DNS (1.1.1.3), which screens out further adult sites.</li>
+<li>App blocker: closes the apps you choose.</li>
+<li>Uninstall protection while a lock is active.</li>
+<li>Calendar and statistics, a "hard moment" breathing screen, and tamper detection (clock changes, safe mode, protection gaps).</li>
+<li>7 languages, with system, light and dark themes.</li>
+</ul>
+
+<b>Why these permissions</b>
+<ul>
+<li><b>VPN:</b> PBlock runs a local VPN that only carries DNS traffic. Blocked domains are answered on the device; other queries are forwarded to Cloudflare for Families or your network's DNS. Your web traffic does not go through any server of ours: there is no server.</li>
+<li><b>Accessibility service:</b> used only to see which app is in the foreground, so chosen apps can be closed and, while a lock is active, PBlock's own settings pages can't be used to turn it off. Screen text is checked only inside the Settings app, to recognise PBlock's own pages; nothing is stored or sent.</li>
+<li><b>Device admin:</b> used only to prevent uninstalling PBlock while a lock is active.</li>
+</ul>
+
+<b>Privacy</b>
+No accounts, no analytics, no ads, no tracking. The activity log stays on the device. Only DNS forwarding and time sync (NTP / HTTPS Date header, so changing the clock can't end a lock) leave the phone.
+
+<b>Limitations</b>
+Filtering is by domain only. Encrypted DNS (Private DNS, browser "Secure DNS"), another VPN, safe mode, a factory reset or ADB can get around it. Safe-mode boots and protection gaps are detected and logged, but not prevented.
+
+Free software under GPL-3.0. Blocklist: StevenBlack/hosts (MIT).

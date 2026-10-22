@@ -1,0 +1,32 @@
+PBlock hilft dir, den No Nut November durchzuhalten, und funktioniert auch als allgemeiner Inhaltsfilter, zum Beispiel für Eltern.
+
+<b>Zwei Modi</b>
+<ul>
+<li><b>No Nut November:</b> Sobald du die Challenge startest, bleiben die Schutzfunktionen bis zum 30. November 2026, 23:59 Uhr (Budapester Zeit) gesperrt. Danach wird alles automatisch entsperrt.</li>
+<li><b>Inhaltsfilter:</b> dieselben Schutzfunktionen ohne Challenge, mit optionaler Zeitsperre oder Eltern-PIN. Die PIN wird benötigt, um Schutzfunktionen auszuschalten oder den Filter zu lockern.</li>
+</ul>
+
+<b>Funktionen</b>
+<ul>
+<li>Seitenfilter: integrierte Sperrliste für Erwachseneninhalte (StevenBlack/hosts „porn-only“, mit Subdomains und den Endungen .xxx/.porn/.sex/.adult), eigene gesperrte Seiten und Ausnahmen.</li>
+<li>Optional Cloudflare for Families DNS (1.1.1.3), das weitere Erwachsenenseiten herausfiltert.</li>
+<li>App-Sperre: schließt die von dir gewählten Apps.</li>
+<li>Deinstallationsschutz, solange eine Sperre aktiv ist.</li>
+<li>Kalender und Statistiken, ein Atem-Bildschirm für „schwere Momente“ und Manipulationserkennung (Uhrzeitänderungen, abgesicherter Modus, Schutzlücken).</li>
+<li>7 Sprachen, System-, helles und dunkles Design.</li>
+</ul>
+
+<b>Wofür die Berechtigungen gebraucht werden</b>
+<ul>
+<li><b>VPN:</b> PBlock betreibt ein lokales VPN, das nur DNS-Verkehr transportiert. Gesperrte Domains werden auf dem Gerät beantwortet, andere Anfragen gehen an Cloudflare for Families oder den DNS deines Netzwerks. Dein Webverkehr läuft über keinen Server von uns: Es gibt keinen.</li>
+<li><b>Bedienungshilfe:</b> erkennt nur, welche App im Vordergrund ist, damit gewählte Apps geschlossen werden und PBlock während einer Sperre nicht über seine Einstellungsseiten abgeschaltet werden kann. Bildschirmtext wird nur in der Einstellungen-App geprüft, um PBlocks eigene Seiten zu erkennen; nichts wird gespeichert oder gesendet.</li>
+<li><b>Geräteadministrator:</b> nur, um die Deinstallation von PBlock während einer Sperre zu verhindern.</li>
+</ul>
+
+<b>Datenschutz</b>
+Keine Konten, keine Analyse, keine Werbung, kein Tracking. Das Protokoll bleibt auf dem Gerät. Nur DNS-Weiterleitung und Zeitabgleich (NTP / HTTPS-Date-Header, damit ein Verstellen der Uhr keine Sperre beendet) verlassen das Telefon.
+
+<b>Einschränkungen</b>
+Gefiltert wird nur nach Domain. Verschlüsseltes DNS (Privates DNS, „Sicheres DNS“ im Browser), ein anderes VPN, der abgesicherte Modus, ein Zurücksetzen auf Werkseinstellungen oder ADB können den Filter umgehen. Starts im abgesicherten Modus und Schutzlücken werden erkannt und protokolliert, aber nicht verhindert.
+
+Freie Software unter GPL-3.0. Sperrliste: StevenBlack/hosts (MIT).

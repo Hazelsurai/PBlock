@@ -1,0 +1,1 @@
+Erste öffentliche Version: No-Nut-November-Modus, Inhaltsfilter-Modus mit Zeit- oder Eltern-PIN-Sperre, lokaler DNS-Filter, App-Sperre, Deinstallationsschutz, Kalender und Statistiken, 7 Sprachen.

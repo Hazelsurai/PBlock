@@ -4,6 +4,20 @@ PBlock is an Android app that helps young people get through the **No Nut Novemb
 
 Made by **SAWorks**.
 
+<p>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="200" alt="Main screen">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="200" alt="Calendar">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="200" alt="Filter settings">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="200" alt="Blocked app">
+</p>
+
+## Install
+
+Download the APK from [Releases](https://github.com/agost4002/PBlock/releases) (Android 10 or newer). On Android 13 and newer, sideloaded apps start with the accessibility switch greyed out ("Restricted setting"): open *Settings → Apps → PBlock → ⋮ → Allow restricted settings* first. Then follow the setup checklist in the app.
+
+Release APKs are signed by SAWorks. Signing certificate SHA-256:
+`65:FC:AA:29:FD:73:06:1E:4B:9F:05:D0:49:34:4C:17:73:02:F7:88:A9:09:3E:07:F8:42:E3:B5:AC:A4:45:28`
+
 ## Features
 
 - **No Nut November mode** – a challenge for November 2026. After you start it (by typing a confirmation word), the protections stay locked until November 30, 2026, 23:59 (Budapest time), then everything unlocks automatically.
@@ -23,7 +37,7 @@ Made by **SAWorks**.
 PBlock uses three standard Android mechanisms. You turn each one on yourself.
 
 1. **Local DNS VPN** (`VpnService`) – only DNS traffic is routed into the app. Blocked domains get an NXDOMAIN ("does not exist") answer. Allowed queries are forwarded to the upstream DNS server. Other traffic does not go through the VPN at all. Using it as an *Always-on VPN* is recommended (but **not** "Block connections without VPN").
-2. **Accessibility service** – watches which app is in the foreground so it can close blocked apps. While a lock is active, it also keeps you from disabling PBlock in Settings.
+2. **Accessibility service** – watches which app is in the foreground so it can close blocked apps. While a lock is active, it also keeps you from disabling PBlock in Settings: for that it reads the screen text of the Settings app only, to recognise PBlock's own pages. Nothing is stored or sent.
 3. **Device admin** – used only to prevent uninstalling while a lock is active.
 
 ## Privacy
@@ -57,6 +71,8 @@ Requirements: Android Studio (or JDK 17+ and the Android SDK) with compileSdk 36
 
 By default the release build is **unsigned**. To sign it with your own keystore, point the Gradle property `pblockSigningProps` (for example in `~/.gradle/gradle.properties`) or the `PBLOCK_SIGNING_PROPS` environment variable at a properties file kept outside the repository, containing `storeFile`, `storePassword`, `keyAlias` and `keyPassword`. Keystores, signing properties and `local.properties` are git-ignored and must never be committed.
 
+The release build is meant to be **reproducible**: it contains no VCS info or dependency metadata block, and all text files use LF line endings (`.gitattributes`), so an unsigned build from the same tag gives the same APK contents on Windows and Linux. Store descriptions and screenshots for F-Droid live in `fastlane/metadata/android/`.
+
 ## Languages
 
 English (default), Hungarian, German, Russian, Simplified Chinese, Brazilian Portuguese and Japanese.
@@ -69,10 +85,16 @@ Bug reports and suggestions: **saworksl1dev@gmail.com** (or use *Report a proble
 
 Licensed under GPL-3.0. See [LICENSE](LICENSE).
 
-Third-party: the built-in blocklist comes from [StevenBlack/hosts](https://github.com/StevenBlack/hosts) (MIT, see `app/src/main/assets/LICENSE-StevenBlack-hosts.txt`), which combines Sinfonietta/hostfiles (MIT), Clefspeare13/pornhosts (MIT), bigdargon/hostsVN (MIT), tiuxo/hosts (CC BY 4.0) and brijrajparmar27/host-sources (CC BY 4.0).
+## Credits
+
+The built-in blocklist comes from [StevenBlack/hosts](https://github.com/StevenBlack/hosts) (MIT, see `app/src/main/assets/LICENSE-StevenBlack-hosts.txt`), which combines Sinfonietta/hostfiles (MIT), Clefspeare13/pornhosts (MIT), bigdargon/hostsVN (MIT), tiuxo/hosts (CC BY 4.0) and brijrajparmar27/host-sources (CC BY 4.0). Thanks to Steven Black and the list maintainers. The credit is also shown in the app (the licenses button on the main screen).
+
+Optional family DNS filtering: [Cloudflare for Families](https://one.one.one.one/family/) (1.1.1.3 / 1.0.0.3).
+
+Libraries: AndroidX (Core, AppCompat, SplashScreen) and Material Components for Android, all Apache-2.0. No proprietary libraries or Google Play Services.
 
 ---
 
 ## Magyarul
 
-A PBlock egy Android-alkalmazás, amely segít a fiataloknak végigcsinálni a **No Nut November** kihívást, és amelyet szülők vagy bárki más **általános tartalomszűrőként** is használhat. Helyi DNS-VPN-nel tiltja a felnőtt oldalakat, bezárja a kiválasztott alkalmazásokat, és a kihívás alatt (vagy idő- / szülői PIN-zárral) zárolja a saját védelmeit. Nincs fiók, nincs analitika. Az eszközt csak a DNS-lekérdezések továbbítása (Cloudflare családi DNS) és az időszinkron hagyja el. Hibabejelentés: saworksl1dev@gmail.com. Licenc: GPL-3.0.
+A PBlock egy Android-alkalmazás, amely segít a fiataloknak végigcsinálni a **No Nut November** kihívást, és amelyet szülők vagy bárki más **általános tartalomszűrőként** is használhat. Helyi DNS-VPN-nel tiltja a felnőtt oldalakat, bezárja a kiválasztott alkalmazásokat, és a kihívás alatt (vagy idő- / szülői PIN-zárral) zárolja a saját védelmeit. Nincs fiók, nincs analitika. Az eszközt csak a DNS-lekérdezések továbbítása (Cloudflare családi DNS) és az időszinkron hagyja el. Hibabejelentés: saworksl1dev@gmail.com. Licenc: GPL-3.0. A beépített tiltólista forrása a [StevenBlack/hosts](https://github.com/StevenBlack/hosts) (MIT licenc), köszönet érte.

@@ -1,0 +1,1 @@
+Reproduzierbarer Build für F-Droid, Store-Beschreibungen und Screenshots. Keine Änderungen an der Funktion der App.

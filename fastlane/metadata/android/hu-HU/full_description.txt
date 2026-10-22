@@ -1,0 +1,32 @@
+A PBlock segít végigcsinálni a No Nut November kihívást, és általános tartalomszűrőként is használható, például szülőknek.
+
+<b>Két mód</b>
+<ul>
+<li><b>No Nut November:</b> a kihívás elindítása után a védelmek 2026. november 30., 23:59-ig (budapesti idő) zárolva maradnak. Utána minden automatikusan feloldódik.</li>
+<li><b>Tartalomszűrő:</b> ugyanezek a védelmek kihívás nélkül, opcionális időzárral vagy szülői PIN-zárral. A védelmek kikapcsolásához vagy a szűrő lazításához kell a PIN.</li>
+</ul>
+
+<b>Funkciók</b>
+<ul>
+<li>Oldalszűrő: beépített felnőtt tiltólista (StevenBlack/hosts „porn-only”, aldomainekkel és a .xxx/.porn/.sex/.adult végződésekkel), saját tiltott oldalak és kivételek.</li>
+<li>Opcionális Cloudflare for Families DNS (1.1.1.3), amely további felnőtt oldalakat szűr ki.</li>
+<li>Alkalmazás-blokkoló: bezárja a kiválasztott alkalmazásokat.</li>
+<li>Eltávolítás elleni védelem, amíg zár aktív.</li>
+<li>Naptár és statisztika, „Nehéz pillanat” légzőgyakorlat, manipuláció-észlelés (óraállítás, csökkentett mód, védelmi kiesések).</li>
+<li>7 nyelv, rendszer-, világos és sötét téma.</li>
+</ul>
+
+<b>Miért kellenek ezek az engedélyek</b>
+<ul>
+<li><b>VPN:</b> a PBlock helyi VPN-t futtat, amely csak a DNS-forgalmat viszi. A tiltott domainekre a telefon maga válaszol, a többi lekérdezés a Cloudflare for Families vagy a hálózat DNS-e felé megy. A böngészési forgalmad nem megy át semmilyen saját szerveren: nincs ilyen szerver.</li>
+<li><b>Kisegítő szolgáltatás:</b> csak azt figyeli, melyik alkalmazás van előtérben, hogy a kiválasztottakat bezárja, és zár alatt a PBlock beállítási oldalain ne lehessen kikapcsolni. Képernyőszöveget csak a Beállítások alkalmazásban néz, hogy felismerje a PBlock saját oldalait; semmit nem tárol és nem küld el.</li>
+<li><b>Eszközrendszergazda:</b> csak arra, hogy zár alatt a PBlockot ne lehessen eltávolítani.</li>
+</ul>
+
+<b>Adatvédelem</b>
+Nincs fiók, analitika, reklám vagy követés. A naplók a telefonon maradnak. Csak a DNS-továbbítás és az időszinkron (NTP / HTTPS Date fejléc, hogy az óra átállítása ne oldja fel a zárat) hagyja el a készüléket.
+
+<b>Korlátok</b>
+Csak domain alapján szűr. Titkosított DNS (Privát DNS, böngészők „Biztonságos DNS” funkciója), másik VPN, csökkentett mód, gyári visszaállítás vagy ADB megkerülheti. A csökkentett módú indításokat és a kieséseket észleli és naplózza, de nem akadályozza meg.
+
+Szabad szoftver, GPL-3.0 licenc. Tiltólista: StevenBlack/hosts (MIT).

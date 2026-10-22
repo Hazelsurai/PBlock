@@ -1,0 +1,32 @@
+O PBlock ajuda você a completar o No Nut November e também funciona como um filtro de conteúdo geral, por exemplo para pais.
+
+<b>Dois modos</b>
+<ul>
+<li><b>No Nut November:</b> depois que você inicia o desafio, as proteções ficam bloqueadas até 30 de novembro de 2026, 23:59 (horário de Budapeste). Depois disso, tudo é desbloqueado automaticamente.</li>
+<li><b>Filtro de conteúdo:</b> as mesmas proteções sem o desafio, com bloqueio opcional por tempo ou por PIN dos pais. O PIN é necessário para desativar as proteções ou afrouxar o filtro.</li>
+</ul>
+
+<b>Recursos</b>
+<ul>
+<li>Filtro de sites: lista de bloqueio adulta integrada (StevenBlack/hosts "porn-only", com subdomínios e as terminações .xxx/.porn/.sex/.adult), sites bloqueados e exceções próprios.</li>
+<li>DNS opcional Cloudflare for Families (1.1.1.3), que filtra mais sites adultos.</li>
+<li>Bloqueador de apps: fecha os apps que você escolher.</li>
+<li>Proteção contra desinstalação enquanto um bloqueio estiver ativo.</li>
+<li>Calendário e estatísticas, uma tela de respiração para "momentos difíceis" e detecção de violações (mudança de relógio, modo de segurança, falhas na proteção).</li>
+<li>7 idiomas, com tema do sistema, claro e escuro.</li>
+</ul>
+
+<b>Por que essas permissões</b>
+<ul>
+<li><b>VPN:</b> o PBlock executa uma VPN local que transporta apenas tráfego DNS. Domínios bloqueados são respondidos no próprio aparelho; as outras consultas vão para o Cloudflare for Families ou para o DNS da sua rede. Seu tráfego web não passa por nenhum servidor nosso: não existe servidor.</li>
+<li><b>Serviço de acessibilidade:</b> usado só para saber qual app está em primeiro plano, para fechar os apps escolhidos e, durante um bloqueio, impedir que o PBlock seja desligado pelas páginas de configuração dele. O texto da tela só é verificado dentro do app Configurações, para reconhecer as páginas do próprio PBlock; nada é salvo nem enviado.</li>
+<li><b>Administrador do dispositivo:</b> usado só para impedir a desinstalação do PBlock durante um bloqueio.</li>
+</ul>
+
+<b>Privacidade</b>
+Sem contas, análises, anúncios ou rastreamento. O registro de atividades fica no aparelho. Só o encaminhamento de DNS e a sincronização de hora (NTP / cabeçalho HTTPS Date, para que mudar o relógio não encerre um bloqueio) saem do telefone.
+
+<b>Limitações</b>
+A filtragem é feita apenas por domínio. DNS criptografado (DNS privado, "DNS seguro" do navegador), outra VPN, modo de segurança, redefinição de fábrica ou ADB podem contorná-la. Inicializações em modo de segurança e falhas na proteção são detectadas e registradas, mas não impedidas.
+
+Software livre sob a GPL-3.0. Lista de bloqueio: StevenBlack/hosts (MIT).

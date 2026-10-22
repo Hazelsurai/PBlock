@@ -1,0 +1,1 @@
+Primeira versão pública: modo No Nut November, modo filtro de conteúdo com bloqueio por tempo ou PIN dos pais, filtro DNS local, bloqueador de apps, proteção contra desinstalação, calendário e estatísticas, 7 idiomas.

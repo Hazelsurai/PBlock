@@ -1,0 +1,1 @@
+Reprodukálható build az F-Droidhoz, áruházi leírások és képernyőképek. Az alkalmazás működése nem változott.

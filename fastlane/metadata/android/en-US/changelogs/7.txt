@@ -1,0 +1,1 @@
+Reproducible build for F-Droid, store descriptions and screenshots. No changes in how the app works.

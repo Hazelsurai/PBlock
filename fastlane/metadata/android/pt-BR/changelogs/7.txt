@@ -1,0 +1,1 @@
+Build reproduzível para o F-Droid, descrições e capturas de tela da loja. Nenhuma mudança no funcionamento do app.
