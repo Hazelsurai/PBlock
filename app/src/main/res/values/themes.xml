@@ -1,0 +1,46 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Material 3 DayNight with a full PBlock palette; colors switch via values/ and values-night/.
+         The app picks light/dark itself (System / Light / Dark, default Dark) via AppCompatDelegate. -->
+    <style name="Base.Theme.PBlock" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pb_primary</item>
+        <item name="colorOnPrimary">@color/pb_on_primary</item>
+        <item name="colorPrimaryContainer">@color/pb_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/pb_on_primary_container</item>
+        <item name="colorSecondary">@color/pb_secondary</item>
+        <item name="colorOnSecondary">@color/pb_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/pb_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/pb_on_secondary_container</item>
+        <item name="android:colorBackground">@color/pb_bg</item>
+        <item name="colorOnBackground">@color/pb_text</item>
+        <item name="colorSurface">@color/pb_surface</item>
+        <item name="colorOnSurface">@color/pb_on_surface</item>
+        <item name="colorSurfaceVariant">@color/pb_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/pb_on_surface_variant</item>
+        <item name="colorSurfaceContainerLowest">@color/pb_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/pb_container_low</item>
+        <item name="colorSurfaceContainer">@color/pb_container</item>
+        <item name="colorSurfaceContainerHigh">@color/pb_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/pb_container_highest</item>
+        <item name="colorSurfaceInverse">@color/pb_inverse_surface</item>
+        <item name="colorOnSurfaceInverse">@color/pb_inverse_on_surface</item>
+        <item name="colorPrimaryInverse">@color/pb_inverse_primary</item>
+        <item name="colorOutline">@color/pb_outline</item>
+        <item name="colorOutlineVariant">@color/pb_outline_variant</item>
+        <item name="colorError">@color/pb_error</item>
+        <item name="colorOnError">@color/pb_on_error</item>
+        <item name="android:textColorPrimary">@color/pb_text</item>
+        <item name="android:textColorSecondary">@color/pb_on_surface_variant</item>
+    </style>
+
+    <!-- Launch splash (androidx core-splashscreen): Pb icon on black, then the normal theme. -->
+    <style name="Theme.PBlock.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/pb_splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.PBlock</item>
+    </style>
+
+    <style name="Theme.PBlock" parent="Base.Theme.PBlock">
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

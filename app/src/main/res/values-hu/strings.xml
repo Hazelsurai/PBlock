@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle">No Nut November 2026 – kitartás, egy nap egyszerre.</string>
+    <string name="card_challenge">Kihívás</string>
+    <string name="card_protections">Védelmek</string>
+    <string name="card_calendar">2026. november</string>
+    <string name="card_tips">Tippek a kiskapuk ellen</string>
+    <string name="prot_vpn">DNS-szűrő (helyi VPN)</string>
+    <string name="prot_accessibility">Alkalmazás-blokkoló</string>
+    <string name="prot_admin">Eltávolítás elleni védelem</string>
+    <string name="prot_always_on">Mindig bekapcsolt VPN</string>
+    <string name="status_on">✔ Aktív</string>
+    <string name="status_off">✖ Kikapcsolva</string>
+    <string name="status_unknown">– (előbb kapcsold be a DNS-szűrőt)</string>
+    <string name="status_always_on_yes">✔ Beállítva</string>
+    <string name="status_always_on_no">⚠ Ajánlott beállítani</string>
+    <string name="status_lockdown_on">✖ Kapcsold KI a „VPN nélküli kapcsolatok blokkolása” opciót, különben nincs internet!</string>
+    <string name="btn_turn_on">Bekapcsolás</string>
+    <string name="btn_turn_off">Kikapcsolás</string>
+    <string name="btn_setup">Beállítás</string>
+    <string name="btn_settings">Beállítások</string>
+    <string name="btn_activate">Aktiválás</string>
+    <string name="btn_guide">Útmutató</string>
+    <string name="btn_open_settings">Beállítások megnyitása</string>
+    <string name="btn_open_vpn_settings">VPN-beállítások</string>
+    <string name="btn_start_challenge">Kihívás indítása</string>
+    <string name="btn_cancel">Mégse</string>
+    <string name="btn_ok">Rendben</string>
+    <string name="btn_home">Vissza a kezdőképernyőre</string>
+    <string name="challenge_not_ready">A kihívás még nem indult el. Kapcsold be mindhárom védelmet (DNS-szűrő, alkalmazás-blokkoló, eltávolítás elleni védelem), utána indíthatod.</string>
+    <string name="challenge_ready">Minden védelem aktív. Ha készen állsz, indítsd el a kihívást – utána november 30. 23:59-ig nem lehet kikapcsolni.</string>
+    <string name="challenge_locked">🔒 A kihívás fut. A védelmek 2026. november 30. 23:59-ig (budapesti idő) zárolva vannak.\nHátra van: %1$s.</string>
+    <string name="challenge_finished">🏁 Vége a kihívásnak, gratulálok! Minden zár feloldva: kikapcsolhatod a védelmeket, és el is távolíthatod az appot.</string>
+    <string name="challenge_over_not_started">A 2026-os novemberi kihívás időszaka lejárt.</string>
+    <string name="challenge_started">A kihívás elindult. Hajrá! 💪</string>
+    <string name="confirm_title">Biztosan elindítod?</string>
+    <string name="confirm_word">VÁLLALOM</string>
+    <string name="confirm_text">A kihívás indítása után 2026. november 30. 23:59-ig (budapesti idő szerint):\n\n• a DNS-szűrőt, az alkalmazás-blokkolót és az eltávolítás elleni védelmet nem lehet kikapcsolni,\n• az appot nem lehet eltávolítani,\n• a PBlock beállítási oldalai a Beállítások appban zárolva lesznek.\n\nUtána minden automatikusan feloldódik.\n\nHa biztos vagy benne, írd be: %1$s</string>
+    <string name="acc_guide_title">Alkalmazás-blokkoló bekapcsolása</string>
+    <string name="acc_guide_text">A Brave, az X és a Telegram blokkolásához a PBlocknak kisegítő szolgáltatásként kell futnia.\n\n1. Nyomd meg a „Beállítások megnyitása” gombot.\n2. Keresd meg a „Telepített alkalmazások” / „Letöltött alkalmazások” részben a „PBlock védelem” elemet.\n3. Kapcsold be, és engedélyezd.\n\nHa a kapcsoló szürke („Korlátozott beállítás”): Beállítások › Alkalmazások › PBlock › ⋮ menü › „Korlátozott beállítások engedélyezése”, majd próbáld újra.\n\nA PBlock semmilyen adatot nem gyűjt és nem küld el: csak azt figyeli, melyik alkalmazás van előtérben.</string>
+    <string name="always_on_title">Mindig bekapcsolt VPN</string>
+    <string name="always_on_text">Ezzel a rendszer újraindítás után és összeomlás esetén is automatikusan visszakapcsolja a DNS-szűrőt.\n\n1. Nyomd meg a „VPN-beállítások” gombot.\n2. Koppints a PBlock melletti fogaskerékre.\n3. Kapcsold be a „Mindig bekapcsolt VPN” opciót.\n\nFontos: a „VPN nélküli kapcsolatok blokkolása” opciót NE kapcsold be! A PBlock csak a DNS-forgalmat vezeti át a VPN-en, így ez az opció minden más internetforgalmat megszakítana.</string>
+    <string name="admin_explanation">A PBlock eszközrendszergazdaként megakadályozza, hogy a kihívás alatt el lehessen távolítani. Semmilyen más jogot nem kér.</string>
+    <string name="admin_description">Megakadályozza a PBlock eltávolítását, amíg zár van érvényben.</string>
+    <string name="admin_disable_warning">Ha kikapcsolod, a PBlock eltávolíthatóvá válik.</string>
+    <string name="admin_disable_warning_locked">A kihívás még tart! Ha most kikapcsolod, feladod a No Nut Novembert. Biztos vagy benne? Inkább lépj vissza. 💪</string>
+    <string name="toast_settings_locked">PBlock: ez a beállítás a kihívás végéig zárolva van. 💪</string>
+    <string name="vpn_consent_denied">A DNS-szűrőhöz engedélyezni kell a VPN-kapcsolatot.</string>
+    <string name="settings_not_found">Nem sikerült megnyitni a beállításokat.</string>
+    <string name="private_dns_title">⚠ A Privát DNS megkerüli a szűrőt</string>
+    <string name="private_dns_warning">A telefonon egyedi Privát DNS-szolgáltató van beállítva (%1$s). Ilyenkor a rendszer titkosítva, a PBlock megkerülésével küldheti a DNS-kéréseket, így a szűrés nem megbízható.\n\nÁllítsd át: Beállítások › Hálózat és internet › Privát DNS › „Automatikus” vagy „Ki”.</string>
+    <string name="calendar_legend">★ = tiszta nap · ✔ = próbálkoztál, de a PBlock megállított · ⚠ = a védelmek nem működtek, vagy átállították az órát · Koppints egy napra a részletekért. A mai és a jövőbeli napok a nap végén kapnak jelet.</string>
+    <string name="day_not_in_challenge">Ez a nap nem tartozik a kihíváshoz (még nem indult el, vagy korábbi a kezdésnél).</string>
+    <string name="day_clean">★ Tiszta nap, egyetlen blokkolt próbálkozás sem volt. Szép munka!</string>
+    <string name="day_no_attempts">Erre a napra még nincs blokkolt próbálkozás.</string>
+    <string name="kind_app">app</string>
+    <string name="kind_dns">oldal</string>
+    <string name="kind_dns_filter">oldal (családi szűrő)</string>
+    <string name="tips_text">• Chrome: Beállítások › Adatvédelem és biztonság › „Biztonságos DNS használata” → kapcsold KI, különben a Chrome megkerülheti a szűrőt.\n• Firefox, Edge, Opera és más böngészők: kapcsold ki a „DNS over HTTPS” / „Secure DNS” és a beépített VPN funkciókat.\n• Privát DNS: Beállítások › Hálózat és internet › Privát DNS legyen „Automatikus” vagy „Ki”.\n• A szűrő a tiltólistán kívül a Cloudflare családi DNS-ét (1.1.1.3) is használja, ami további felnőtt oldalakat szűr ki.</string>
+    <string name="app_generic">Ez az alkalmazás</string>
+    <string name="blocked_title">A(z) %1$s blokkolva van</string>
+    <string name="blocked_text">No Nut November: ez az alkalmazás a kihívás idejére tiltva van. Tarts ki, bírod! 💪</string>
+    <string name="accessibility_label">PBlock védelem</string>
+    <string name="accessibility_description">Tiltja a kiválasztott alkalmazások megnyitását (a kihívás alatt a Brave, X és Telegram), és amíg zár van érvényben, megakadályozza a PBlock kikapcsolását. A PBlock nem gyűjt és nem küld adatot.</string>
+    <string name="version_fmt">Verzió %1$s%2$s</string>
+    <string name="licenses_title">Licencek és források</string>
+    <string name="licenses_text">PBlock – SAWorks\n\nBeépített tiltólista: %1$s (+ az összes aldomainjük, valamint a .xxx, .porn, .sex és .adult végződések).\n\nForrás: StevenBlack/hosts – „porn-only” lista (2026. október 18.), MIT licenc, © Steven Black.\nhttps://github.com/StevenBlack/hosts\n\nA lista összetevői:\n• Sinfonietta/hostfiles – MIT\n• Clefspeare13/pornhosts – MIT\n• bigdargon/hostsVN – MIT\n• tiuxo/hosts – CC BY 4.0\n• brijrajparmar27/host-sources – CC BY 4.0\n\nKiegészítő DNS-szűrés: Cloudflare for Families (1.1.1.3, 1.0.0.3).</string>
+    <string name="duration_fmt">%1$s %2$s %3$s</string>
+    <string-array name="weekdays_short">
+        <item>H</item>
+        <item>K</item>
+        <item>Sze</item>
+        <item>Cs</item>
+        <item>P</item>
+        <item>Szo</item>
+        <item>V</item>
+    </string-array>
+    <plurals name="blocklist_domains">
+        <item quantity="one">%1$d domain</item>
+        <item quantity="other">%1$d domain</item>
+    </plurals>
+    <plurals name="stats_clean_days">
+        <item quantity="one">★ Tiszta napok: %1$d</item>
+        <item quantity="other">★ Tiszta napok: %1$d</item>
+    </plurals>
+    <plurals name="stats_check_days">
+        <item quantity="one">✔ Napok blokkolt próbálkozással: %1$d</item>
+        <item quantity="other">✔ Napok blokkolt próbálkozással: %1$d</item>
+    </plurals>
+    <plurals name="stats_total_attempts">
+        <item quantity="one">Összes blokkolt próbálkozás a kihívás alatt: %1$d</item>
+        <item quantity="other">Összes blokkolt próbálkozás a kihívás alatt: %1$d</item>
+    </plurals>
+    <plurals name="day_attempts">
+        <item quantity="one">✔ %1$d blokkolt próbálkozás:</item>
+        <item quantity="other">✔ %1$d blokkolt próbálkozás:</item>
+    </plurals>
+    <plurals name="duration_days">
+        <item quantity="one">%1$d nap</item>
+        <item quantity="other">%1$d nap</item>
+    </plurals>
+    <plurals name="duration_hours">
+        <item quantity="one">%1$d óra</item>
+        <item quantity="other">%1$d óra</item>
+    </plurals>
+    <plurals name="duration_minutes">
+        <item quantity="one">%1$d perc</item>
+        <item quantity="other">%1$d perc</item>
+    </plurals>
+    <!-- v0.3.0 -->
+    <string name="btn_hard_moment">🌊 Nehéz pillanat</string>
+    <string name="challenge_awaiting_trusted_time">⏳ A készülék órája szerint a kihívás véget ért, de az idő még nincs ellenőrizve. Csatlakozz az internethez: a PBlock feloldja a zárat, amint megerősítette a dátumot.</string>
+    <string name="time_not_verified">⚠ Az idő még nincs ellenőrizve (nincs internet). A készülék órájának átállítása nem oldja fel a zárat.</string>
+    <string name="ev_clock_changed">A készülék óráját átállították</string>
+    <string name="ev_clock_forward">A készülék órája előre lett állítva ennyivel: %1$s</string>
+    <string name="ev_clock_back">A készülék órája vissza lett állítva ennyivel: %1$s</string>
+    <string name="ev_clock_behind">Újraindítás után a készülék órája ennyivel késett az ellenőrzött időhöz képest: %1$s</string>
+    <string name="ev_clock_offset">A készülék órája ennyivel tér el az ellenőrzött időtől: %1$s</string>
+    <string name="ev_safe_mode_now">A telefon csökkentett módban fut</string>
+    <string name="ev_down_off">%1$s ki volt kapcsolva (ekkortól: %2$s)</string>
+    <string name="ev_down_on">%1$s ki volt kapcsolva ennyi ideig: %2$s</string>
+    <string name="ev_down_generic">%1$s ki volt kapcsolva</string>
+    <string name="comp_vpn">DNS-szűrő</string>
+    <string name="comp_accessibility">Alkalmazásblokkoló</string>
+    <string name="hm_title">Nehéz pillanat</string>
+    <string name="hm_intro">Állj meg másfél percre. A késztetés olyan, mint egy hullám: felerősödik, tetőzik, majd elmúlik. Lélegezz a körrel együtt.</string>
+    <string name="hm_start">Légzés indítása</string>
+    <string name="hm_stop">Leállítás</string>
+    <string name="hm_again">Még egyszer</string>
+    <string name="hm_ready">Indíthatod, ha készen állsz</string>
+    <string name="hm_done">Szép volt 🌿</string>
+    <string name="hm_breathe_in">Belégzés</string>
+    <string name="hm_hold">Tartsd bent</string>
+    <string name="hm_breathe_out">Kilégzés</string>
+    <string name="hm_round">%1$d. kör / %2$d</string>
+    <string name="hm_round_info">Doboz-légzés: %1$d kör, kb. %2$d másodperc</string>
+    <string name="hm_message_title">Egy gondolat most</string>
+    <string name="hm_another">Másikat</string>
+    <string name="hm_try_this">Próbáld ki</string>
+    <string name="hm_back">Vissza</string>
+    <string-array name="hard_moment_messages">
+        <item>A késztetés olyan, mint egy hullám: felerősödik, tetőzik, aztán elhalványul, általában 15–20 perc alatt. Nem kell vele semmit kezdened.</item>
+        <item>Csináltál már nehéz dolgokat. Ez is csak egy közülük, és kisebb, mint amilyennek most tűnik.</item>
+        <item>A következő tíz percben semmit sem kell eldöntened. Csak ezt a tízet vészeld át.</item>
+        <item>Attól, hogy érzed a húzást, még nem bukod el. Észrevenni és megállni: pont ezt a képességet építed.</item>
+        <item>A holnap reggeli éned hálás lesz azért, amit most teszel.</item>
+        <item>Unalom, stressz, magány vagy fáradtság: melyik kopogtat valójában? Annak add meg, amire szüksége van.</item>
+        <item>Az agyad gyors jutalmat kér. Egy pohár víz, egy rövid séta vagy egy üzenet egy barátnak is annak számít.</item>
+        <item>Minden nap, amit kibírsz, egy kicsit könnyebbé teszi a következőt. Így változnak meg a szokások.</item>
+        <item>Egy nyugodt napon okkal indítottad el ezt a kihívást. Bízz abban az önmagadban.</item>
+        <item>Rendben van, hogy ez most nehéz. A nehéz nem azt jelenti, hogy lehetetlen.</item>
+        <item>Tedd le egy pillanatra a telefont, állj fel, és nézz ki az ablakon. Hadd múljon el ez a pillanat.</item>
+        <item>Nem a késztetéseid vagy. Te vagy az, aki eldönti, mi történik ezután.</item>
+        <item>Számold össze, mit nyertél már: időt, fókuszt, energiát. Ne cseréld el néhány percért.</item>
+        <item>Lassíts. Engedd el az állkapcsod, ereszd le a vállad, és vegyél még egy lassú levegőt.</item>
+        <item>Ha a tegnap nehéz volt is, a ma új kezdet. Itt vagy, és ez számít.</item>
+    </string-array>
+    <string-array name="hard_moment_actions">
+        <item>Menj el egy 10 perces sétára, akár csak a ház körül.</item>
+        <item>Mosd meg az arcod hideg vízzel, vagy zuhanyozz le hűvösen.</item>
+        <item>Csinálj most rögtön 20 fekvőtámaszt vagy guggolást.</item>
+        <item>Igyál meg lassan egy nagy pohár vizet.</item>
+        <item>Írj vagy telefonálj egy barátodnak, bármiről.</item>
+        <item>Menj ki a szobából, és 10 percig csinálj valamit a kezeddel.</item>
+    </string-array>
+    <plurals name="stats_warn_days">
+        <item quantity="one">⚠ Napok figyelmeztetéssel: %1$d</item>
+        <item quantity="other">⚠ Napok figyelmeztetéssel: %1$d</item>
+    </plurals>
+    <plurals name="stats_hard_moments">
+        <item quantity="one">🌊 Átvészelt nehéz pillanatok: %1$d</item>
+        <item quantity="other">🌊 Átvészelt nehéz pillanatok: %1$d</item>
+    </plurals>
+    <plurals name="day_warnings">
+        <item quantity="one">⚠ %1$d figyelmeztetés:</item>
+        <item quantity="other">⚠ %1$d figyelmeztetés:</item>
+    </plurals>
+    <plurals name="day_hard_moments">
+        <item quantity="one">🌊 Ezen a napon %1$d alkalommal nyitottad meg a Nehéz pillanat képernyőt. Ez nem kudarc.</item>
+        <item quantity="other">🌊 Ezen a napon %1$d alkalommal nyitottad meg a Nehéz pillanat képernyőt. Ez nem kudarc.</item>
+    </plurals>
+    <plurals name="ev_missed_boots">
+        <item quantity="one">%1$d újraindítás, amely alatt a PBlock nem futott (valószínűleg csökkentett mód)</item>
+        <item quantity="other">%1$d újraindítás, amelyek alatt a PBlock nem futott (valószínűleg csökkentett mód)</item>
+    </plurals>
+    <plurals name="hm_streak">
+        <item quantity="one">🔥 Jelenlegi sorozat: %1$d tiszta nap</item>
+        <item quantity="other">🔥 Jelenlegi sorozat: %1$d tiszta nap</item>
+    </plurals>
+    <plurals name="hm_days_left">
+        <item quantity="one">📅 Még %1$d nap van hátra a kihívásból</item>
+        <item quantity="other">📅 Még %1$d nap van hátra a kihívásból</item>
+    </plurals>
+    <plurals name="hm_uses">
+        <item quantity="one">Eddig %1$d alkalommal nyitottad meg ezt a képernyőt. Hogy ide fordultál, az győzelem, nem kudarc.</item>
+        <item quantity="other">Eddig %1$d alkalommal nyitottad meg ezt a képernyőt. Hogy ide fordultál, az győzelem, nem kudarc.</item>
+    </plurals>
+    <!-- v0.4.0 -->
+    <string name="subtitle_filter">Tartalomszűrő – tisztább internet, az év bármely napján.</string>
+    <string name="mode_challenge">No Nut November</string>
+    <string name="mode_filter">Tartalomszűrő</string>
+    <string name="mode_locked">Zár van érvényben, most nem lehet módot váltani.</string>
+    <string name="challenge_continue_hint">A PBlock továbbra is védhet: válts Tartalomszűrő módra. A naptárad továbbra is megtekinthető.</string>
+    <string name="btn_continue_filter">Folytatás Tartalomszűrővel</string>
+    <string name="card_filter">Tartalomszűrő</string>
+    <string name="filter_summary_dns_family">Felnőtt oldalak tiltva (beépített lista + Cloudflare családi DNS)</string>
+    <string name="filter_summary_dns_plain">Felnőtt oldalak tiltva (beépített lista)</string>
+    <string name="filter_summary_apps_off">Alkalmazástiltás: ki</string>
+    <string name="btn_filter_settings">Szűrő szerkesztése</string>
+    <string name="lock_title">Zár</string>
+    <string name="lock_none">Nincs zár: a védelmek bármikor kikapcsolhatók.</string>
+    <string name="lock_time_active">Zárolva eddig: %1$s (még %2$s). Addig a védelmek nem kapcsolhatók ki.</string>
+    <string name="lock_time_awaiting">A telefon órája szerint a zár lejárt, de ezt még nem sikerült online ellenőrizni. Csatlakozz az internethez a feloldáshoz.</string>
+    <string name="lock_pin_active">Szülői PIN-zár bekapcsolva. A védelmek kikapcsolásához vagy a szűrő lazításához PIN kell.</string>
+    <string name="lock_pin_session">PIN-nel feloldva (%1$s múlva újra zárol).</string>
+    <string name="btn_set_lock">Zár beállítása</string>
+    <string name="btn_enter_pin">PIN megadása</string>
+    <string name="btn_lock_now">Zárolás most</string>
+    <string name="btn_remove_lock">Zár eltávolítása</string>
+    <string name="btn_change_pin">PIN módosítása</string>
+    <string name="lock_choose_title">Válassz zárat</string>
+    <string name="lock_choice_time">Időzár – egy általam választott időpontig</string>
+    <string name="lock_choice_pin">Szülői PIN – a lazításhoz a szülő PIN-je kell</string>
+    <string name="lock_needs_protections">Előbb kapcsold be mindhárom védelmet (DNS-szűrő, Alkalmazás-blokkoló, Eltávolítás elleni védelem).</string>
+    <string name="time_lock_confirm_title">Elindítod az időzárat?</string>
+    <string name="time_lock_confirm_text">Eddig: %1$s (%2$s) a védelmek nem kapcsolhatók ki, a szűrő csak szigorítható, nem lazítható. Ez nem vonható vissza.\n\nA megerősítéshez írd be: %3$s</string>
+    <string name="time_lock_too_soon">Legalább néhány perccel későbbi időpontot válassz.</string>
+    <string name="time_lock_too_far">Az időzár legfeljebb egy évig tarthat.</string>
+    <string name="btn_lock">Zárolás</string>
+    <string name="time_lock_started">Időzár elindítva. 💪</string>
+    <string name="toast_locked">Zárolva – ez most nem módosítható.</string>
+    <string name="pin_set_title">Szülői PIN beállítása</string>
+    <string name="pin_set_text">4–12 számjegy. Nem állítható helyre: ha elfelejtik, a PBlock csak csökkentett módú újraindítással vagy gyári visszaállítással távolítható el.</string>
+    <string name="pin_hint">PIN</string>
+    <string name="pin_repeat_hint">PIN újra</string>
+    <string name="pin_invalid">4–12 számjegyet adj meg.</string>
+    <string name="pin_mismatch">A két PIN nem egyezik.</string>
+    <string name="pin_set_done">Szülői PIN-zár bekapcsolva.</string>
+    <string name="pin_enter_title">Add meg a szülői PIN-t</string>
+    <string name="pin_wrong">Hibás PIN.</string>
+    <string name="pin_wait">Túl sok próbálkozás. Próbáld újra %1$s múlva.</string>
+    <string name="pin_checking">Ellenőrzés…</string>
+    <string name="pin_removed">Zár eltávolítva.</string>
+    <string name="pin_changed">PIN módosítva.</string>
+    <string name="card_settings">Beállítások</string>
+    <string name="setting_theme">Megjelenés</string>
+    <string name="theme_system">Rendszer szerint</string>
+    <string name="theme_light">Világos</string>
+    <string name="theme_dark">Sötét</string>
+    <string name="btn_change">Módosítás</string>
+    <string name="setting_history">Napló megőrzése</string>
+    <string name="retention_forever">Örökre</string>
+    <string name="setting_purge_at_end">Napló törlése a kihívás végén</string>
+    <string name="setting_history_note">A napló csak ezen a telefonon marad. A naptár napi számai megmaradnak, a részletek törlődnek. Szülői PIN esetén a napló csak PIN-nel nézhető meg.</string>
+    <string name="btn_view_log">Napló</string>
+    <string name="btn_clear_log">Napló törlése</string>
+    <string name="clear_log_title">Törlöd a naplót?</string>
+    <string name="clear_log_text">Minden bejegyzés (tiltott oldalak és alkalmazások, figyelmeztetések) törlődik erről a telefonról. A naptár napi számai megmaradnak.</string>
+    <string name="btn_delete">Törlés</string>
+    <string name="log_cleared">Napló törölve.</string>
+    <string name="log_title">Napló</string>
+    <string name="log_empty">A napló üres.</string>
+    <string name="log_hard_moment">Nehéz pillanat megnyitva</string>
+    <string name="card_calendar_history">No Nut November 2026 – előzmények</string>
+    <string name="filter_settings_title">Szűrő beállításai</string>
+    <string name="btn_back">Vissza</string>
+    <string name="fs_dns_title">Oldalszűrő (DNS)</string>
+    <string name="fs_dns_text">A beépített felnőtt lista (%1$s) mindig aktív, amíg a VPN fut.</string>
+    <string name="fs_family">Cloudflare családi szűrő</string>
+    <string name="fs_family_text">A Cloudflare családi DNS-ét (1.1.1.3) is használja a listán nem szereplő felnőtt és kártékony oldalakhoz. Ajánlott.</string>
+    <string name="fs_blocked_title">Saját tiltott oldalak</string>
+    <string name="fs_blocked_text">További tiltandó domainek, aldomainekkel együtt.</string>
+    <string name="fs_allowed_title">Kivételek</string>
+    <string name="fs_allowed_text">Domainek, amelyeket a PBlock saját listái soha nem tiltanak (pl. ha egy szükséges oldal tévesen tiltva van).</string>
+    <string name="fs_domain_hint">pelda.hu</string>
+    <string name="btn_add">Hozzáadás</string>
+    <string name="btn_remove">Eltávolítás</string>
+    <string name="fs_list_empty">Még nincs.</string>
+    <string name="fs_invalid_domain">Érvénytelen domainnév.</string>
+    <string name="fs_apps_title">Alkalmazástiltás</string>
+    <string name="fs_apps_switch">Kiválasztott alkalmazások tiltása</string>
+    <string name="fs_apps_text">Nem kötelező. A kiválasztott alkalmazások megnyitáskor bezáródnak (a kisegítő szolgáltatást használja).</string>
+    <string name="btn_choose_apps">Alkalmazások kiválasztása</string>
+    <string name="fs_apps_none">Nincs kiválasztott alkalmazás.</string>
+    <string name="fs_suggested">%1$s (javasolt)</string>
+    <string name="fs_loading">Alkalmazások betöltése…</string>
+    <string name="fs_locked_time">Időzár aktív: korlátozást hozzáadhatsz, de eltávolítani csak a lejárta után lehet.</string>
+    <string name="fs_locked_pin">Szülői PIN-zár: korlátozás szabadon hozzáadható, eltávolításhoz PIN kell.</string>
+    <string name="blocked_text_filter">Ezt az alkalmazást a PBlock tartalomszűrője tiltja.</string>
+    <string name="toast_settings_locked_filter">PBlock: ez a beállítás zárolva van. 🔒</string>
+    <string name="admin_disable_warning_filter_locked">A PBlock zárolva van. Ha ezt kikapcsolod, a védelmek eltávolíthatók.</string>
+    <plurals name="filter_summary_custom">
+        <item quantity="one">%1$d saját tiltott oldal</item>
+        <item quantity="other">%1$d saját tiltott oldal</item>
+    </plurals>
+    <plurals name="filter_summary_allowed">
+        <item quantity="one">%1$d kivétel</item>
+        <item quantity="other">%1$d kivétel</item>
+    </plurals>
+    <plurals name="filter_summary_apps">
+        <item quantity="one">Alkalmazástiltás: %1$d alkalmazás</item>
+        <item quantity="other">Alkalmazástiltás: %1$d alkalmazás</item>
+    </plurals>
+    <plurals name="retention_days">
+        <item quantity="one">%1$d nap</item>
+        <item quantity="other">%1$d nap</item>
+    </plurals>
+    <plurals name="day_details_deleted">
+        <item quantity="one">%1$d korábbi próbálkozás (a részletek adatvédelmi okból törölve)</item>
+        <item quantity="other">%1$d korábbi próbálkozás (a részletek adatvédelmi okból törölve)</item>
+    </plurals>
+    <plurals name="duration_seconds">
+        <item quantity="one">%1$d másodperc</item>
+        <item quantity="other">%1$d másodperc</item>
+    </plurals>
+    <!-- v0.5.0: bug report -->
+    <string name="bug_btn_open">Hiba vagy javaslat bejelentése</string>
+    <string name="bug_title">Hiba bejelentése</string>
+    <string name="bug_intro">Írd le, mi nem működik, vagy mit szeretnél. A PBlock elkészíti a jelentést, te átnézed, és a saját e-mail-alkalmazásodból küldöd el – automatikusan semmi nem megy el. Maga a jelentés angol nyelvű, de bármilyen nyelven írhatsz.</string>
+    <string name="bug_category_label">Miről szól?</string>
+    <string name="bug_cat_bug">Hiba</string>
+    <string name="bug_cat_blocking">Nem működik a tiltás</string>
+    <string name="bug_cat_wrong_block">Tévesen tiltott oldal</string>
+    <string name="bug_cat_suggestion">Javaslat</string>
+    <string name="bug_cat_other">Egyéb</string>
+    <string name="bug_description_hint">Mi történt? (kötelező)</string>
+    <string name="bug_description_required">Kérlek, írd le a problémát.</string>
+    <string name="bug_steps_hint">Lépések a hiba előidézéséhez (nem kötelező)</string>
+    <string name="bug_contact_hint">E-mail-címed a válaszhoz (nem kötelező)</string>
+    <string name="bug_contact_helper">Csak akkor kell, ha választ szeretnél.</string>
+    <string name="bug_contact_invalid">Ez nem tűnik e-mail-címnek.</string>
+    <string name="bug_attach_diag">Diagnosztikai adatok csatolása</string>
+    <string name="bug_attach_diag_note">App- és Android-verzió, készüléktípus, nyelvek, mód, zárolás típusa (a PIN soha), védelmek állapota, privát DNS és mindig bekapcsolt VPN állapota, tiltólista mérete és a legutóbbi belső hibák. Böngészési előzmények nem.</string>
+    <string name="bug_attach_log">Eseménynapló csatolása</string>
+    <string name="bug_attach_log_warn">Az eseménynapló időponttal együtt tartalmazza a tiltott oldalakat és alkalmazásokat. Csak akkor csatold, ha ezt szívesen megosztod.</string>
+    <string name="bug_preview_btn">Előnézet és küldés</string>
+    <string name="bug_preview_title">Ellenőrizd a jelentést</string>
+    <string name="bug_preview_note">Ez a szöveg kerül az e-mail-alkalmazásodba, címzett: %1$s. Ott még szerkesztheted vagy elvetheted.</string>
+    <string name="bug_preview_note_attach">A jelentés hosszú, ezért csatolt szövegfájlként kerül az e-mail-alkalmazásodba, címzett: %1$s. Ott még szerkesztheted vagy elvetheted.</string>
+    <string name="bug_preview_subject">Tárgy: %1$s</string>
+    <string name="bug_send">Küldés e-mailben</string>
+    <string name="bug_copy">Másolás</string>
+    <string name="bug_copied">Jelentés kimásolva. Illeszd be egy e-mailbe ide: %1$s.</string>
+    <string name="bug_no_email_title">Nem található e-mail-alkalmazás</string>
+    <string name="bug_no_email_text">A jelentést a vágólapra másoltuk. Illeszd be egy üzenetbe bármely alkalmazásból, címzett: %1$s.</string>
+    <string name="bug_chooser_title">Jelentés küldése ezzel:</string>
+    <!-- v0.5.1: brand -->
+    <string name="saworks_logo_description">SAWorks logó</string>
+</resources>

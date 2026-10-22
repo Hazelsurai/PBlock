@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Template colors (kept) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- PBlock (light) -->
+    <color name="pb_primary">#FF5B4BDB</color>
+    <color name="pb_on_primary">#FFFFFFFF</color>
+    <color name="pb_bg">#FFF6F5FB</color>
+    <color name="pb_surface">#FFFFFFFF</color>
+    <color name="pb_cell">#FFEDEBF7</color>
+    <color name="pb_text">#FF1C1B22</color>
+    <color name="pb_muted">#FF8A879A</color>
+    <color name="pb_ok">#FF2E7D32</color>
+    <color name="pb_bad">#FFC62828</color>
+    <color name="pb_warn">#FFB26A00</color>
+    <color name="pb_star">#FFF2A900</color>
+    <color name="pb_check">#FF2E9D44</color>
+    <color name="pb_warn_bg">#FFFFF1DC</color>
+    <color name="pb_alert">#FFE65100</color>
+    <color name="pb_breath">#5A5B4BDB</color>
+
+    <!-- Material 3 roles (light) -->
+    <color name="pb_primary_container">#FFE4DFFF</color>
+    <color name="pb_on_primary_container">#FF170065</color>
+    <color name="pb_secondary">#FF5E5A71</color>
+    <color name="pb_on_secondary">#FFFFFFFF</color>
+    <color name="pb_secondary_container">#FFE5E0F9</color>
+    <color name="pb_on_secondary_container">#FF1C1A2E</color>
+    <color name="pb_on_surface">#FF1C1B22</color>
+    <color name="pb_surface_variant">#FFE5E1EC</color>
+    <color name="pb_on_surface_variant">#FF5F5C6E</color>
+    <color name="pb_outline">#FF79768A</color>
+    <color name="pb_outline_variant">#FFC9C5D6</color>
+    <color name="pb_container_lowest">#FFFFFFFF</color>
+    <color name="pb_container_low">#FFF7F5FC</color>
+    <color name="pb_container">#FFF1EFF8</color>
+    <color name="pb_container_high">#FFEBE9F3</color>
+    <color name="pb_container_highest">#FFE5E3EE</color>
+    <color name="pb_error">#FFBA1A1A</color>
+    <color name="pb_on_error">#FFFFFFFF</color>
+    <color name="pb_inverse_surface">#FF312F38</color>
+    <color name="pb_inverse_on_surface">#FFF3EFF9</color>
+    <color name="pb_inverse_primary">#FFC5BCFF</color>
+    <!-- Brand -->
+    <color name="pb_splash_bg">#FF000000</color>
+    <color name="pb_brand_card">#FFF5F5F5</color>
+</resources>

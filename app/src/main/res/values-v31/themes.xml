@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- API 31+: SAWorks branding at the bottom of the system splash screen. -->
+    <style name="Theme.PBlock.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/pb_splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/saworks_badge</item>
+        <item name="postSplashScreenTheme">@style/Theme.PBlock</item>
+    </style>
+</resources>

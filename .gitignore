@@ -1,0 +1,41 @@
+# PBlock - Android (Gradle/Kotlin)
+
+# --- Gradle / Android build output ---
+.gradle/
+build/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+local.properties
+
+# --- Android Studio / IntelliJ (machine-specific workspace files) ---
+.idea/
+*.iml
+.navigation/
+
+# --- Signing keys (never commit) ---
+*.jks
+*.keystore
+*.p12
+*.pk8
+*.pem
+keystore.properties
+signing.properties
+
+# --- Editors / OS ---
+.vs/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Logs / device captures (may contain personal data) ---
+*.log
+*.logcat
+
+# --- Local backups (history is in Git) ---
+_backup_*/

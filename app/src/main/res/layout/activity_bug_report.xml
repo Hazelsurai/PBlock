@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pb_bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/pb_bg"
+        app:navigationContentDescription="@string/btn_back"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="@string/bug_title"
+        app:titleTextColor="@color/pb_text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/bug_intro"
+                android:textColor="@color/pb_muted"
+                android:textSize="14sp" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+                <LinearLayout style="@style/PBlockCardBody">
+                    <TextView style="@style/PBlockCardTitle" android:text="@string/bug_category_label" />
+                    <RadioGroup
+                        android:id="@+id/groupCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RadioButton android:id="@+id/catBug" style="@style/PBlockRadio" android:checked="true" android:text="@string/bug_cat_bug" />
+                        <RadioButton android:id="@+id/catBlocking" style="@style/PBlockRadio" android:text="@string/bug_cat_blocking" />
+                        <RadioButton android:id="@+id/catWrongBlock" style="@style/PBlockRadio" android:text="@string/bug_cat_wrong_block" />
+                        <RadioButton android:id="@+id/catSuggestion" style="@style/PBlockRadio" android:text="@string/bug_cat_suggestion" />
+                        <RadioButton android:id="@+id/catOther" style="@style/PBlockRadio" android:text="@string/bug_cat_other" />
+                    </RadioGroup>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+                <LinearLayout style="@style/PBlockCardBody">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutDescription"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/bug_description_hint">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|start"
+                            android:importantForAutofill="no"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:minLines="4" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/bug_steps_hint">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputSteps"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="top|start"
+                            android:importantForAutofill="no"
+                            android:inputType="textMultiLine|textCapSentences"
+                            android:minLines="3" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutContact"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/bug_contact_hint"
+                        app:helperText="@string/bug_contact_helper">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputContact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints="emailAddress"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+                <LinearLayout style="@style/PBlockCardBody">
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkDiagnostics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/bug_attach_diag"
+                        android:textColor="@color/pb_text"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="@string/bug_attach_diag_note"
+                        android:textColor="@color/pb_muted"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/checkLog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:checked="false"
+                        android:text="@string/bug_attach_log"
+                        android:textColor="@color/pb_text"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/tvLogWarning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="@string/bug_attach_log_warn"
+                        android:textColor="@color/pb_warn"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bug_preview_btn" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

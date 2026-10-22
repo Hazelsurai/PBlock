@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle">No Nut November 2026 – 一日ずつ、乗り越えよう。</string>
+    <string name="card_challenge">チャレンジ</string>
+    <string name="card_protections">保護機能</string>
+    <string name="card_calendar">2026年11月</string>
+    <string name="card_tips">抜け道をふさぐヒント</string>
+    <string name="prot_vpn">DNS フィルタ（ローカル VPN）</string>
+    <string name="prot_accessibility">アプリブロック</string>
+    <string name="prot_admin">アンインストール防止</string>
+    <string name="prot_always_on">常時接続 VPN</string>
+    <string name="status_on">✔ 有効</string>
+    <string name="status_off">✖ 無効</string>
+    <string name="status_unknown">–（先に DNS フィルタを有効にしてください）</string>
+    <string name="status_always_on_yes">✔ 設定済み</string>
+    <string name="status_always_on_no">⚠ 設定をおすすめします</string>
+    <string name="status_lockdown_on">✖「VPN なしの接続のブロック」をオフにしてください。オンのままだとインターネットに接続できません！</string>
+    <string name="btn_turn_on">オンにする</string>
+    <string name="btn_turn_off">オフにする</string>
+    <string name="btn_setup">設定する</string>
+    <string name="btn_settings">設定</string>
+    <string name="btn_activate">有効にする</string>
+    <string name="btn_guide">ガイド</string>
+    <string name="btn_open_settings">設定を開く</string>
+    <string name="btn_open_vpn_settings">VPN 設定</string>
+    <string name="btn_start_challenge">チャレンジを開始</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_home">ホーム画面に戻る</string>
+    <string name="challenge_not_ready">チャレンジはまだ始まっていません。3 つの保護機能（DNS フィルタ、アプリブロック、アンインストール防止）をすべて有効にすると開始できます。</string>
+    <string name="challenge_ready">すべての保護機能が有効です。準備ができたらチャレンジを開始してください。開始後は 11 月 30 日 23:59 までオフにできません。</string>
+    <string name="challenge_locked">🔒 チャレンジ実施中です。保護機能は 2026 年 11 月 30 日 23:59（ブダペスト時間）までロックされています。\n残り時間：%1$s</string>
+    <string name="challenge_finished">🏁 チャレンジ終了、おめでとうございます！すべてのロックが解除されました。保護機能をオフにしたり、アプリをアンインストールしたりできます。</string>
+    <string name="challenge_over_not_started">2026 年 11 月のチャレンジ期間は終了しました。</string>
+    <string name="challenge_started">チャレンジが始まりました。がんばって！💪</string>
+    <string name="confirm_title">本当に開始しますか？</string>
+    <string name="confirm_word">やりぬきます</string>
+    <string name="confirm_text">チャレンジを開始すると、2026 年 11 月 30 日 23:59（ブダペスト時間）まで次のようになります：\n\n• DNS フィルタ、アプリブロック、アンインストール防止をオフにできません\n• アプリをアンインストールできません\n• 設定アプリ内の PBlock の設定ページがロックされます\n\nその後はすべて自動的にロック解除されます。\n\n本当によければ、次のように入力してください：%1$s</string>
+    <string name="acc_guide_title">アプリブロックを有効にする</string>
+    <string name="acc_guide_text">Brave、X、Telegram をブロックするには、PBlock をユーザー補助サービスとして実行する必要があります。\n\n1.「設定を開く」をタップします。\n2.「インストール済みアプリ」/「ダウンロードしたアプリ」で「PBlock 保護」を探します。\n3. オンにして許可します。\n\nスイッチがグレー表示（「制限付き設定」）の場合：設定 › アプリ › PBlock › ⋮ メニュー ›「制限付き設定を許可」の後、もう一度お試しください。\n\nPBlock はデータを一切収集・送信しません。どのアプリが前面に表示されているかを確認するだけです。</string>
+    <string name="always_on_title">常時接続 VPN</string>
+    <string name="always_on_text">これにより、再起動やクラッシュの後も DNS フィルタが自動的に再開されます。\n\n1.「VPN 設定」をタップします。\n2. PBlock の横にある歯車アイコンをタップします。\n3.「常時接続 VPN」をオンにします。\n\n重要：「VPN なしの接続のブロック」はオンにしないでください！PBlock は DNS 通信だけを VPN 経由にしているため、このオプションをオンにするとそれ以外のインターネット通信がすべて遮断されます。</string>
+    <string name="admin_explanation">PBlock はデバイス管理アプリとして、チャレンジ中に自身がアンインストールされるのを防ぎます。それ以外の権限は要求しません。</string>
+    <string name="admin_description">ロック中に PBlock がアンインストールされるのを防ぎます。</string>
+    <string name="admin_disable_warning">これをオフにすると、PBlock をアンインストールできるようになります。</string>
+    <string name="admin_disable_warning_locked">チャレンジはまだ続いています！今オフにすると No Nut November をあきらめることになります。本当によろしいですか？戻ることをおすすめします。💪</string>
+    <string name="toast_settings_locked">PBlock：この設定はチャレンジ終了までロックされています。💪</string>
+    <string name="vpn_consent_denied">DNS フィルタを使うには VPN 接続を許可する必要があります。</string>
+    <string name="settings_not_found">設定を開けませんでした。</string>
+    <string name="private_dns_title">⚠ プライベート DNS はフィルタを迂回します</string>
+    <string name="private_dns_warning">この端末にはカスタムのプライベート DNS プロバイダ（%1$s）が設定されています。この場合、システムは PBlock を迂回して DNS クエリを暗号化して送信することがあるため、フィルタリングは確実ではありません。\n\n変更方法：設定 › ネットワークとインターネット › プライベート DNS ›「自動」または「OFF」。</string>
+    <string name="calendar_legend">★ = クリーンな日 · ✔ = 試みたけれど PBlock が止めた · ⚠ = 保護がオフだった、または時計が変更された · 日付をタップすると詳細を表示。今日と今後の日には、その日の終わりに印が付きます。</string>
+    <string name="day_not_in_challenge">この日はチャレンジの対象外です（まだ開始していないか、開始日より前の日です）。</string>
+    <string name="day_clean">★ クリーンな日です。ブロックされた試みは一度もありません。よくできました！</string>
+    <string name="day_no_attempts">この日のブロックされた試みはまだありません。</string>
+    <string name="kind_app">アプリ</string>
+    <string name="kind_dns">サイト</string>
+    <string name="kind_dns_filter">サイト（ファミリーフィルタ）</string>
+    <string name="tips_text">• Chrome：設定 › プライバシーとセキュリティ ›「セキュア DNS を使用する」→ オフにしてください。オンのままだと Chrome がフィルタを迂回することがあります。\n• Firefox、Edge、Opera などのブラウザ：「DNS over HTTPS」/「セキュア DNS」と内蔵 VPN をオフにしてください。\n• プライベート DNS：設定 › ネットワークとインターネット › プライベート DNS を「自動」または「OFF」にしてください。\n• ブロックリストに加えて、Cloudflare のファミリー向け DNS（1.1.1.3）も使用し、さらに多くのアダルトサイトを除外します。</string>
+    <string name="app_generic">このアプリ</string>
+    <string name="blocked_title">%1$s はブロックされています</string>
+    <string name="blocked_text">No Nut November：このアプリはチャレンジ期間中ブロックされています。踏ん張って、あなたならできる！💪</string>
+    <string name="accessibility_label">PBlock 保護</string>
+    <string name="accessibility_description">選んだアプリ（チャレンジ中は Brave、X、Telegram）を開けないようにし、ロック中は PBlock がオフにされるのを防ぎます。PBlock はデータを収集・送信しません。</string>
+    <string name="version_fmt">バージョン %1$s%2$s</string>
+    <string name="licenses_title">ライセンスと出典</string>
+    <string name="licenses_text">PBlock – SAWorks\n\n内蔵ブロックリスト：%1$s（およびそのすべてのサブドメインと、.xxx・.porn・.sex・.adult ドメイン）。\n\n出典：StevenBlack/hosts –「porn-only」リスト（2026 年 10 月 18 日）、MIT ライセンス、© Steven Black。\nhttps://github.com/StevenBlack/hosts\n\nリストの構成：\n• Sinfonietta/hostfiles – MIT\n• Clefspeare13/pornhosts – MIT\n• bigdargon/hostsVN – MIT\n• tiuxo/hosts – CC BY 4.0\n• brijrajparmar27/host-sources – CC BY 4.0\n\n追加の DNS フィルタリング：Cloudflare for Families（1.1.1.3、1.0.0.3）。</string>
+    <string name="duration_fmt">%1$s %2$s %3$s</string>
+    <string-array name="weekdays_short">
+        <item>月</item>
+        <item>火</item>
+        <item>水</item>
+        <item>木</item>
+        <item>金</item>
+        <item>土</item>
+        <item>日</item>
+    </string-array>
+    <plurals name="blocklist_domains">
+        <item quantity="other">%1$d 件のドメイン</item>
+    </plurals>
+    <plurals name="stats_clean_days">
+        <item quantity="other">★ クリーンな日：%1$d</item>
+    </plurals>
+    <plurals name="stats_check_days">
+        <item quantity="other">✔ ブロックされた試みがあった日：%1$d</item>
+    </plurals>
+    <plurals name="stats_total_attempts">
+        <item quantity="other">チャレンジ中にブロックされた試みの合計：%1$d</item>
+    </plurals>
+    <plurals name="day_attempts">
+        <item quantity="other">✔ ブロックされた試み %1$d 件：</item>
+    </plurals>
+    <plurals name="duration_days">
+        <item quantity="other">%1$d 日</item>
+    </plurals>
+    <plurals name="duration_hours">
+        <item quantity="other">%1$d 時間</item>
+    </plurals>
+    <plurals name="duration_minutes">
+        <item quantity="other">%1$d 分</item>
+    </plurals>
+    <!-- v0.3.0 -->
+    <string name="btn_hard_moment">🌊 つらい瞬間</string>
+    <string name="challenge_awaiting_trusted_time">⏳ 端末の時計ではチャレンジは終了していますが、時刻はまだ確認されていません。インターネットに接続してください。日付が確認されるとすぐに PBlock のロックが解除されます。</string>
+    <string name="time_not_verified">⚠ 時刻はまだ確認されていません（インターネットなし）。端末の時計を変更してもロックは解除されません。</string>
+    <string name="ev_clock_changed">端末の時計が変更されました</string>
+    <string name="ev_clock_forward">端末の時計が %1$s 進められました</string>
+    <string name="ev_clock_back">端末の時計が %1$s 戻されました</string>
+    <string name="ev_clock_behind">再起動後、端末の時計が確認済みの時刻より %1$s 遅れていました</string>
+    <string name="ev_clock_offset">端末の時計が確認済みの時刻と %1$s ずれています</string>
+    <string name="ev_safe_mode_now">スマートフォンがセーフモードで動作しています</string>
+    <string name="ev_down_off">%1$s がオフになっていました（%2$s から）</string>
+    <string name="ev_down_on">%1$s が %2$s オフになっていました</string>
+    <string name="ev_down_generic">%1$s がオフになっていました</string>
+    <string name="comp_vpn">DNS フィルタ</string>
+    <string name="comp_accessibility">アプリブロッカー</string>
+    <string name="hm_title">つらい瞬間</string>
+    <string name="hm_intro">1分半だけ立ち止まりましょう。衝動は波のようなもの。高まり、ピークを迎え、そして過ぎ去ります。円に合わせて呼吸してください。</string>
+    <string name="hm_start">呼吸を始める</string>
+    <string name="hm_stop">停止</string>
+    <string name="hm_again">もう一度</string>
+    <string name="hm_ready">準備ができたら始めましょう</string>
+    <string name="hm_done">よくできました 🌿</string>
+    <string name="hm_breathe_in">吸って</string>
+    <string name="hm_hold">止めて</string>
+    <string name="hm_breathe_out">吐いて</string>
+    <string name="hm_round">%2$d 回中 %1$d 回目</string>
+    <string name="hm_round_info">ボックス呼吸：%1$d 回、約 %2$d 秒</string>
+    <string name="hm_message_title">今のあなたへ</string>
+    <string name="hm_another">別の言葉</string>
+    <string name="hm_try_this">やってみよう</string>
+    <string name="hm_back">戻る</string>
+    <string-array name="hard_moment_messages">
+        <item>衝動は波です。高まり、ピークを迎え、たいてい 15～20 分で引いていきます。何かをする必要はありません。</item>
+        <item>あなたはこれまでにも難しいことを乗り越えてきました。これもその一つで、今感じているより小さなものです。</item>
+        <item>これからの 10 分で何かを決める必要はありません。この 10 分を過ごすだけでいいのです。</item>
+        <item>引き寄せられる感覚があっても、失敗しているわけではありません。気づいて立ち止まることこそ、あなたが身につけている力です。</item>
+        <item>明日の朝のあなたは、今のあなたの行動に感謝するはずです。</item>
+        <item>退屈、ストレス、孤独、疲れ。本当にドアをたたいているのはどれでしょう？それが本当に必要としているものをあげてください。</item>
+        <item>脳は手っ取り早いごほうびを求めています。コップ一杯の水、短い散歩、友達へのメッセージもごほうびです。</item>
+        <item>一日を乗り越えるたびに、次の日が少し楽になります。習慣はそうやって変わっていきます。</item>
+        <item>あなたは落ち着いた日に、理由があってこのチャレンジを始めました。そのときの自分を信じてください。</item>
+        <item>今つらいのは当たり前です。つらいことは、不可能という意味ではありません。</item>
+        <item>少しの間スマホを置いて、立ち上がり、窓の外を見てみましょう。この瞬間をやり過ごしましょう。</item>
+        <item>あなたは衝動そのものではありません。次に何をするかを選ぶのはあなたです。</item>
+        <item>すでに手に入れたものを数えてみましょう。時間、集中力、エネルギー。数分のためにそれを手放さないで。</item>
+        <item>ペースを落としましょう。あごの力を抜き、肩を下ろして、もう一度ゆっくり息を吸って。</item>
+        <item>昨日がつらかったとしても、今日は新しいスタートです。あなたはここにいる、それが大切です。</item>
+    </string-array>
+    <string-array name="hard_moment_actions">
+        <item>10 分間散歩しましょう。近所を一周するだけでも大丈夫です。</item>
+        <item>冷たい水で顔を洗うか、冷たいシャワーを浴びましょう。</item>
+        <item>今すぐ腕立て伏せかスクワットを 20 回。</item>
+        <item>大きなコップ一杯の水をゆっくり飲みましょう。</item>
+        <item>友達にメッセージを送るか電話をしましょう。話題は何でもかまいません。</item>
+        <item>部屋を出て、10 分間手を使う作業をしましょう。</item>
+    </string-array>
+    <plurals name="stats_warn_days">
+        <item quantity="other">⚠ 警告のあった日：%1$d</item>
+    </plurals>
+    <plurals name="stats_hard_moments">
+        <item quantity="other">🌊 乗り越えたつらい瞬間：%1$d</item>
+    </plurals>
+    <plurals name="day_warnings">
+        <item quantity="other">⚠ 警告 %1$d 件：</item>
+    </plurals>
+    <plurals name="day_hard_moments">
+        <item quantity="other">🌊 この日は「つらい瞬間」画面を %1$d 回使いました。これは失敗ではありません。</item>
+    </plurals>
+    <plurals name="ev_missed_boots">
+        <item quantity="other">PBlock が動作していない間に %1$d 回再起動されました（セーフモードの可能性）</item>
+    </plurals>
+    <plurals name="hm_streak">
+        <item quantity="other">🔥 現在の連続記録：クリーンな日 %1$d 日</item>
+    </plurals>
+    <plurals name="hm_days_left">
+        <item quantity="other">📅 チャレンジ終了まであと %1$d 日</item>
+    </plurals>
+    <plurals name="hm_uses">
+        <item quantity="other">この画面を開いた回数：%1$d 回。ここに頼ることは勝利であり、失敗ではありません。</item>
+    </plurals>
+    <!-- v0.4.0 -->
+    <string name="subtitle_filter">コンテンツフィルタ – 一年中、よりクリーンなインターネットを。</string>
+    <string name="mode_challenge">No Nut November</string>
+    <string name="mode_filter">コンテンツフィルタ</string>
+    <string name="mode_locked">ロック中のため、今はモードを切り替えられません。</string>
+    <string name="challenge_continue_hint">PBlock は引き続きあなたを守れます。「コンテンツフィルタ」モードに切り替えてください。カレンダーは引き続き見られます。</string>
+    <string name="btn_continue_filter">コンテンツフィルタで続ける</string>
+    <string name="card_filter">コンテンツフィルタ</string>
+    <string name="filter_summary_dns_family">アダルトサイトをブロック中（内蔵リスト + Cloudflare ファミリー DNS）</string>
+    <string name="filter_summary_dns_plain">アダルトサイトをブロック中（内蔵リスト）</string>
+    <string name="filter_summary_apps_off">アプリブロック：オフ</string>
+    <string name="btn_filter_settings">フィルタを編集</string>
+    <string name="lock_title">ロック</string>
+    <string name="lock_none">ロックなし：保護はいつでもオフにできます。</string>
+    <string name="lock_time_active">%1$s までロック中（残り %2$s）。それまで保護はオフにできません。</string>
+    <string name="lock_time_awaiting">端末の時計ではロック期間が終わっていますが、まだオンラインで確認できていません。ロック解除にはインターネットに接続してください。</string>
+    <string name="lock_pin_active">保護者 PIN ロックがオンです。保護をオフにしたりフィルタを緩めたりするには PIN が必要です。</string>
+    <string name="lock_pin_session">PIN で解除中（%1$s 後に再ロック）。</string>
+    <string name="btn_set_lock">ロックを設定</string>
+    <string name="btn_enter_pin">PIN を入力</string>
+    <string name="btn_lock_now">今すぐロック</string>
+    <string name="btn_remove_lock">ロックを解除</string>
+    <string name="btn_change_pin">PIN を変更</string>
+    <string name="lock_choose_title">ロックの種類を選択</string>
+    <string name="lock_choice_time">時間ロック – 選んだ日時まで</string>
+    <string name="lock_choice_pin">保護者 PIN – 緩めるには保護者の PIN が必要</string>
+    <string name="lock_needs_protections">まず 3 つの保護（DNS フィルタ、アプリブロック、アンインストール防止）をすべてオンにしてください。</string>
+    <string name="time_lock_confirm_title">時間ロックを開始しますか？</string>
+    <string name="time_lock_confirm_text">%1$s（%2$s）まで保護はオフにできず、フィルタは厳しくすることだけができ、緩めることはできません。元に戻せません。\n\n確認のため %3$s と入力してください：</string>
+    <string name="time_lock_too_soon">少なくとも数分後の時刻を選んでください。</string>
+    <string name="time_lock_too_far">時間ロックは最長 1 年です。</string>
+    <string name="btn_lock">ロック</string>
+    <string name="time_lock_started">時間ロックを開始しました。💪</string>
+    <string name="toast_locked">ロック中 – 今は変更できません。</string>
+    <string name="pin_set_title">保護者 PIN を設定</string>
+    <string name="pin_set_text">4～12 桁の数字。復元はできません。忘れた場合、PBlock はセーフモードでの再起動か初期化でしか削除できません。</string>
+    <string name="pin_hint">PIN</string>
+    <string name="pin_repeat_hint">PIN（確認）</string>
+    <string name="pin_invalid">4～12 桁の数字を入力してください。</string>
+    <string name="pin_mismatch">2 つの PIN が一致しません。</string>
+    <string name="pin_set_done">保護者 PIN ロックをオンにしました。</string>
+    <string name="pin_enter_title">保護者 PIN を入力</string>
+    <string name="pin_wrong">PIN が違います。</string>
+    <string name="pin_wait">試行回数が多すぎます。%1$s 後にもう一度お試しください。</string>
+    <string name="pin_checking">確認中…</string>
+    <string name="pin_removed">ロックを解除しました。</string>
+    <string name="pin_changed">PIN を変更しました。</string>
+    <string name="card_settings">設定</string>
+    <string name="setting_theme">表示</string>
+    <string name="theme_system">システムに合わせる</string>
+    <string name="theme_light">ライト</string>
+    <string name="theme_dark">ダーク</string>
+    <string name="btn_change">変更</string>
+    <string name="setting_history">ログの保存期間</string>
+    <string name="retention_forever">無期限</string>
+    <string name="setting_purge_at_end">チャレンジ終了時にログを削除</string>
+    <string name="setting_history_note">ログはこの端末にのみ保存されます。カレンダーの日ごとの件数は残り、詳細は削除されます。保護者 PIN がある場合、ログの閲覧には PIN が必要です。</string>
+    <string name="btn_view_log">アクティビティログ</string>
+    <string name="btn_clear_log">ログを削除</string>
+    <string name="clear_log_title">アクティビティログを削除しますか？</string>
+    <string name="clear_log_text">すべての記録（ブロックしたサイトとアプリ、警告）がこの端末から削除されます。カレンダーの日ごとの件数は残ります。</string>
+    <string name="btn_delete">削除</string>
+    <string name="log_cleared">ログを削除しました。</string>
+    <string name="log_title">アクティビティログ</string>
+    <string name="log_empty">ログは空です。</string>
+    <string name="log_hard_moment">「つらい瞬間」を開いた</string>
+    <string name="card_calendar_history">No Nut November 2026 – 履歴</string>
+    <string name="filter_settings_title">フィルタ設定</string>
+    <string name="btn_back">戻る</string>
+    <string name="fs_dns_title">サイトフィルタ（DNS）</string>
+    <string name="fs_dns_text">VPN の実行中は、内蔵のアダルトリスト（%1$s）が常に有効です。</string>
+    <string name="fs_family">Cloudflare ファミリーフィルタ</string>
+    <string name="fs_family_text">リストにないアダルトサイトや悪質なサイトに対して、Cloudflare のファミリー DNS（1.1.1.3）も使います。推奨。</string>
+    <string name="fs_blocked_title">自分でブロックするサイト</string>
+    <string name="fs_blocked_text">追加でブロックするドメイン（サブドメインを含む）。</string>
+    <string name="fs_allowed_title">例外</string>
+    <string name="fs_allowed_text">PBlock 独自のリストでは決してブロックしないドメイン（必要なサイトが誤ってブロックされた場合など）。</string>
+    <string name="fs_domain_hint">example.jp</string>
+    <string name="btn_add">追加</string>
+    <string name="btn_remove">削除</string>
+    <string name="fs_list_empty">まだありません。</string>
+    <string name="fs_invalid_domain">有効なドメイン名ではありません。</string>
+    <string name="fs_apps_title">アプリブロック</string>
+    <string name="fs_apps_switch">選んだアプリをブロック</string>
+    <string name="fs_apps_text">任意。選んだアプリは開くと閉じられます（ユーザー補助サービスを使用）。</string>
+    <string name="btn_choose_apps">アプリを選択</string>
+    <string name="fs_apps_none">アプリが選択されていません。</string>
+    <string name="fs_suggested">%1$s（おすすめ）</string>
+    <string name="fs_loading">アプリを読み込み中…</string>
+    <string name="fs_locked_time">時間ロック中：制限の追加はできますが、削除はロック終了後になります。</string>
+    <string name="fs_locked_pin">保護者 PIN ロック：制限の追加は自由、削除には PIN が必要です。</string>
+    <string name="blocked_text_filter">このアプリは PBlock のコンテンツフィルタでブロックされています。</string>
+    <string name="toast_settings_locked_filter">PBlock：この設定はロックされています。🔒</string>
+    <string name="admin_disable_warning_filter_locked">PBlock はロック中です。これをオフにすると、保護が削除される可能性があります。</string>
+    <plurals name="filter_summary_custom">
+        <item quantity="other">自分でブロックしたサイト %1$d 件</item>
+    </plurals>
+    <plurals name="filter_summary_allowed">
+        <item quantity="other">例外 %1$d 件</item>
+    </plurals>
+    <plurals name="filter_summary_apps">
+        <item quantity="other">アプリブロック：%1$d 個のアプリ</item>
+    </plurals>
+    <plurals name="retention_days">
+        <item quantity="other">%1$d 日</item>
+    </plurals>
+    <plurals name="day_details_deleted">
+        <item quantity="other">以前の試行 %1$d 件（プライバシー保護のため詳細は削除済み）</item>
+    </plurals>
+    <plurals name="duration_seconds">
+        <item quantity="other">%1$d 秒</item>
+    </plurals>
+    <!-- v0.5.0: bug report -->
+    <string name="bug_btn_open">問題の報告・提案</string>
+    <string name="bug_title">問題を報告</string>
+    <string name="bug_intro">うまくいかないことや、ほしい機能を教えてください。PBlock がレポートを作成し、内容を確認したうえでご自身のメールアプリから送信します。自動では何も送信されません。レポート自体は英語ですが、どの言語で書いてもかまいません。</string>
+    <string name="bug_category_label">内容の種類</string>
+    <string name="bug_cat_bug">不具合</string>
+    <string name="bug_cat_blocking">ブロックが機能しない</string>
+    <string name="bug_cat_wrong_block">誤ってブロックされたサイト</string>
+    <string name="bug_cat_suggestion">提案</string>
+    <string name="bug_cat_other">その他</string>
+    <string name="bug_description_hint">何が起きましたか？（必須）</string>
+    <string name="bug_description_required">問題の内容を入力してください。</string>
+    <string name="bug_steps_hint">再現手順（任意）</string>
+    <string name="bug_contact_hint">返信用メールアドレス（任意）</string>
+    <string name="bug_contact_helper">返信を希望する場合のみ必要です。</string>
+    <string name="bug_contact_invalid">メールアドレスの形式ではないようです。</string>
+    <string name="bug_attach_diag">診断情報を添付</string>
+    <string name="bug_attach_diag_note">アプリと Android のバージョン、端末モデル、言語、モード、ロックの種類（PIN は含みません）、保護機能の状態、プライベート DNS と常時接続 VPN の状態、ブロックリストの件数、最近の内部エラー。閲覧履歴は含みません。</string>
+    <string name="bug_attach_log">アクティビティログを添付</string>
+    <string name="bug_attach_log_warn">アクティビティログには、ブロックされたサイトとアプリが日時とともに記録されています。共有してもよい場合のみ添付してください。</string>
+    <string name="bug_preview_btn">プレビューして送信</string>
+    <string name="bug_preview_title">レポートの確認</string>
+    <string name="bug_preview_note">このテキストがメールアプリに渡されます（宛先：%1$s）。送信前にそこで編集・取り消しができます。</string>
+    <string name="bug_preview_note_attach">レポートが長いため、テキストファイルとして添付してメールアプリに渡されます（宛先：%1$s）。送信前にそこで編集・取り消しができます。</string>
+    <string name="bug_preview_subject">件名：%1$s</string>
+    <string name="bug_send">メールで送信</string>
+    <string name="bug_copy">コピー</string>
+    <string name="bug_copied">レポートをコピーしました。%1$s 宛てのメールに貼り付けてください。</string>
+    <string name="bug_no_email_title">メールアプリが見つかりません</string>
+    <string name="bug_no_email_text">レポートをクリップボードにコピーしました。任意のアプリで %1$s 宛てのメッセージに貼り付けてください。</string>
+    <string name="bug_chooser_title">レポートの送信方法</string>
+    <!-- v0.5.1: brand -->
+    <string name="saworks_logo_description">SAWorks のロゴ</string>
+</resources>

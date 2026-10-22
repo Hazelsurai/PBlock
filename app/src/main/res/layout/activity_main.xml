@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pb_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginEnd="12dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/pb_logo" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/pb_text"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/subtitle"
+            android:textColor="@color/pb_muted"
+            android:textSize="15sp" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/modeToggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeChallenge"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_challenge" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnModeFilter"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_filter" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHardMoment"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:minHeight="56dp"
+            android:text="@string/btn_hard_moment"
+            android:textSize="16sp" />
+
+        <!-- Challenge -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardChallenge" style="@style/PBlockCard">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/card_challenge" />
+                <TextView
+                    android:id="@+id/tvChallengeStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pb_text"
+                    android:textSize="15sp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/btn_start_challenge" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnContinueFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/btn_continue_filter"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Content filter -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardFilter" style="@style/PBlockCard">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/card_filter" />
+                <TextView
+                    android:id="@+id/tvFilterSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pb_text"
+                    android:textSize="15sp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFilterSettings"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/btn_filter_settings" />
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lock_title"
+                    android:textColor="@color/pb_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvLockStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/pb_text"
+                    android:textSize="15sp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+                <LinearLayout
+                    android:id="@+id/rowLockExtra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnChangePin"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/btn_change_pin" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRemoveLock"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/btn_remove_lock" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Protections -->
+        <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/card_protections" />
+
+                <LinearLayout style="@style/PBlockRow">
+                    <LinearLayout style="@style/PBlockRowText">
+                        <TextView style="@style/PBlockRowName" android:text="@string/prot_vpn" />
+                        <TextView android:id="@+id/statusVpn" style="@style/PBlockRowStatus" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnVpn" style="@style/PBlockRowButton" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/PBlockRow">
+                    <LinearLayout style="@style/PBlockRowText">
+                        <TextView style="@style/PBlockRowName" android:text="@string/prot_accessibility" />
+                        <TextView android:id="@+id/statusAccessibility" style="@style/PBlockRowStatus" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnAccessibility" style="@style/PBlockRowButton" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/PBlockRow">
+                    <LinearLayout style="@style/PBlockRowText">
+                        <TextView style="@style/PBlockRowName" android:text="@string/prot_admin" />
+                        <TextView android:id="@+id/statusAdmin" style="@style/PBlockRowStatus" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnAdmin" style="@style/PBlockRowButton" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/PBlockRow">
+                    <LinearLayout style="@style/PBlockRowText">
+                        <TextView style="@style/PBlockRowName" android:text="@string/prot_always_on" />
+                        <TextView android:id="@+id/statusAlwaysOn" style="@style/PBlockRowStatus" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnVpnSettings"
+                        style="@style/PBlockRowButton"
+                        android:text="@string/btn_guide" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Private DNS warning -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPrivateDns"
+            style="@style/PBlockCard"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/pb_warn_bg">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/private_dns_title" android:textColor="@color/pb_warn" />
+                <TextView
+                    android:id="@+id/tvPrivateDns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/pb_text" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPrivateDns"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/btn_open_settings" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Calendar -->
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardCalendar" style="@style/PBlockCard">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView android:id="@+id/tvCalendarTitle" style="@style/PBlockCardTitle" android:text="@string/card_calendar" />
+                <LinearLayout
+                    android:id="@+id/calendarGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+                <TextView
+                    android:id="@+id/tvCalendarStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/pb_text" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/calendar_legend"
+                    android:textColor="@color/pb_muted"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Settings -->
+        <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/card_settings" />
+
+                <LinearLayout style="@style/PBlockRow">
+                    <LinearLayout style="@style/PBlockRowText">
+                        <TextView style="@style/PBlockRowName" android:text="@string/setting_theme" />
+                        <TextView android:id="@+id/tvTheme" style="@style/PBlockRowStatus" android:textColor="@color/pb_muted" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnTheme" style="@style/PBlockRowButton" android:text="@string/btn_change" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/PBlockRow">
+                    <LinearLayout style="@style/PBlockRowText">
+                        <TextView style="@style/PBlockRowName" android:text="@string/setting_history" />
+                        <TextView android:id="@+id/tvRetention" style="@style/PBlockRowStatus" android:textColor="@color/pb_muted" />
+                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btnRetention" style="@style/PBlockRowButton" android:text="@string/btn_change" />
+                </LinearLayout>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchPurgeAtEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting_purge_at_end"
+                    android:textColor="@color/pb_text"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting_history_note"
+                    android:textColor="@color/pb_muted"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewLog"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:text="@string/btn_view_log" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnClearLog"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/btn_clear_log" />
+                </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBugReport"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/bug_btn_open" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tips -->
+        <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/card_tips" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tips_text"
+                    android:textColor="@color/pb_text"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:textColor="@color/pb_muted"
+                android:textSize="13sp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLicenses"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/licenses_title" />
+        </LinearLayout>
+
+        <!-- SAWorks brand footer: light card so the black-outlined logo stays legible in dark theme. -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/pb_brand_card"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/pb_outline_variant"
+            app:strokeWidth="1dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="6dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/saworks_logo_description"
+                android:src="@drawable/saworks_logo" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

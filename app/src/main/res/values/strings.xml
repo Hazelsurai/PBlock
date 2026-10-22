@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">PBlock</string>
+    <string name="subtitle">No Nut November 2026 – stay strong, one day at a time.</string>
+    <string name="card_challenge">Challenge</string>
+    <string name="card_protections">Protections</string>
+    <string name="card_calendar">November 2026</string>
+    <string name="card_tips">Tips against loopholes</string>
+    <string name="prot_vpn">DNS filter (local VPN)</string>
+    <string name="prot_accessibility">App blocker</string>
+    <string name="prot_admin">Uninstall protection</string>
+    <string name="prot_always_on">Always-on VPN</string>
+    <string name="status_on">✔ Active</string>
+    <string name="status_off">✖ Off</string>
+    <string name="status_unknown">– (turn on the DNS filter first)</string>
+    <string name="status_always_on_yes">✔ Set up</string>
+    <string name="status_always_on_no">⚠ Recommended</string>
+    <string name="status_lockdown_on">✖ Turn OFF “Block connections without VPN”, or you will have no internet!</string>
+    <string name="btn_turn_on">Turn on</string>
+    <string name="btn_turn_off">Turn off</string>
+    <string name="btn_setup">Set up</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_activate">Activate</string>
+    <string name="btn_guide">Guide</string>
+    <string name="btn_open_settings">Open settings</string>
+    <string name="btn_open_vpn_settings">VPN settings</string>
+    <string name="btn_start_challenge">Start challenge</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_home">Back to home screen</string>
+    <string name="challenge_not_ready">The challenge has not started yet. Turn on all three protections (DNS filter, app blocker, uninstall protection), then you can start it.</string>
+    <string name="challenge_ready">All protections are active. When you are ready, start the challenge – after that it cannot be turned off until November 30, 23:59.</string>
+    <string name="challenge_locked">🔒 The challenge is running. The protections are locked until November 30, 2026, 23:59 (Budapest time).\nRemaining: %1$s.</string>
+    <string name="challenge_finished">🏁 The challenge is over, congratulations! Everything is unlocked: you can turn off the protections and uninstall the app.</string>
+    <string name="challenge_over_not_started">The November 2026 challenge period has ended.</string>
+    <string name="challenge_started">The challenge has started. Go for it! 💪</string>
+    <string name="confirm_title">Are you sure?</string>
+    <string name="confirm_word">I COMMIT</string>
+    <string name="confirm_word_universal" translatable="false">VÁLLALOM</string>
+    <string name="confirm_text">After starting the challenge, until November 30, 2026, 23:59 (Budapest time):\n\n• the DNS filter, the app blocker and the uninstall protection cannot be turned off,\n• the app cannot be uninstalled,\n• PBlock’s setup pages in the Settings app will be locked.\n\nAfter that everything unlocks automatically.\n\nIf you are sure, type: %1$s</string>
+    <string name="acc_guide_title">Turn on the app blocker</string>
+    <string name="acc_guide_text">To block Brave, X and Telegram, PBlock needs to run as an accessibility service.\n\n1. Press “Open settings”.\n2. Find “PBlock protection” under “Installed apps” / “Downloaded apps”.\n3. Turn it on and allow it.\n\nIf the switch is greyed out (“Restricted setting”): Settings › Apps › PBlock › ⋮ menu › “Allow restricted settings”, then try again.\n\nPBlock collects and sends no data: it only watches which app is in the foreground.</string>
+    <string name="always_on_title">Always-on VPN</string>
+    <string name="always_on_text">This makes the system automatically restore the DNS filter after a reboot or a crash.\n\n1. Press “VPN settings”.\n2. Tap the gear next to PBlock.\n3. Turn on “Always-on VPN”.\n\nImportant: do NOT turn on “Block connections without VPN”! PBlock only routes DNS traffic through the VPN, so that option would cut off all other internet traffic.</string>
+    <string name="admin_explanation">As a device admin, PBlock prevents itself from being uninstalled during the challenge. It requests no other permissions.</string>
+    <string name="admin_description">Prevents PBlock from being uninstalled while a lock is active.</string>
+    <string name="admin_disable_warning">If you turn this off, PBlock can be uninstalled.</string>
+    <string name="admin_disable_warning_locked">The challenge is still running! If you turn this off now, you give up No Nut November. Are you sure? Better go back. 💪</string>
+    <string name="toast_settings_locked">PBlock: this setting is locked until the end of the challenge. 💪</string>
+    <string name="vpn_consent_denied">The DNS filter needs the VPN connection to be allowed.</string>
+    <string name="settings_not_found">Could not open settings.</string>
+    <string name="private_dns_title">⚠ Private DNS bypasses the filter</string>
+    <string name="private_dns_warning">A custom Private DNS provider is set on the phone (%1$s). In that case the system can send DNS queries encrypted, bypassing PBlock, so the filtering is not reliable.\n\nChange it: Settings › Network &amp; internet › Private DNS › “Automatic” or “Off”.</string>
+    <string name="calendar_legend">★ = clean day · ✔ = you tried, but PBlock stopped you · ⚠ = protections were down or the clock was changed · Tap a day for details. Today and future days get a mark at the end of the day.</string>
+    <string name="day_not_in_challenge">This day is not part of the challenge (it hasn’t started yet, or it is before the start).</string>
+    <string name="day_clean">★ Clean day, not a single blocked attempt. Nice work!</string>
+    <string name="day_no_attempts">No blocked attempts for this day yet.</string>
+    <string name="day_attempt_line" translatable="false">"%1$s  %2$s: %3$s"</string>
+    <string name="kind_app">app</string>
+    <string name="kind_dns">site</string>
+    <string name="kind_dns_filter">site (family filter)</string>
+    <string name="tips_text">• Chrome: Settings › Privacy and security › “Use secure DNS” → turn it OFF, otherwise Chrome can bypass the filter.\n• Firefox, Edge, Opera and other browsers: turn off “DNS over HTTPS” / “Secure DNS” and any built-in VPN.\n• Private DNS: Settings › Network &amp; internet › Private DNS should be “Automatic” or “Off”.\n• Besides the blocklist, the filter also uses Cloudflare’s family DNS (1.1.1.3), which screens out further adult sites.</string>
+    <string name="app_generic">This app</string>
+    <string name="blocked_title">%1$s is blocked</string>
+    <string name="blocked_text">No Nut November: this app is blocked for the duration of the challenge. Hang in there, you’ve got this! 💪</string>
+    <string name="blocked_emoji" translatable="false">🛑</string>
+    <string name="accessibility_label">PBlock protection</string>
+    <string name="accessibility_description">Blocks opening the apps you choose (Brave, X and Telegram during the challenge) and, while a lock is active, prevents PBlock from being turned off. PBlock collects and sends no data.</string>
+    <string name="version_fmt">Version %1$s%2$s</string>
+    <string name="version_debug_suffix" translatable="false">" (debug)"</string>
+    <string name="licenses_title">Licenses and sources</string>
+    <string name="licenses_text">PBlock – SAWorks\n\nBuilt-in blocklist: %1$s (plus all their subdomains, and the .xxx, .porn, .sex and .adult endings).\n\nSource: StevenBlack/hosts – “porn-only” list (October 18, 2026), MIT license, © Steven Black.\nhttps://github.com/StevenBlack/hosts\n\nList components:\n• Sinfonietta/hostfiles – MIT\n• Clefspeare13/pornhosts – MIT\n• bigdargon/hostsVN – MIT\n• tiuxo/hosts – CC BY 4.0\n• brijrajparmar27/host-sources – CC BY 4.0\n\nAdditional DNS filtering: Cloudflare for Families (1.1.1.3, 1.0.0.3).</string>
+    <string name="duration_fmt">%1$s %2$s %3$s</string>
+    <string name="symbol_star" translatable="false">★</string>
+    <string name="symbol_check" translatable="false">✔</string>
+    <string name="symbol_none" translatable="false">·</string>
+    <string-array name="weekdays_short">
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </string-array>
+    <plurals name="blocklist_domains">
+        <item quantity="one">%1$d domain</item>
+        <item quantity="other">%1$d domains</item>
+    </plurals>
+    <plurals name="stats_clean_days">
+        <item quantity="one">★ Clean days: %1$d</item>
+        <item quantity="other">★ Clean days: %1$d</item>
+    </plurals>
+    <plurals name="stats_check_days">
+        <item quantity="one">✔ Days with a blocked attempt: %1$d</item>
+        <item quantity="other">✔ Days with a blocked attempt: %1$d</item>
+    </plurals>
+    <plurals name="stats_total_attempts">
+        <item quantity="one">Total blocked attempts during the challenge: %1$d</item>
+        <item quantity="other">Total blocked attempts during the challenge: %1$d</item>
+    </plurals>
+    <plurals name="day_attempts">
+        <item quantity="one">✔ %1$d blocked attempt:</item>
+        <item quantity="other">✔ %1$d blocked attempts:</item>
+    </plurals>
+    <plurals name="duration_days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <plurals name="duration_hours">
+        <item quantity="one">%1$d hour</item>
+        <item quantity="other">%1$d hours</item>
+    </plurals>
+    <plurals name="duration_minutes">
+        <item quantity="one">%1$d minute</item>
+        <item quantity="other">%1$d minutes</item>
+    </plurals>
+    <!-- v0.3.0 -->
+    <string name="symbol_warn" translatable="false">⚠</string>
+    <string name="day_event_line" translatable="false">"%1$s  %2$s"</string>
+    <string name="hm_phase_fmt" translatable="false">%1$s\n%2$d</string>
+    <string name="btn_hard_moment">🌊 Hard moment</string>
+    <string name="challenge_awaiting_trusted_time">⏳ By the device clock the challenge is over, but the time has not been verified yet. Connect to the internet: PBlock unlocks as soon as it confirms the date.</string>
+    <string name="time_not_verified">⚠ The time has not been verified yet (no internet). Changing the device clock will not end the lock.</string>
+    <string name="ev_clock_changed">The device clock was changed</string>
+    <string name="ev_clock_forward">Device clock moved forward by %1$s</string>
+    <string name="ev_clock_back">Device clock moved back by %1$s</string>
+    <string name="ev_clock_behind">After a restart the device clock was %1$s behind the verified time</string>
+    <string name="ev_clock_offset">The device clock differs from the verified time by %1$s</string>
+    <string name="ev_safe_mode_now">The phone is running in safe mode</string>
+    <string name="ev_down_off">%1$s was turned off (since %2$s)</string>
+    <string name="ev_down_on">%1$s was off for %2$s</string>
+    <string name="ev_down_generic">%1$s was off</string>
+    <string name="comp_vpn">DNS filter</string>
+    <string name="comp_accessibility">App blocker</string>
+    <string name="hm_title">Hard moment</string>
+    <string name="hm_intro">Pause for a minute and a half. An urge is like a wave: it rises, peaks and passes. Breathe with the circle.</string>
+    <string name="hm_start">Start breathing</string>
+    <string name="hm_stop">Stop</string>
+    <string name="hm_again">Once more</string>
+    <string name="hm_ready">Ready when you are</string>
+    <string name="hm_done">Well done 🌿</string>
+    <string name="hm_breathe_in">Breathe in</string>
+    <string name="hm_hold">Hold</string>
+    <string name="hm_breathe_out">Breathe out</string>
+    <string name="hm_round">Round %1$d of %2$d</string>
+    <string name="hm_round_info">Box breathing: %1$d rounds, about %2$d seconds</string>
+    <string name="hm_message_title">A thought for now</string>
+    <string name="hm_another">Another one</string>
+    <string name="hm_try_this">Try this</string>
+    <string name="hm_back">Back</string>
+    <string-array name="hard_moment_messages">
+        <item>An urge is a wave. It rises, peaks and fades, usually within 15–20 minutes. You don\'t have to do anything with it.</item>
+        <item>You\'ve done hard things before. This is one more of them, and it\'s smaller than it feels right now.</item>
+        <item>Nothing has to be decided in the next ten minutes. Just get through these ten.</item>
+        <item>Feeling the pull doesn\'t mean you\'re failing. Noticing it and pausing is exactly the skill you\'re building.</item>
+        <item>Tomorrow morning\'s you will be glad about what you do right now.</item>
+        <item>Boredom, stress, loneliness or tiredness: which one is really knocking? Give that one what it needs.</item>
+        <item>Your brain is asking for a quick reward. A glass of water, a short walk or a message to a friend counts too.</item>
+        <item>Every day you get through makes the next one a little easier. That\'s how habits change.</item>
+        <item>You set up this challenge on a calm day for a reason. Trust that version of you.</item>
+        <item>It\'s okay that this is hard. Hard doesn\'t mean impossible.</item>
+        <item>Put the phone down for a moment, stand up and look out the window. Let this moment pass.</item>
+        <item>You are not your urges. You\'re the one who chooses what happens next.</item>
+        <item>Count what you\'ve already gained: time, focus, energy. Don\'t trade it for a few minutes.</item>
+        <item>Slow down. Unclench your jaw, drop your shoulders and take one more slow breath.</item>
+        <item>Even if yesterday was rough, today is a fresh start. You\'re here, and that counts.</item>
+    </string-array>
+    <string-array name="hard_moment_actions">
+        <item>Go for a 10-minute walk, even just around the block.</item>
+        <item>Splash cold water on your face or take a cool shower.</item>
+        <item>Do 20 push-ups or squats right now.</item>
+        <item>Slowly drink a big glass of water.</item>
+        <item>Message or call a friend, about anything at all.</item>
+        <item>Leave the room and do something with your hands for 10 minutes.</item>
+    </string-array>
+    <plurals name="stats_warn_days">
+        <item quantity="one">⚠ Days with a warning: %1$d</item>
+        <item quantity="other">⚠ Days with a warning: %1$d</item>
+    </plurals>
+    <plurals name="stats_hard_moments">
+        <item quantity="one">🌊 Hard moments handled: %1$d</item>
+        <item quantity="other">🌊 Hard moments handled: %1$d</item>
+    </plurals>
+    <plurals name="day_warnings">
+        <item quantity="one">⚠ %1$d warning:</item>
+        <item quantity="other">⚠ %1$d warnings:</item>
+    </plurals>
+    <plurals name="day_hard_moments">
+        <item quantity="one">🌊 You used the Hard moment screen %1$d time this day. That is not a failure.</item>
+        <item quantity="other">🌊 You used the Hard moment screen %1$d times this day. That is not a failure.</item>
+    </plurals>
+    <plurals name="ev_missed_boots">
+        <item quantity="one">%1$d restart while PBlock was not running (possibly safe mode)</item>
+        <item quantity="other">%1$d restarts while PBlock was not running (possibly safe mode)</item>
+    </plurals>
+    <plurals name="hm_streak">
+        <item quantity="one">🔥 Current streak: %1$d clean day</item>
+        <item quantity="other">🔥 Current streak: %1$d clean days</item>
+    </plurals>
+    <plurals name="hm_days_left">
+        <item quantity="one">📅 %1$d day left in the challenge</item>
+        <item quantity="other">📅 %1$d days left in the challenge</item>
+    </plurals>
+    <plurals name="hm_uses">
+        <item quantity="one">You have opened this screen %1$d time. Reaching for it is a win, not a failure.</item>
+        <item quantity="other">You have opened this screen %1$d times. Reaching for it is a win, not a failure.</item>
+    </plurals>
+    <!-- v0.4.0 -->
+    <string name="subtitle_filter">Content filter – a cleaner internet, any time of the year.</string>
+    <string name="mode_challenge">No Nut November</string>
+    <string name="mode_filter">Content filter</string>
+    <string name="mode_locked">A lock is active, the mode can\'t be changed now.</string>
+    <string name="challenge_continue_hint">PBlock can keep protecting you: switch to Content filter mode. Your calendar stays viewable.</string>
+    <string name="btn_continue_filter">Continue with Content filter</string>
+    <string name="card_filter">Content filter</string>
+    <string name="filter_summary_dns_family">Adult sites blocked (built-in list + Cloudflare family DNS)</string>
+    <string name="filter_summary_dns_plain">Adult sites blocked (built-in list)</string>
+    <string name="filter_summary_apps_off">App blocking: off</string>
+    <string name="btn_filter_settings">Edit filter</string>
+    <string name="lock_title">Lock</string>
+    <string name="lock_none">No lock: protections can be turned off at any time.</string>
+    <string name="lock_time_active">Locked until %1$s (%2$s left). Protections can\'t be turned off until then.</string>
+    <string name="lock_time_awaiting">The lock time is over on this phone\'s clock, but it couldn\'t be verified online yet. Connect to the internet to unlock.</string>
+    <string name="lock_pin_active">Parent PIN lock is on. The PIN is needed to turn off protections or loosen the filter.</string>
+    <string name="lock_pin_session">Unlocked with the PIN (locks again in %1$s).</string>
+    <string name="btn_set_lock">Set up a lock</string>
+    <string name="btn_enter_pin">Enter PIN</string>
+    <string name="btn_lock_now">Lock now</string>
+    <string name="btn_remove_lock">Remove lock</string>
+    <string name="btn_change_pin">Change PIN</string>
+    <string name="lock_choose_title">Choose a lock</string>
+    <string name="lock_choice_time">Time lock – until a date I choose</string>
+    <string name="lock_choice_pin">Parent PIN – a parent\'s PIN is needed to loosen</string>
+    <string name="lock_needs_protections">First turn on all three protections (DNS filter, App blocker, Uninstall protection).</string>
+    <string name="time_lock_confirm_title">Start the time lock?</string>
+    <string name="time_lock_confirm_text">Until %1$s (%2$s) the protections can\'t be turned off and the filter can only be tightened, not loosened. This can\'t be undone.\n\nType %3$s to confirm:</string>
+    <string name="time_lock_too_soon">Choose a time at least a few minutes from now.</string>
+    <string name="time_lock_too_far">A time lock can last at most one year.</string>
+    <string name="btn_lock">Lock</string>
+    <string name="time_lock_started">Time lock started. 💪</string>
+    <string name="toast_locked">Locked – this can\'t be changed now.</string>
+    <string name="pin_set_title">Set a parent PIN</string>
+    <string name="pin_set_text">4–12 digits. It can\'t be recovered: if it\'s forgotten, PBlock can only be removed by restarting the phone in safe mode or by a factory reset.</string>
+    <string name="pin_hint">PIN</string>
+    <string name="pin_repeat_hint">PIN again</string>
+    <string name="pin_invalid">Use 4–12 digits.</string>
+    <string name="pin_mismatch">The two PINs don\'t match.</string>
+    <string name="pin_set_done">Parent PIN lock is on.</string>
+    <string name="pin_enter_title">Enter the parent PIN</string>
+    <string name="pin_wrong">Wrong PIN.</string>
+    <string name="pin_wait">Too many tries. Try again in %1$s.</string>
+    <string name="pin_checking">Checking…</string>
+    <string name="pin_removed">Lock removed.</string>
+    <string name="pin_changed">PIN changed.</string>
+    <string name="card_settings">Settings</string>
+    <string name="setting_theme">Appearance</string>
+    <string name="theme_system">System default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="btn_change">Change</string>
+    <string name="setting_history">Keep activity log</string>
+    <string name="retention_forever">Forever</string>
+    <string name="setting_purge_at_end">Delete the log when the challenge ends</string>
+    <string name="setting_history_note">The log stays on this phone only. Calendar day counts are kept, details are deleted. With a parent PIN the log can only be viewed with the PIN.</string>
+    <string name="btn_view_log">Activity log</string>
+    <string name="btn_clear_log">Delete log</string>
+    <string name="clear_log_title">Delete the activity log?</string>
+    <string name="clear_log_text">All entries (blocked sites and apps, warnings) are deleted from this phone. Calendar day counts are kept.</string>
+    <string name="btn_delete">Delete</string>
+    <string name="log_cleared">Log deleted.</string>
+    <string name="log_title">Activity log</string>
+    <string name="log_empty">The log is empty.</string>
+    <string name="log_hard_moment">Hard moment opened</string>
+    <string name="card_calendar_history">No Nut November 2026 – history</string>
+    <string name="filter_settings_title">Filter settings</string>
+    <string name="btn_back">Back</string>
+    <string name="fs_dns_title">Site filter (DNS)</string>
+    <string name="fs_dns_text">The built-in adult list (%1$s) is always on while the VPN runs.</string>
+    <string name="fs_family">Cloudflare family filter</string>
+    <string name="fs_family_text">Also uses Cloudflare\'s family DNS (1.1.1.3) for adult and malware sites that aren\'t on the list. Recommended.</string>
+    <string name="fs_blocked_title">My blocked sites</string>
+    <string name="fs_blocked_text">Extra domains to block, including their subdomains.</string>
+    <string name="fs_allowed_title">Exceptions</string>
+    <string name="fs_allowed_text">Domains PBlock\'s own lists never block (e.g. if a needed site is blocked by mistake).</string>
+    <string name="fs_domain_hint">example.com</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_remove">Remove</string>
+    <string name="fs_list_empty">None yet.</string>
+    <string name="fs_invalid_domain">Not a valid domain name.</string>
+    <string name="fs_apps_title">App blocking</string>
+    <string name="fs_apps_switch">Block chosen apps</string>
+    <string name="fs_apps_text">Optional. The chosen apps are closed when opened (uses the accessibility service).</string>
+    <string name="btn_choose_apps">Choose apps</string>
+    <string name="fs_apps_none">No apps chosen.</string>
+    <string name="fs_suggested">%1$s (suggested)</string>
+    <string name="fs_loading">Loading apps…</string>
+    <string name="fs_locked_time">A time lock is active: you can add restrictions, but not remove them until it ends.</string>
+    <string name="fs_locked_pin">Parent PIN lock: adding restrictions is free, removing them needs the PIN.</string>
+    <string name="blocked_text_filter">This app is blocked by PBlock\'s content filter.</string>
+    <string name="toast_settings_locked_filter">PBlock: this setting is locked. 🔒</string>
+    <string name="admin_disable_warning_filter_locked">PBlock is locked. If you turn this off, the protections can be removed.</string>
+    <plurals name="filter_summary_custom">
+        <item quantity="one">%1$d own blocked site</item>
+        <item quantity="other">%1$d own blocked sites</item>
+    </plurals>
+    <plurals name="filter_summary_allowed">
+        <item quantity="one">%1$d exception</item>
+        <item quantity="other">%1$d exceptions</item>
+    </plurals>
+    <plurals name="filter_summary_apps">
+        <item quantity="one">App blocking: %1$d app</item>
+        <item quantity="other">App blocking: %1$d apps</item>
+    </plurals>
+    <plurals name="retention_days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <plurals name="day_details_deleted">
+        <item quantity="one">%1$d older attempt (details deleted for privacy)</item>
+        <item quantity="other">%1$d older attempts (details deleted for privacy)</item>
+    </plurals>
+    <plurals name="duration_seconds">
+        <item quantity="one">%1$d second</item>
+        <item quantity="other">%1$d seconds</item>
+    </plurals>
+    <!-- v0.5.0: bug report -->
+    <string name="bug_btn_open">Report a problem or suggestion</string>
+    <string name="bug_title">Report a problem</string>
+    <string name="bug_intro">Tell us what went wrong or what you would like. PBlock prepares the report, you check it, and it is sent from your own e-mail app – nothing is sent automatically. The report itself is in English; you can write in any language.</string>
+    <string name="bug_category_label">What is it about?</string>
+    <string name="bug_cat_bug">Bug</string>
+    <string name="bug_cat_blocking">Blocking doesn\'t work</string>
+    <string name="bug_cat_wrong_block">Wrongly blocked site</string>
+    <string name="bug_cat_suggestion">Suggestion</string>
+    <string name="bug_cat_other">Other</string>
+    <string name="bug_description_hint">What happened? (required)</string>
+    <string name="bug_description_required">Please describe the problem.</string>
+    <string name="bug_steps_hint">Steps to reproduce (optional)</string>
+    <string name="bug_contact_hint">Your e-mail for a reply (optional)</string>
+    <string name="bug_contact_helper">Only needed if you want an answer.</string>
+    <string name="bug_contact_invalid">This doesn\'t look like an e-mail address.</string>
+    <string name="bug_attach_diag">Attach diagnostic info</string>
+    <string name="bug_attach_diag_note">App and Android version, device model, languages, mode, lock type (never the PIN), protection status, Private DNS and always-on VPN state, blocklist size and recent internal errors. No browsing history.</string>
+    <string name="bug_attach_log">Attach activity log</string>
+    <string name="bug_attach_log_warn">The activity log lists the blocked sites and apps with times. Only attach it if you are comfortable sharing that.</string>
+    <string name="bug_preview_btn">Preview and send</string>
+    <string name="bug_preview_title">Check your report</string>
+    <string name="bug_preview_note">This text goes to your e-mail app, addressed to %1$s. You can still edit or cancel it there.</string>
+    <string name="bug_preview_note_attach">The report is long, so your e-mail app gets it as an attached text file, addressed to %1$s. You can still edit or cancel it there.</string>
+    <string name="bug_preview_subject">Subject: %1$s</string>
+    <string name="bug_send">Send by e-mail</string>
+    <string name="bug_copy">Copy</string>
+    <string name="bug_copied">Report copied. Paste it into an e-mail to %1$s.</string>
+    <string name="bug_no_email_title">No e-mail app found</string>
+    <string name="bug_no_email_text">The report has been copied to the clipboard. Paste it into a message to %1$s from any app.</string>
+    <string name="bug_chooser_title">Send report with</string>
+    <!-- v0.5.1: brand -->
+    <string name="saworks_logo_description">SAWorks logo</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pb_primary">#FFA99BFF</color>
+    <color name="pb_on_primary">#FF1B1340</color>
+    <color name="pb_bg">#FF121118</color>
+    <color name="pb_surface">#FF1D1C25</color>
+    <color name="pb_cell">#FF272533</color>
+    <color name="pb_text">#FFECEAF4</color>
+    <color name="pb_muted">#FF8D8A9E</color>
+    <color name="pb_ok">#FF7BD88A</color>
+    <color name="pb_bad">#FFFF8A80</color>
+    <color name="pb_warn">#FFFFC266</color>
+    <color name="pb_star">#FFFFCA28</color>
+    <color name="pb_check">#FF5BE07A</color>
+    <color name="pb_warn_bg">#FF3A2C14</color>
+    <color name="pb_alert">#FFFF9E40</color>
+    <color name="pb_breath">#5AA99BFF</color>
+
+    <!-- Material 3 roles (night) -->
+    <color name="pb_primary_container">#FF3F31B0</color>
+    <color name="pb_on_primary_container">#FFE4DFFF</color>
+    <color name="pb_secondary">#FFC9C3DC</color>
+    <color name="pb_on_secondary">#FF312E42</color>
+    <color name="pb_secondary_container">#FF34304A</color>
+    <color name="pb_on_secondary_container">#FFE5E0F9</color>
+    <color name="pb_on_surface">#FFECEAF4</color>
+    <color name="pb_surface_variant">#FF2E2C3A</color>
+    <color name="pb_on_surface_variant">#FFC9C5D6</color>
+    <color name="pb_outline">#FF8F8BA0</color>
+    <color name="pb_outline_variant">#FF46435A</color>
+    <color name="pb_container_lowest">#FF0D0C12</color>
+    <color name="pb_container_low">#FF18171F</color>
+    <color name="pb_container">#FF1D1C25</color>
+    <color name="pb_container_high">#FF262430</color>
+    <color name="pb_container_highest">#FF302E3B</color>
+    <color name="pb_error">#FFFFB4AB</color>
+    <color name="pb_on_error">#FF690005</color>
+    <color name="pb_inverse_surface">#FFE5E1EC</color>
+    <color name="pb_inverse_on_surface">#FF312F38</color>
+    <color name="pb_inverse_primary">#FF5B4BDB</color>
+</resources>

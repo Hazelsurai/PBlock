@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle">No Nut November 2026 – durchhalten, Tag für Tag.</string>
+    <string name="card_challenge">Challenge</string>
+    <string name="card_protections">Schutzfunktionen</string>
+    <string name="card_calendar">November 2026</string>
+    <string name="card_tips">Tipps gegen Schlupflöcher</string>
+    <string name="prot_vpn">DNS-Filter (lokales VPN)</string>
+    <string name="prot_accessibility">App-Blocker</string>
+    <string name="prot_admin">Deinstallationsschutz</string>
+    <string name="prot_always_on">Durchgehend aktives VPN</string>
+    <string name="status_on">✔ Aktiv</string>
+    <string name="status_off">✖ Aus</string>
+    <string name="status_unknown">– (zuerst den DNS-Filter einschalten)</string>
+    <string name="status_always_on_yes">✔ Eingerichtet</string>
+    <string name="status_always_on_no">⚠ Empfohlen</string>
+    <string name="status_lockdown_on">✖ Schalte „Verbindungen ohne VPN blockieren“ AUS, sonst hast du kein Internet!</string>
+    <string name="btn_turn_on">Einschalten</string>
+    <string name="btn_turn_off">Ausschalten</string>
+    <string name="btn_setup">Einrichten</string>
+    <string name="btn_settings">Einstellungen</string>
+    <string name="btn_activate">Aktivieren</string>
+    <string name="btn_guide">Anleitung</string>
+    <string name="btn_open_settings">Einstellungen öffnen</string>
+    <string name="btn_open_vpn_settings">VPN-Einstellungen</string>
+    <string name="btn_start_challenge">Challenge starten</string>
+    <string name="btn_cancel">Abbrechen</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_home">Zurück zum Startbildschirm</string>
+    <string name="challenge_not_ready">Die Challenge hat noch nicht begonnen. Schalte alle drei Schutzfunktionen ein (DNS-Filter, App-Blocker, Deinstallationsschutz), dann kannst du sie starten.</string>
+    <string name="challenge_ready">Alle Schutzfunktionen sind aktiv. Wenn du bereit bist, starte die Challenge – danach lässt sie sich bis zum 30. November, 23:59 Uhr nicht mehr ausschalten.</string>
+    <string name="challenge_locked">🔒 Die Challenge läuft. Die Schutzfunktionen sind bis zum 30. November 2026, 23:59 Uhr (Budapester Zeit) gesperrt.\nVerbleibend: %1$s.</string>
+    <string name="challenge_finished">🏁 Die Challenge ist vorbei – herzlichen Glückwunsch! Alles ist entsperrt: Du kannst die Schutzfunktionen ausschalten und die App deinstallieren.</string>
+    <string name="challenge_over_not_started">Der Zeitraum der Challenge im November 2026 ist abgelaufen.</string>
+    <string name="challenge_started">Die Challenge hat begonnen. Du schaffst das! 💪</string>
+    <string name="confirm_title">Wirklich starten?</string>
+    <string name="confirm_word">ICH ZIEHE DURCH</string>
+    <string name="confirm_text">Nach dem Start der Challenge gilt bis zum 30. November 2026, 23:59 Uhr (Budapester Zeit):\n\n• DNS-Filter, App-Blocker und Deinstallationsschutz lassen sich nicht ausschalten,\n• die App lässt sich nicht deinstallieren,\n• die Einrichtungsseiten von PBlock in den Einstellungen sind gesperrt.\n\nDanach wird alles automatisch entsperrt.\n\nWenn du dir sicher bist, gib ein: %1$s</string>
+    <string name="acc_guide_title">App-Blocker einschalten</string>
+    <string name="acc_guide_text">Um Brave, X und Telegram zu blockieren, muss PBlock als Bedienungshilfe laufen.\n\n1. Tippe auf „Einstellungen öffnen“.\n2. Suche unter „Installierte Apps“ / „Heruntergeladene Apps“ den Eintrag „PBlock-Schutz“.\n3. Schalte ihn ein und erlaube den Zugriff.\n\nWenn der Schalter ausgegraut ist („Eingeschränkte Einstellung“): Einstellungen › Apps › PBlock › ⋮-Menü › „Eingeschränkte Einstellungen zulassen“, dann erneut versuchen.\n\nPBlock sammelt und sendet keine Daten: Es prüft nur, welche App im Vordergrund ist.</string>
+    <string name="always_on_title">Durchgehend aktives VPN</string>
+    <string name="always_on_text">Damit schaltet das System den DNS-Filter nach einem Neustart oder Absturz automatisch wieder ein.\n\n1. Tippe auf „VPN-Einstellungen“.\n2. Tippe auf das Zahnrad neben PBlock.\n3. Schalte „Durchgehend aktives VPN“ ein.\n\nWichtig: Schalte „Verbindungen ohne VPN blockieren“ NICHT ein! PBlock leitet nur den DNS-Verkehr über das VPN, daher würde diese Option den gesamten übrigen Internetverkehr unterbrechen.</string>
+    <string name="admin_explanation">Als Geräteadministrator verhindert PBlock, dass es während der Challenge deinstalliert wird. Es fordert keine weiteren Berechtigungen an.</string>
+    <string name="admin_description">Verhindert die Deinstallation von PBlock, solange eine Sperre aktiv ist.</string>
+    <string name="admin_disable_warning">Wenn du das ausschaltest, kann PBlock deinstalliert werden.</string>
+    <string name="admin_disable_warning_locked">Die Challenge läuft noch! Wenn du das jetzt ausschaltest, gibst du den No Nut November auf. Bist du sicher? Geh lieber zurück. 💪</string>
+    <string name="toast_settings_locked">PBlock: Diese Einstellung ist bis zum Ende der Challenge gesperrt. 💪</string>
+    <string name="vpn_consent_denied">Für den DNS-Filter muss die VPN-Verbindung erlaubt werden.</string>
+    <string name="settings_not_found">Die Einstellungen konnten nicht geöffnet werden.</string>
+    <string name="private_dns_title">⚠ Privates DNS umgeht den Filter</string>
+    <string name="private_dns_warning">Auf dem Telefon ist ein eigener Anbieter für privates DNS eingestellt (%1$s). Dann kann das System DNS-Anfragen verschlüsselt an PBlock vorbei senden, sodass der Filter nicht zuverlässig ist.\n\nÄndere es: Einstellungen › Netzwerk &amp; Internet › Privates DNS › „Automatisch“ oder „Aus“.</string>
+    <string name="calendar_legend">★ = sauberer Tag · ✔ = du hast es versucht, aber PBlock hat dich gestoppt · ⚠ = Schutz war aus oder die Uhr wurde verstellt · Tippe auf einen Tag für Details. Heute und künftige Tage bekommen ihr Zeichen am Ende des Tages.</string>
+    <string name="day_not_in_challenge">Dieser Tag gehört nicht zur Challenge (sie hat noch nicht begonnen oder der Tag liegt vor dem Start).</string>
+    <string name="day_clean">★ Sauberer Tag, kein einziger blockierter Versuch. Gut gemacht!</string>
+    <string name="day_no_attempts">Für diesen Tag gibt es noch keine blockierten Versuche.</string>
+    <string name="kind_app">App</string>
+    <string name="kind_dns">Website</string>
+    <string name="kind_dns_filter">Website (Familienfilter)</string>
+    <string name="tips_text">• Chrome: Einstellungen › Datenschutz und Sicherheit › „Sicheres DNS verwenden“ → AUSSCHALTEN, sonst kann Chrome den Filter umgehen.\n• Firefox, Edge, Opera und andere Browser: „DNS über HTTPS“ / „Sicheres DNS“ und integrierte VPNs ausschalten.\n• Privates DNS: Einstellungen › Netzwerk &amp; Internet › Privates DNS sollte „Automatisch“ oder „Aus“ sein.\n• Neben der Sperrliste nutzt der Filter auch das Familien-DNS von Cloudflare (1.1.1.3), das weitere Erwachsenenseiten herausfiltert.</string>
+    <string name="app_generic">Diese App</string>
+    <string name="blocked_title">%1$s ist blockiert</string>
+    <string name="blocked_text">No Nut November: Diese App ist für die Dauer der Challenge gesperrt. Halte durch, du schaffst das! 💪</string>
+    <string name="accessibility_label">PBlock-Schutz</string>
+    <string name="accessibility_description">Verhindert das Öffnen der von dir gewählten Apps (während der Challenge Brave, X und Telegram) und verhindert, solange eine Sperre aktiv ist, dass PBlock ausgeschaltet wird. PBlock sammelt und sendet keine Daten.</string>
+    <string name="version_fmt">Version %1$s%2$s</string>
+    <string name="licenses_title">Lizenzen und Quellen</string>
+    <string name="licenses_text">PBlock – SAWorks\n\nIntegrierte Sperrliste: %1$s (plus alle Subdomains sowie die Endungen .xxx, .porn, .sex und .adult).\n\nQuelle: StevenBlack/hosts – Liste „porn-only“ (18. Oktober 2026), MIT-Lizenz, © Steven Black.\nhttps://github.com/StevenBlack/hosts\n\nBestandteile der Liste:\n• Sinfonietta/hostfiles – MIT\n• Clefspeare13/pornhosts – MIT\n• bigdargon/hostsVN – MIT\n• tiuxo/hosts – CC BY 4.0\n• brijrajparmar27/host-sources – CC BY 4.0\n\nZusätzliche DNS-Filterung: Cloudflare for Families (1.1.1.3, 1.0.0.3).</string>
+    <string name="duration_fmt">%1$s %2$s %3$s</string>
+    <string-array name="weekdays_short">
+        <item>Mo</item>
+        <item>Di</item>
+        <item>Mi</item>
+        <item>Do</item>
+        <item>Fr</item>
+        <item>Sa</item>
+        <item>So</item>
+    </string-array>
+    <plurals name="blocklist_domains">
+        <item quantity="one">%1$d Domain</item>
+        <item quantity="other">%1$d Domains</item>
+    </plurals>
+    <plurals name="stats_clean_days">
+        <item quantity="one">★ Saubere Tage: %1$d</item>
+        <item quantity="other">★ Saubere Tage: %1$d</item>
+    </plurals>
+    <plurals name="stats_check_days">
+        <item quantity="one">✔ Tage mit blockierten Versuchen: %1$d</item>
+        <item quantity="other">✔ Tage mit blockierten Versuchen: %1$d</item>
+    </plurals>
+    <plurals name="stats_total_attempts">
+        <item quantity="one">Blockierte Versuche während der Challenge: %1$d</item>
+        <item quantity="other">Blockierte Versuche während der Challenge: %1$d</item>
+    </plurals>
+    <plurals name="day_attempts">
+        <item quantity="one">✔ %1$d blockierter Versuch:</item>
+        <item quantity="other">✔ %1$d blockierte Versuche:</item>
+    </plurals>
+    <plurals name="duration_days">
+        <item quantity="one">%1$d Tag</item>
+        <item quantity="other">%1$d Tage</item>
+    </plurals>
+    <plurals name="duration_hours">
+        <item quantity="one">%1$d Stunde</item>
+        <item quantity="other">%1$d Stunden</item>
+    </plurals>
+    <plurals name="duration_minutes">
+        <item quantity="one">%1$d Minute</item>
+        <item quantity="other">%1$d Minuten</item>
+    </plurals>
+    <!-- v0.3.0 -->
+    <string name="btn_hard_moment">🌊 Schwerer Moment</string>
+    <string name="challenge_awaiting_trusted_time">⏳ Laut Geräteuhr ist die Challenge vorbei, aber die Zeit wurde noch nicht überprüft. Verbinde dich mit dem Internet: PBlock entsperrt, sobald das Datum bestätigt ist.</string>
+    <string name="time_not_verified">⚠ Die Zeit wurde noch nicht überprüft (kein Internet). Das Verstellen der Geräteuhr beendet die Sperre nicht.</string>
+    <string name="ev_clock_changed">Die Geräteuhr wurde verstellt</string>
+    <string name="ev_clock_forward">Geräteuhr um %1$s vorgestellt</string>
+    <string name="ev_clock_back">Geräteuhr um %1$s zurückgestellt</string>
+    <string name="ev_clock_behind">Nach einem Neustart ging die Geräteuhr %1$s hinter der überprüften Zeit</string>
+    <string name="ev_clock_offset">Die Geräteuhr weicht um %1$s von der überprüften Zeit ab</string>
+    <string name="ev_safe_mode_now">Das Telefon läuft im abgesicherten Modus</string>
+    <string name="ev_down_off">%1$s war ausgeschaltet (seit %2$s)</string>
+    <string name="ev_down_on">%1$s war %2$s lang ausgeschaltet</string>
+    <string name="ev_down_generic">%1$s war ausgeschaltet</string>
+    <string name="comp_vpn">DNS-Filter</string>
+    <string name="comp_accessibility">App-Sperre</string>
+    <string name="hm_title">Schwerer Moment</string>
+    <string name="hm_intro">Halte für anderthalb Minuten inne. Ein Drang ist wie eine Welle: Er steigt an, erreicht seinen Höhepunkt und vergeht. Atme mit dem Kreis.</string>
+    <string name="hm_start">Atmung starten</string>
+    <string name="hm_stop">Stopp</string>
+    <string name="hm_again">Noch einmal</string>
+    <string name="hm_ready">Bereit, wenn du es bist</string>
+    <string name="hm_done">Gut gemacht 🌿</string>
+    <string name="hm_breathe_in">Einatmen</string>
+    <string name="hm_hold">Halten</string>
+    <string name="hm_breathe_out">Ausatmen</string>
+    <string name="hm_round">Runde %1$d von %2$d</string>
+    <string name="hm_round_info">Box-Atmung: %1$d Runden, etwa %2$d Sekunden</string>
+    <string name="hm_message_title">Ein Gedanke für jetzt</string>
+    <string name="hm_another">Noch einer</string>
+    <string name="hm_try_this">Probier das</string>
+    <string name="hm_back">Zurück</string>
+    <string-array name="hard_moment_messages">
+        <item>Ein Drang ist eine Welle. Er steigt, erreicht seinen Höhepunkt und ebbt ab, meist innerhalb von 15–20 Minuten. Du musst nichts damit tun.</item>
+        <item>Du hast schon schwierige Dinge geschafft. Das hier ist nur eins mehr, und es ist kleiner, als es sich gerade anfühlt.</item>
+        <item>In den nächsten zehn Minuten muss nichts entschieden werden. Komm einfach durch diese zehn.</item>
+        <item>Den Sog zu spüren heißt nicht, dass du versagst. Ihn zu bemerken und innezuhalten ist genau die Fähigkeit, die du aufbaust.</item>
+        <item>Dein Ich von morgen früh wird froh sein über das, was du jetzt tust.</item>
+        <item>Langeweile, Stress, Einsamkeit oder Müdigkeit: Was klopft da wirklich an? Gib genau dem, was es braucht.</item>
+        <item>Dein Gehirn will eine schnelle Belohnung. Ein Glas Wasser, ein kurzer Spaziergang oder eine Nachricht an einen Freund zählen auch.</item>
+        <item>Jeder Tag, den du schaffst, macht den nächsten ein bisschen leichter. So verändern sich Gewohnheiten.</item>
+        <item>Du hast diese Challenge an einem ruhigen Tag aus gutem Grund begonnen. Vertrau dieser Version von dir.</item>
+        <item>Es ist in Ordnung, dass es gerade schwer ist. Schwer heißt nicht unmöglich.</item>
+        <item>Leg das Handy kurz weg, steh auf und schau aus dem Fenster. Lass diesen Moment vorbeiziehen.</item>
+        <item>Du bist nicht dein Drang. Du bist derjenige, der entscheidet, was als Nächstes passiert.</item>
+        <item>Zähl, was du schon gewonnen hast: Zeit, Konzentration, Energie. Tausch das nicht gegen ein paar Minuten ein.</item>
+        <item>Werde langsamer. Lockere den Kiefer, lass die Schultern sinken und nimm noch einen langsamen Atemzug.</item>
+        <item>Auch wenn gestern schwer war: Heute ist ein neuer Anfang. Du bist hier, und das zählt.</item>
+    </string-array>
+    <string-array name="hard_moment_actions">
+        <item>Mach einen 10-minütigen Spaziergang, notfalls nur um den Block.</item>
+        <item>Spritz dir kaltes Wasser ins Gesicht oder dusch kühl.</item>
+        <item>Mach jetzt sofort 20 Liegestütze oder Kniebeugen.</item>
+        <item>Trink langsam ein großes Glas Wasser.</item>
+        <item>Schreib oder ruf einen Freund an, egal worüber.</item>
+        <item>Verlass den Raum und mach 10 Minuten lang etwas mit deinen Händen.</item>
+    </string-array>
+    <plurals name="stats_warn_days">
+        <item quantity="one">⚠ Tage mit Warnung: %1$d</item>
+        <item quantity="other">⚠ Tage mit Warnung: %1$d</item>
+    </plurals>
+    <plurals name="stats_hard_moments">
+        <item quantity="one">🌊 Überstandene schwere Momente: %1$d</item>
+        <item quantity="other">🌊 Überstandene schwere Momente: %1$d</item>
+    </plurals>
+    <plurals name="day_warnings">
+        <item quantity="one">⚠ %1$d Warnung:</item>
+        <item quantity="other">⚠ %1$d Warnungen:</item>
+    </plurals>
+    <plurals name="day_hard_moments">
+        <item quantity="one">🌊 Du hast den Bildschirm „Schwerer Moment“ an diesem Tag %1$d-mal genutzt. Das ist kein Scheitern.</item>
+        <item quantity="other">🌊 Du hast den Bildschirm „Schwerer Moment“ an diesem Tag %1$d-mal genutzt. Das ist kein Scheitern.</item>
+    </plurals>
+    <plurals name="ev_missed_boots">
+        <item quantity="one">%1$d Neustart, während PBlock nicht lief (möglicherweise abgesicherter Modus)</item>
+        <item quantity="other">%1$d Neustarts, während PBlock nicht lief (möglicherweise abgesicherter Modus)</item>
+    </plurals>
+    <plurals name="hm_streak">
+        <item quantity="one">🔥 Aktuelle Serie: %1$d sauberer Tag</item>
+        <item quantity="other">🔥 Aktuelle Serie: %1$d saubere Tage</item>
+    </plurals>
+    <plurals name="hm_days_left">
+        <item quantity="one">📅 Noch %1$d Tag bis zum Ende der Challenge</item>
+        <item quantity="other">📅 Noch %1$d Tage bis zum Ende der Challenge</item>
+    </plurals>
+    <plurals name="hm_uses">
+        <item quantity="one">Du hast diesen Bildschirm %1$d-mal geöffnet. Danach zu greifen ist ein Erfolg, kein Scheitern.</item>
+        <item quantity="other">Du hast diesen Bildschirm %1$d-mal geöffnet. Danach zu greifen ist ein Erfolg, kein Scheitern.</item>
+    </plurals>
+    <!-- v0.4.0 -->
+    <string name="subtitle_filter">Inhaltsfilter – ein saubereres Internet, das ganze Jahr über.</string>
+    <string name="mode_challenge">No Nut November</string>
+    <string name="mode_filter">Inhaltsfilter</string>
+    <string name="mode_locked">Eine Sperre ist aktiv, der Modus kann jetzt nicht gewechselt werden.</string>
+    <string name="challenge_continue_hint">PBlock kann dich weiter schützen: Wechsle in den Inhaltsfilter-Modus. Dein Kalender bleibt sichtbar.</string>
+    <string name="btn_continue_filter">Mit Inhaltsfilter weitermachen</string>
+    <string name="card_filter">Inhaltsfilter</string>
+    <string name="filter_summary_dns_family">Erwachsenenseiten gesperrt (eingebaute Liste + Cloudflare-Familien-DNS)</string>
+    <string name="filter_summary_dns_plain">Erwachsenenseiten gesperrt (eingebaute Liste)</string>
+    <string name="filter_summary_apps_off">App-Sperre: aus</string>
+    <string name="btn_filter_settings">Filter bearbeiten</string>
+    <string name="lock_title">Sperre</string>
+    <string name="lock_none">Keine Sperre: Die Schutzfunktionen können jederzeit ausgeschaltet werden.</string>
+    <string name="lock_time_active">Gesperrt bis %1$s (noch %2$s). Bis dahin können die Schutzfunktionen nicht ausgeschaltet werden.</string>
+    <string name="lock_time_awaiting">Laut Uhr des Telefons ist die Sperrzeit vorbei, sie konnte aber noch nicht online bestätigt werden. Verbinde dich mit dem Internet, um zu entsperren.</string>
+    <string name="lock_pin_active">Eltern-PIN-Sperre ist aktiv. Zum Ausschalten der Schutzfunktionen oder Lockern des Filters wird die PIN benötigt.</string>
+    <string name="lock_pin_session">Mit PIN entsperrt (sperrt wieder in %1$s).</string>
+    <string name="btn_set_lock">Sperre einrichten</string>
+    <string name="btn_enter_pin">PIN eingeben</string>
+    <string name="btn_lock_now">Jetzt sperren</string>
+    <string name="btn_remove_lock">Sperre entfernen</string>
+    <string name="btn_change_pin">PIN ändern</string>
+    <string name="lock_choose_title">Sperre wählen</string>
+    <string name="lock_choice_time">Zeitsperre – bis zu einem gewählten Zeitpunkt</string>
+    <string name="lock_choice_pin">Eltern-PIN – Lockern nur mit der PIN eines Elternteils</string>
+    <string name="lock_needs_protections">Schalte zuerst alle drei Schutzfunktionen ein (DNS-Filter, App-Blocker, Deinstallationsschutz).</string>
+    <string name="time_lock_confirm_title">Zeitsperre starten?</string>
+    <string name="time_lock_confirm_text">Bis %1$s (%2$s) können die Schutzfunktionen nicht ausgeschaltet werden, und der Filter kann nur verschärft, nicht gelockert werden. Das lässt sich nicht rückgängig machen.\n\nGib zur Bestätigung %3$s ein:</string>
+    <string name="time_lock_too_soon">Wähle einen Zeitpunkt, der mindestens ein paar Minuten in der Zukunft liegt.</string>
+    <string name="time_lock_too_far">Eine Zeitsperre kann höchstens ein Jahr dauern.</string>
+    <string name="btn_lock">Sperren</string>
+    <string name="time_lock_started">Zeitsperre gestartet. 💪</string>
+    <string name="toast_locked">Gesperrt – das kann jetzt nicht geändert werden.</string>
+    <string name="pin_set_title">Eltern-PIN festlegen</string>
+    <string name="pin_set_text">4–12 Ziffern. Sie kann nicht wiederhergestellt werden: Wird sie vergessen, lässt sich PBlock nur über einen Neustart im abgesicherten Modus oder durch Zurücksetzen auf Werkseinstellungen entfernen.</string>
+    <string name="pin_hint">PIN</string>
+    <string name="pin_repeat_hint">PIN wiederholen</string>
+    <string name="pin_invalid">Verwende 4–12 Ziffern.</string>
+    <string name="pin_mismatch">Die beiden PINs stimmen nicht überein.</string>
+    <string name="pin_set_done">Eltern-PIN-Sperre ist aktiv.</string>
+    <string name="pin_enter_title">Eltern-PIN eingeben</string>
+    <string name="pin_wrong">Falsche PIN.</string>
+    <string name="pin_wait">Zu viele Versuche. Versuche es in %1$s erneut.</string>
+    <string name="pin_checking">Wird geprüft…</string>
+    <string name="pin_removed">Sperre entfernt.</string>
+    <string name="pin_changed">PIN geändert.</string>
+    <string name="card_settings">Einstellungen</string>
+    <string name="setting_theme">Darstellung</string>
+    <string name="theme_system">Systemstandard</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="btn_change">Ändern</string>
+    <string name="setting_history">Protokoll aufbewahren</string>
+    <string name="retention_forever">Für immer</string>
+    <string name="setting_purge_at_end">Protokoll am Ende der Challenge löschen</string>
+    <string name="setting_history_note">Das Protokoll bleibt nur auf diesem Telefon. Die Tageszahlen im Kalender bleiben erhalten, Details werden gelöscht. Mit Eltern-PIN ist das Protokoll nur mit PIN einsehbar.</string>
+    <string name="btn_view_log">Protokoll</string>
+    <string name="btn_clear_log">Protokoll löschen</string>
+    <string name="clear_log_title">Protokoll löschen?</string>
+    <string name="clear_log_text">Alle Einträge (gesperrte Websites und Apps, Warnungen) werden von diesem Telefon gelöscht. Die Tageszahlen im Kalender bleiben erhalten.</string>
+    <string name="btn_delete">Löschen</string>
+    <string name="log_cleared">Protokoll gelöscht.</string>
+    <string name="log_title">Protokoll</string>
+    <string name="log_empty">Das Protokoll ist leer.</string>
+    <string name="log_hard_moment">Schwerer Moment geöffnet</string>
+    <string name="card_calendar_history">No Nut November 2026 – Verlauf</string>
+    <string name="filter_settings_title">Filtereinstellungen</string>
+    <string name="btn_back">Zurück</string>
+    <string name="fs_dns_title">Website-Filter (DNS)</string>
+    <string name="fs_dns_text">Die eingebaute Erwachsenenliste (%1$s) ist immer aktiv, solange das VPN läuft.</string>
+    <string name="fs_family">Cloudflare-Familienfilter</string>
+    <string name="fs_family_text">Nutzt zusätzlich das Familien-DNS von Cloudflare (1.1.1.3) für Erwachsenen- und Schadseiten, die nicht auf der Liste stehen. Empfohlen.</string>
+    <string name="fs_blocked_title">Meine gesperrten Websites</string>
+    <string name="fs_blocked_text">Zusätzliche Domains zum Sperren, einschließlich ihrer Subdomains.</string>
+    <string name="fs_allowed_title">Ausnahmen</string>
+    <string name="fs_allowed_text">Domains, die PBlocks eigene Listen nie sperren (z. B. wenn eine benötigte Website versehentlich gesperrt ist).</string>
+    <string name="fs_domain_hint">beispiel.de</string>
+    <string name="btn_add">Hinzufügen</string>
+    <string name="btn_remove">Entfernen</string>
+    <string name="fs_list_empty">Noch keine.</string>
+    <string name="fs_invalid_domain">Kein gültiger Domainname.</string>
+    <string name="fs_apps_title">App-Sperre</string>
+    <string name="fs_apps_switch">Ausgewählte Apps sperren</string>
+    <string name="fs_apps_text">Optional. Die ausgewählten Apps werden beim Öffnen geschlossen (nutzt den Bedienungshilfen-Dienst).</string>
+    <string name="btn_choose_apps">Apps auswählen</string>
+    <string name="fs_apps_none">Keine Apps ausgewählt.</string>
+    <string name="fs_suggested">%1$s (empfohlen)</string>
+    <string name="fs_loading">Apps werden geladen…</string>
+    <string name="fs_locked_time">Eine Zeitsperre ist aktiv: Du kannst Einschränkungen hinzufügen, aber erst nach ihrem Ende entfernen.</string>
+    <string name="fs_locked_pin">Eltern-PIN-Sperre: Einschränkungen hinzufügen ist frei, entfernen erfordert die PIN.</string>
+    <string name="blocked_text_filter">Diese App wird vom Inhaltsfilter von PBlock gesperrt.</string>
+    <string name="toast_settings_locked_filter">PBlock: Diese Einstellung ist gesperrt. 🔒</string>
+    <string name="admin_disable_warning_filter_locked">PBlock ist gesperrt. Wenn du das ausschaltest, können die Schutzfunktionen entfernt werden.</string>
+    <plurals name="filter_summary_custom">
+        <item quantity="one">%1$d eigene gesperrte Website</item>
+        <item quantity="other">%1$d eigene gesperrte Websites</item>
+    </plurals>
+    <plurals name="filter_summary_allowed">
+        <item quantity="one">%1$d Ausnahme</item>
+        <item quantity="other">%1$d Ausnahmen</item>
+    </plurals>
+    <plurals name="filter_summary_apps">
+        <item quantity="one">App-Sperre: %1$d App</item>
+        <item quantity="other">App-Sperre: %1$d Apps</item>
+    </plurals>
+    <plurals name="retention_days">
+        <item quantity="one">%1$d Tag</item>
+        <item quantity="other">%1$d Tage</item>
+    </plurals>
+    <plurals name="day_details_deleted">
+        <item quantity="one">%1$d älterer Versuch (Details aus Datenschutzgründen gelöscht)</item>
+        <item quantity="other">%1$d ältere Versuche (Details aus Datenschutzgründen gelöscht)</item>
+    </plurals>
+    <plurals name="duration_seconds">
+        <item quantity="one">%1$d Sekunde</item>
+        <item quantity="other">%1$d Sekunden</item>
+    </plurals>
+    <!-- v0.5.0: bug report -->
+    <string name="bug_btn_open">Problem oder Vorschlag melden</string>
+    <string name="bug_title">Problem melden</string>
+    <string name="bug_intro">Beschreibe, was nicht funktioniert oder was du dir wünschst. PBlock erstellt den Bericht, du prüfst ihn, und er wird aus deiner eigenen E-Mail-App gesendet – nichts wird automatisch verschickt. Der Bericht selbst ist auf Englisch; du kannst in jeder Sprache schreiben.</string>
+    <string name="bug_category_label">Worum geht es?</string>
+    <string name="bug_cat_bug">Fehler</string>
+    <string name="bug_cat_blocking">Sperre funktioniert nicht</string>
+    <string name="bug_cat_wrong_block">Fälschlich gesperrte Seite</string>
+    <string name="bug_cat_suggestion">Vorschlag</string>
+    <string name="bug_cat_other">Sonstiges</string>
+    <string name="bug_description_hint">Was ist passiert? (Pflichtfeld)</string>
+    <string name="bug_description_required">Bitte beschreibe das Problem.</string>
+    <string name="bug_steps_hint">Schritte zum Nachstellen (optional)</string>
+    <string name="bug_contact_hint">Deine E-Mail für eine Antwort (optional)</string>
+    <string name="bug_contact_helper">Nur nötig, wenn du eine Antwort möchtest.</string>
+    <string name="bug_contact_invalid">Das sieht nicht wie eine E-Mail-Adresse aus.</string>
+    <string name="bug_attach_diag">Diagnosedaten anhängen</string>
+    <string name="bug_attach_diag_note">App- und Android-Version, Gerätemodell, Sprachen, Modus, Sperrart (nie die PIN), Status der Schutzfunktionen, privates DNS und dauerhaftes VPN, Größe der Sperrliste und letzte interne Fehler. Kein Browserverlauf.</string>
+    <string name="bug_attach_log">Aktivitätsprotokoll anhängen</string>
+    <string name="bug_attach_log_warn">Das Aktivitätsprotokoll enthält die gesperrten Seiten und Apps mit Uhrzeit. Hänge es nur an, wenn du das teilen möchtest.</string>
+    <string name="bug_preview_btn">Vorschau und senden</string>
+    <string name="bug_preview_title">Bericht prüfen</string>
+    <string name="bug_preview_note">Dieser Text geht an deine E-Mail-App, adressiert an %1$s. Dort kannst du ihn noch bearbeiten oder verwerfen.</string>
+    <string name="bug_preview_note_attach">Der Bericht ist lang und geht deshalb als angehängte Textdatei an deine E-Mail-App, adressiert an %1$s. Dort kannst du ihn noch bearbeiten oder verwerfen.</string>
+    <string name="bug_preview_subject">Betreff: %1$s</string>
+    <string name="bug_send">Per E-Mail senden</string>
+    <string name="bug_copy">Kopieren</string>
+    <string name="bug_copied">Bericht kopiert. Füge ihn in eine E-Mail an %1$s ein.</string>
+    <string name="bug_no_email_title">Keine E-Mail-App gefunden</string>
+    <string name="bug_no_email_text">Der Bericht wurde in die Zwischenablage kopiert. Füge ihn in einer beliebigen App in eine Nachricht an %1$s ein.</string>
+    <string name="bug_chooser_title">Bericht senden mit</string>
+    <!-- v0.5.1: brand -->
+    <string name="saworks_logo_description">SAWorks-Logo</string>
+</resources>

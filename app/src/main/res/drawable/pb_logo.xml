@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PBlock logo tile for in-app use (header, About). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <path
+        android:fillColor="#FF000000"
+        android:strokeColor="@color/pb_outline_variant"
+        android:strokeWidth="1"
+        android:pathData="M16.5,0.5h39a16,16 0 0 1 16,16v39a16,16 0 0 1 -16,16h-39a16,16 0 0 1 -16,-16v-39a16,16 0 0 1 16,-16z" />
+    <group android:scaleX="0.0791" android:scaleY="0.0791" android:translateX="-4.836" android:translateY="-3.2943">
+        <path
+            android:fillColor="#EA111B"
+            android:pathData="M231,297 H492 A56,56 0 0 1 548,353 V641 A56,56 0 0 1 492,697 H231 A56,56 0 0 1 175,641 V353 A56,56 0 0 1 231,297 Z" />
+        <path
+            android:fillColor="#000000"
+            android:fillType="evenOdd"
+            android:pathData="M252,360 H382 A96,96 0 0 1 382,552 H318 V636 H252 Z M318,418 H382 A38,38 0 0 1 382,494 H318 Z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillType="evenOdd"
+            android:pathData="M594,323 H664 V474.4 A104,129 0 1 1 664,603.6 V668 H594 Z M725,472 A61,68 0 1 1 725,608 A61,68 0 1 1 725,472 Z" />
+    </group>
+</vector>

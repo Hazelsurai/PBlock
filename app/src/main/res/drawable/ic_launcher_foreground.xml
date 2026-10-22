@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PBlock logo 'Pb': red rounded box with black P, white b. 56dp wide, inside the 66dp safe zone. Source: _assets/logo_gen. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group android:scaleX="0.082" android:scaleY="0.082" android:translateX="11.6515" android:translateY="13.2504">
+        <path
+            android:fillColor="#EA111B"
+            android:pathData="M231,297 H492 A56,56 0 0 1 548,353 V641 A56,56 0 0 1 492,697 H231 A56,56 0 0 1 175,641 V353 A56,56 0 0 1 231,297 Z" />
+        <path
+            android:fillColor="#000000"
+            android:fillType="evenOdd"
+            android:pathData="M252,360 H382 A96,96 0 0 1 382,552 H318 V636 H252 Z M318,418 H382 A38,38 0 0 1 382,494 H318 Z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillType="evenOdd"
+            android:pathData="M594,323 H664 V474.4 A104,129 0 1 1 664,603.6 V668 H594 Z M725,472 A61,68 0 1 1 725,608 A61,68 0 1 1 725,472 Z" />
+    </group>
+</vector>

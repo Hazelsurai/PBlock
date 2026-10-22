@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitle">No Nut November 2026 — держись, день за днём.</string>
+    <string name="card_challenge">Челлендж</string>
+    <string name="card_protections">Защита</string>
+    <string name="card_calendar">Ноябрь 2026</string>
+    <string name="card_tips">Советы против лазеек</string>
+    <string name="prot_vpn">DNS-фильтр (локальный VPN)</string>
+    <string name="prot_accessibility">Блокировщик приложений</string>
+    <string name="prot_admin">Защита от удаления</string>
+    <string name="prot_always_on">Постоянная VPN</string>
+    <string name="status_on">✔ Включено</string>
+    <string name="status_off">✖ Выключено</string>
+    <string name="status_unknown">– (сначала включи DNS-фильтр)</string>
+    <string name="status_always_on_yes">✔ Настроено</string>
+    <string name="status_always_on_no">⚠ Рекомендуется настроить</string>
+    <string name="status_lockdown_on">✖ Выключи параметр «Блокировать соединения без VPN», иначе интернета не будет!</string>
+    <string name="btn_turn_on">Включить</string>
+    <string name="btn_turn_off">Выключить</string>
+    <string name="btn_setup">Настроить</string>
+    <string name="btn_settings">Настройки</string>
+    <string name="btn_activate">Активировать</string>
+    <string name="btn_guide">Инструкция</string>
+    <string name="btn_open_settings">Открыть настройки</string>
+    <string name="btn_open_vpn_settings">Настройки VPN</string>
+    <string name="btn_start_challenge">Начать челлендж</string>
+    <string name="btn_cancel">Отмена</string>
+    <string name="btn_ok">ОК</string>
+    <string name="btn_home">На главный экран</string>
+    <string name="challenge_not_ready">Челлендж ещё не начат. Включи все три вида защиты (DNS-фильтр, блокировщик приложений, защиту от удаления), и тогда его можно будет начать.</string>
+    <string name="challenge_ready">Вся защита включена. Когда будешь готов, начни челлендж — после этого защиту нельзя будет выключить до 30 ноября, 23:59.</string>
+    <string name="challenge_locked">🔒 Челлендж идёт. Защита заблокирована до 30 ноября 2026 г., 23:59 (по времени Будапешта).\nОсталось: %1$s.</string>
+    <string name="challenge_finished">🏁 Челлендж завершён, поздравляю! Всё разблокировано: можно выключить защиту и удалить приложение.</string>
+    <string name="challenge_over_not_started">Период челленджа (ноябрь 2026) закончился.</string>
+    <string name="challenge_started">Челлендж начался. Вперёд! 💪</string>
+    <string name="confirm_title">Точно начать?</string>
+    <string name="confirm_word">Я СПРАВЛЮСЬ</string>
+    <string name="confirm_text">После начала челленджа и до 30 ноября 2026 г., 23:59 (по времени Будапешта):\n\n• DNS-фильтр, блокировщик приложений и защиту от удаления нельзя будет выключить,\n• приложение нельзя будет удалить,\n• страницы настройки PBlock в приложении «Настройки» будут заблокированы.\n\nПосле этого всё разблокируется автоматически.\n\nЕсли ты уверен, введи: %1$s</string>
+    <string name="acc_guide_title">Включение блокировщика приложений</string>
+    <string name="acc_guide_text">Чтобы блокировать Brave, X и Telegram, PBlock должен работать как служба специальных возможностей.\n\n1. Нажми «Открыть настройки».\n2. В разделе «Установленные приложения» / «Скачанные приложения» найди «Защита PBlock».\n3. Включи её и разреши доступ.\n\nЕсли переключатель неактивен («Ограниченная настройка»): Настройки › Приложения › PBlock › меню ⋮ › «Разрешить ограниченные настройки», затем попробуй снова.\n\nPBlock не собирает и не отправляет никаких данных: он только следит, какое приложение открыто на экране.</string>
+    <string name="always_on_title">Постоянная VPN</string>
+    <string name="always_on_text">Так система будет автоматически снова включать DNS-фильтр после перезагрузки или сбоя.\n\n1. Нажми «Настройки VPN».\n2. Нажми на значок шестерёнки рядом с PBlock.\n3. Включи «Постоянная VPN».\n\nВажно: НЕ включай «Блокировать соединения без VPN»! PBlock пропускает через VPN только DNS-трафик, поэтому этот параметр отключит весь остальной интернет-трафик.</string>
+    <string name="admin_explanation">Как администратор устройства PBlock не даёт удалить себя во время челленджа. Других разрешений он не запрашивает.</string>
+    <string name="admin_description">Не даёт удалить PBlock, пока действует блокировка.</string>
+    <string name="admin_disable_warning">Если отключить это, PBlock можно будет удалить.</string>
+    <string name="admin_disable_warning_locked">Челлендж ещё идёт! Если отключишь это сейчас, ты сдашься в No Nut November. Ты уверен? Лучше вернись назад. 💪</string>
+    <string name="toast_settings_locked">PBlock: эта настройка заблокирована до конца челленджа. 💪</string>
+    <string name="vpn_consent_denied">Для DNS-фильтра нужно разрешить VPN-подключение.</string>
+    <string name="settings_not_found">Не удалось открыть настройки.</string>
+    <string name="private_dns_title">⚠ Персональный DNS-сервер обходит фильтр</string>
+    <string name="private_dns_warning">На телефоне указан собственный персональный DNS-сервер (%1$s). В этом случае система может отправлять DNS-запросы в зашифрованном виде в обход PBlock, и фильтрация ненадёжна.\n\nИзмени настройку: Настройки › Сеть и интернет › Персональный DNS-сервер › «Автоматически» или «Отключено».</string>
+    <string name="calendar_legend">★ = чистый день · ✔ = была попытка, но PBlock остановил · ⚠ = защита была отключена или часы переведены · Нажмите на день, чтобы увидеть подробности. Сегодня и будущие дни получают отметку в конце дня.</string>
+    <string name="day_not_in_challenge">Этот день не входит в челлендж (он ещё не начат или день раньше старта).</string>
+    <string name="day_clean">★ Чистый день, ни одной заблокированной попытки. Отлично!</string>
+    <string name="day_no_attempts">За этот день заблокированных попыток пока нет.</string>
+    <string name="kind_app">приложение</string>
+    <string name="kind_dns">сайт</string>
+    <string name="kind_dns_filter">сайт (семейный фильтр)</string>
+    <string name="tips_text">• Chrome: Настройки › Конфиденциальность и безопасность › «Использовать безопасный DNS» → ВЫКЛЮЧИ, иначе Chrome сможет обойти фильтр.\n• Firefox, Edge, Opera и другие браузеры: выключи «DNS через HTTPS» / «Безопасный DNS» и встроенные VPN.\n• Персональный DNS-сервер: Настройки › Сеть и интернет › Персональный DNS-сервер — «Автоматически» или «Отключено».\n• Помимо списка блокировки фильтр использует семейный DNS Cloudflare (1.1.1.3), который отсеивает и другие сайты для взрослых.</string>
+    <string name="app_generic">Это приложение</string>
+    <string name="blocked_title">Приложение %1$s заблокировано</string>
+    <string name="blocked_text">No Nut November: это приложение заблокировано на время челленджа. Держись, ты справишься! 💪</string>
+    <string name="accessibility_label">Защита PBlock</string>
+    <string name="accessibility_description">Блокирует открытие выбранных тобой приложений (во время челленджа – Brave, X и Telegram) и, пока действует блокировка, не даёт отключить PBlock. PBlock не собирает и не отправляет данные.</string>
+    <string name="version_fmt">Версия %1$s%2$s</string>
+    <string name="licenses_title">Лицензии и источники</string>
+    <string name="licenses_text">PBlock – SAWorks\n\nВстроенный список блокировки: %1$s (а также все их поддомены и окончания .xxx, .porn, .sex и .adult).\n\nИсточник: StevenBlack/hosts — список «porn-only» (18 октября 2026 г.), лицензия MIT, © Steven Black.\nhttps://github.com/StevenBlack/hosts\n\nСостав списка:\n• Sinfonietta/hostfiles – MIT\n• Clefspeare13/pornhosts – MIT\n• bigdargon/hostsVN – MIT\n• tiuxo/hosts – CC BY 4.0\n• brijrajparmar27/host-sources – CC BY 4.0\n\nДополнительная DNS-фильтрация: Cloudflare for Families (1.1.1.3, 1.0.0.3).</string>
+    <string name="duration_fmt">%1$s %2$s %3$s</string>
+    <string-array name="weekdays_short">
+        <item>Пн</item>
+        <item>Вт</item>
+        <item>Ср</item>
+        <item>Чт</item>
+        <item>Пт</item>
+        <item>Сб</item>
+        <item>Вс</item>
+    </string-array>
+    <plurals name="blocklist_domains">
+        <item quantity="one">%1$d домен</item>
+        <item quantity="few">%1$d домена</item>
+        <item quantity="many">%1$d доменов</item>
+        <item quantity="other">%1$d домена</item>
+    </plurals>
+    <plurals name="stats_clean_days">
+        <item quantity="one">★ Чистых дней: %1$d</item>
+        <item quantity="few">★ Чистых дней: %1$d</item>
+        <item quantity="many">★ Чистых дней: %1$d</item>
+        <item quantity="other">★ Чистых дней: %1$d</item>
+    </plurals>
+    <plurals name="stats_check_days">
+        <item quantity="one">✔ Дней с заблокированными попытками: %1$d</item>
+        <item quantity="few">✔ Дней с заблокированными попытками: %1$d</item>
+        <item quantity="many">✔ Дней с заблокированными попытками: %1$d</item>
+        <item quantity="other">✔ Дней с заблокированными попытками: %1$d</item>
+    </plurals>
+    <plurals name="stats_total_attempts">
+        <item quantity="one">Всего заблокированных попыток за челлендж: %1$d</item>
+        <item quantity="few">Всего заблокированных попыток за челлендж: %1$d</item>
+        <item quantity="many">Всего заблокированных попыток за челлендж: %1$d</item>
+        <item quantity="other">Всего заблокированных попыток за челлендж: %1$d</item>
+    </plurals>
+    <plurals name="day_attempts">
+        <item quantity="one">✔ %1$d заблокированная попытка:</item>
+        <item quantity="few">✔ %1$d заблокированные попытки:</item>
+        <item quantity="many">✔ %1$d заблокированных попыток:</item>
+        <item quantity="other">✔ %1$d заблокированной попытки:</item>
+    </plurals>
+    <plurals name="duration_days">
+        <item quantity="one">%1$d день</item>
+        <item quantity="few">%1$d дня</item>
+        <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дня</item>
+    </plurals>
+    <plurals name="duration_hours">
+        <item quantity="one">%1$d час</item>
+        <item quantity="few">%1$d часа</item>
+        <item quantity="many">%1$d часов</item>
+        <item quantity="other">%1$d часа</item>
+    </plurals>
+    <plurals name="duration_minutes">
+        <item quantity="one">%1$d минута</item>
+        <item quantity="few">%1$d минуты</item>
+        <item quantity="many">%1$d минут</item>
+        <item quantity="other">%1$d минуты</item>
+    </plurals>
+    <!-- v0.3.0 -->
+    <string name="btn_hard_moment">🌊 Трудный момент</string>
+    <string name="challenge_awaiting_trusted_time">⏳ По часам устройства челлендж закончился, но время ещё не проверено. Подключитесь к интернету: PBlock снимет блокировку, как только подтвердит дату.</string>
+    <string name="time_not_verified">⚠ Время ещё не проверено (нет интернета). Перевод часов устройства не снимет блокировку.</string>
+    <string name="ev_clock_changed">Часы устройства были переведены</string>
+    <string name="ev_clock_forward">Часы устройства переведены вперёд на %1$s</string>
+    <string name="ev_clock_back">Часы устройства переведены назад на %1$s</string>
+    <string name="ev_clock_behind">После перезагрузки часы устройства отставали от проверенного времени на %1$s</string>
+    <string name="ev_clock_offset">Часы устройства расходятся с проверенным временем на %1$s</string>
+    <string name="ev_safe_mode_now">Телефон работает в безопасном режиме</string>
+    <string name="ev_down_off">%1$s: выключен (с %2$s)</string>
+    <string name="ev_down_on">%1$s: был выключен %2$s</string>
+    <string name="ev_down_generic">%1$s: был выключен</string>
+    <string name="comp_vpn">DNS-фильтр</string>
+    <string name="comp_accessibility">Блокировщик приложений</string>
+    <string name="hm_title">Трудный момент</string>
+    <string name="hm_intro">Остановитесь на полторы минуты. Желание похоже на волну: оно нарастает, достигает пика и уходит. Дышите вместе с кругом.</string>
+    <string name="hm_start">Начать дыхание</string>
+    <string name="hm_stop">Стоп</string>
+    <string name="hm_again">Ещё раз</string>
+    <string name="hm_ready">Начните, когда будете готовы</string>
+    <string name="hm_done">Отлично 🌿</string>
+    <string name="hm_breathe_in">Вдох</string>
+    <string name="hm_hold">Задержка</string>
+    <string name="hm_breathe_out">Выдох</string>
+    <string name="hm_round">Цикл %1$d из %2$d</string>
+    <string name="hm_round_info">Квадратное дыхание: %1$d циклов, около %2$d секунд</string>
+    <string name="hm_message_title">Мысль на сейчас</string>
+    <string name="hm_another">Другая</string>
+    <string name="hm_try_this">Попробуйте</string>
+    <string name="hm_back">Назад</string>
+    <string-array name="hard_moment_messages">
+        <item>Желание — это волна. Оно нарастает, достигает пика и спадает, обычно за 15–20 минут. С ним не нужно ничего делать.</item>
+        <item>Вы уже справлялись с трудными вещами. Это просто ещё одна из них, и она меньше, чем кажется сейчас.</item>
+        <item>В ближайшие десять минут ничего не нужно решать. Просто проживите эти десять.</item>
+        <item>Чувствовать тягу не значит проигрывать. Заметить её и остановиться — именно тот навык, который вы развиваете.</item>
+        <item>Завтра утром вы будете рады тому, что делаете сейчас.</item>
+        <item>Скука, стресс, одиночество или усталость: что на самом деле стучится? Дайте именно этому то, что ему нужно.</item>
+        <item>Мозг просит быстрой награды. Стакан воды, короткая прогулка или сообщение другу тоже считаются.</item>
+        <item>Каждый пройденный день делает следующий чуть легче. Так и меняются привычки.</item>
+        <item>Вы начали этот челлендж в спокойный день, и не просто так. Доверьтесь той версии себя.</item>
+        <item>Нормально, что сейчас трудно. Трудно — не значит невозможно.</item>
+        <item>Отложите телефон на минуту, встаньте и посмотрите в окно. Пусть этот момент пройдёт.</item>
+        <item>Вы — это не ваши желания. Вы — тот, кто решает, что будет дальше.</item>
+        <item>Посчитайте, что вы уже получили: время, концентрацию, энергию. Не меняйте это на несколько минут.</item>
+        <item>Не спешите. Расслабьте челюсть, опустите плечи и сделайте ещё один медленный вдох.</item>
+        <item>Даже если вчера было тяжело, сегодня — новый старт. Вы здесь, и это важно.</item>
+    </string-array>
+    <string-array name="hard_moment_actions">
+        <item>Прогуляйтесь 10 минут, хотя бы вокруг дома.</item>
+        <item>Умойтесь холодной водой или примите прохладный душ.</item>
+        <item>Прямо сейчас сделайте 20 отжиманий или приседаний.</item>
+        <item>Медленно выпейте большой стакан воды.</item>
+        <item>Напишите или позвоните другу — о чём угодно.</item>
+        <item>Выйдите из комнаты и 10 минут займитесь чем-нибудь руками.</item>
+    </string-array>
+    <plurals name="stats_warn_days">
+        <item quantity="one">⚠ Дни с предупреждением: %1$d</item>
+        <item quantity="few">⚠ Дни с предупреждением: %1$d</item>
+        <item quantity="many">⚠ Дни с предупреждением: %1$d</item>
+        <item quantity="other">⚠ Дни с предупреждением: %1$d</item>
+    </plurals>
+    <plurals name="stats_hard_moments">
+        <item quantity="one">🌊 Пережитые трудные моменты: %1$d</item>
+        <item quantity="few">🌊 Пережитые трудные моменты: %1$d</item>
+        <item quantity="many">🌊 Пережитые трудные моменты: %1$d</item>
+        <item quantity="other">🌊 Пережитые трудные моменты: %1$d</item>
+    </plurals>
+    <plurals name="day_warnings">
+        <item quantity="one">⚠ %1$d предупреждение:</item>
+        <item quantity="few">⚠ %1$d предупреждения:</item>
+        <item quantity="many">⚠ %1$d предупреждений:</item>
+        <item quantity="other">⚠ %1$d предупреждения:</item>
+    </plurals>
+    <plurals name="day_hard_moments">
+        <item quantity="one">🌊 В этот день вы открыли экран «Трудный момент» %1$d раз. Это не провал.</item>
+        <item quantity="few">🌊 В этот день вы открыли экран «Трудный момент» %1$d раза. Это не провал.</item>
+        <item quantity="many">🌊 В этот день вы открыли экран «Трудный момент» %1$d раз. Это не провал.</item>
+        <item quantity="other">🌊 В этот день вы открыли экран «Трудный момент» %1$d раза. Это не провал.</item>
+    </plurals>
+    <plurals name="ev_missed_boots">
+        <item quantity="one">%1$d перезагрузка, когда PBlock не работал (возможно, безопасный режим)</item>
+        <item quantity="few">%1$d перезагрузки, когда PBlock не работал (возможно, безопасный режим)</item>
+        <item quantity="many">%1$d перезагрузок, когда PBlock не работал (возможно, безопасный режим)</item>
+        <item quantity="other">%1$d перезагрузки, когда PBlock не работал (возможно, безопасный режим)</item>
+    </plurals>
+    <plurals name="hm_streak">
+        <item quantity="one">🔥 Текущая серия: %1$d чистый день</item>
+        <item quantity="few">🔥 Текущая серия: %1$d чистых дня</item>
+        <item quantity="many">🔥 Текущая серия: %1$d чистых дней</item>
+        <item quantity="other">🔥 Текущая серия: %1$d чистого дня</item>
+    </plurals>
+    <plurals name="hm_days_left">
+        <item quantity="one">📅 До конца челленджа остался %1$d день</item>
+        <item quantity="few">📅 До конца челленджа осталось %1$d дня</item>
+        <item quantity="many">📅 До конца челленджа осталось %1$d дней</item>
+        <item quantity="other">📅 До конца челленджа осталось %1$d дня</item>
+    </plurals>
+    <plurals name="hm_uses">
+        <item quantity="one">Вы открыли этот экран %1$d раз. Обратиться сюда — это победа, а не провал.</item>
+        <item quantity="few">Вы открыли этот экран %1$d раза. Обратиться сюда — это победа, а не провал.</item>
+        <item quantity="many">Вы открыли этот экран %1$d раз. Обратиться сюда — это победа, а не провал.</item>
+        <item quantity="other">Вы открыли этот экран %1$d раза. Обратиться сюда — это победа, а не провал.</item>
+    </plurals>
+    <!-- v0.4.0 -->
+    <string name="subtitle_filter">Фильтр контента – более чистый интернет в любое время года.</string>
+    <string name="mode_challenge">No Nut November</string>
+    <string name="mode_filter">Фильтр контента</string>
+    <string name="mode_locked">Действует блокировка, режим сейчас нельзя сменить.</string>
+    <string name="challenge_continue_hint">PBlock может защищать тебя и дальше: переключись в режим «Фильтр контента». Календарь останется доступным.</string>
+    <string name="btn_continue_filter">Продолжить с фильтром контента</string>
+    <string name="card_filter">Фильтр контента</string>
+    <string name="filter_summary_dns_family">Сайты для взрослых заблокированы (встроенный список + семейный DNS Cloudflare)</string>
+    <string name="filter_summary_dns_plain">Сайты для взрослых заблокированы (встроенный список)</string>
+    <string name="filter_summary_apps_off">Блокировка приложений: выкл.</string>
+    <string name="btn_filter_settings">Изменить фильтр</string>
+    <string name="lock_title">Блокировка</string>
+    <string name="lock_none">Без блокировки: защиту можно отключить в любой момент.</string>
+    <string name="lock_time_active">Заблокировано до %1$s (осталось %2$s). До этого защиту нельзя отключить.</string>
+    <string name="lock_time_awaiting">По часам телефона срок блокировки истёк, но это ещё не удалось проверить онлайн. Подключись к интернету, чтобы снять блокировку.</string>
+    <string name="lock_pin_active">Включена блокировка родительским PIN-кодом. Чтобы отключить защиту или ослабить фильтр, нужен PIN.</string>
+    <string name="lock_pin_session">Разблокировано PIN-кодом (снова заблокируется через %1$s).</string>
+    <string name="btn_set_lock">Настроить блокировку</string>
+    <string name="btn_enter_pin">Ввести PIN</string>
+    <string name="btn_lock_now">Заблокировать сейчас</string>
+    <string name="btn_remove_lock">Снять блокировку</string>
+    <string name="btn_change_pin">Сменить PIN</string>
+    <string name="lock_choose_title">Выбери блокировку</string>
+    <string name="lock_choice_time">По времени – до выбранной даты</string>
+    <string name="lock_choice_pin">Родительский PIN – для ослабления нужен PIN родителя</string>
+    <string name="lock_needs_protections">Сначала включи все три защиты (DNS-фильтр, блокировщик приложений, защита от удаления).</string>
+    <string name="time_lock_confirm_title">Включить блокировку по времени?</string>
+    <string name="time_lock_confirm_text">До %1$s (%2$s) защиту нельзя будет отключить, а фильтр можно будет только ужесточать, но не ослаблять. Это нельзя отменить.\n\nДля подтверждения введи %3$s:</string>
+    <string name="time_lock_too_soon">Выбери время хотя бы на несколько минут позже текущего.</string>
+    <string name="time_lock_too_far">Блокировка по времени может длиться не больше года.</string>
+    <string name="btn_lock">Заблокировать</string>
+    <string name="time_lock_started">Блокировка по времени включена. 💪</string>
+    <string name="toast_locked">Заблокировано – сейчас это нельзя изменить.</string>
+    <string name="pin_set_title">Задать родительский PIN</string>
+    <string name="pin_set_text">4–12 цифр. Восстановить его нельзя: если он забыт, удалить PBlock можно только перезагрузкой в безопасном режиме или сбросом до заводских настроек.</string>
+    <string name="pin_hint">PIN</string>
+    <string name="pin_repeat_hint">PIN ещё раз</string>
+    <string name="pin_invalid">Используй 4–12 цифр.</string>
+    <string name="pin_mismatch">PIN-коды не совпадают.</string>
+    <string name="pin_set_done">Блокировка родительским PIN-кодом включена.</string>
+    <string name="pin_enter_title">Введи родительский PIN</string>
+    <string name="pin_wrong">Неверный PIN.</string>
+    <string name="pin_wait">Слишком много попыток. Повтори через %1$s.</string>
+    <string name="pin_checking">Проверка…</string>
+    <string name="pin_removed">Блокировка снята.</string>
+    <string name="pin_changed">PIN изменён.</string>
+    <string name="card_settings">Настройки</string>
+    <string name="setting_theme">Оформление</string>
+    <string name="theme_system">Как в системе</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="btn_change">Изменить</string>
+    <string name="setting_history">Хранить журнал</string>
+    <string name="retention_forever">Всегда</string>
+    <string name="setting_purge_at_end">Удалить журнал по окончании челленджа</string>
+    <string name="setting_history_note">Журнал хранится только на этом телефоне. Счётчики дней в календаре сохраняются, подробности удаляются. С родительским PIN журнал можно открыть только по PIN.</string>
+    <string name="btn_view_log">Журнал</string>
+    <string name="btn_clear_log">Удалить журнал</string>
+    <string name="clear_log_title">Удалить журнал?</string>
+    <string name="clear_log_text">Все записи (заблокированные сайты и приложения, предупреждения) будут удалены с этого телефона. Счётчики дней в календаре сохранятся.</string>
+    <string name="btn_delete">Удалить</string>
+    <string name="log_cleared">Журнал удалён.</string>
+    <string name="log_title">Журнал</string>
+    <string name="log_empty">Журнал пуст.</string>
+    <string name="log_hard_moment">Открыт «Трудный момент»</string>
+    <string name="card_calendar_history">No Nut November 2026 – история</string>
+    <string name="filter_settings_title">Настройки фильтра</string>
+    <string name="btn_back">Назад</string>
+    <string name="fs_dns_title">Фильтр сайтов (DNS)</string>
+    <string name="fs_dns_text">Встроенный список сайтов для взрослых (%1$s) всегда активен, пока работает VPN.</string>
+    <string name="fs_family">Семейный фильтр Cloudflare</string>
+    <string name="fs_family_text">Дополнительно использует семейный DNS Cloudflare (1.1.1.3) для сайтов для взрослых и вредоносных сайтов, которых нет в списке. Рекомендуется.</string>
+    <string name="fs_blocked_title">Мои заблокированные сайты</string>
+    <string name="fs_blocked_text">Дополнительные домены для блокировки, включая поддомены.</string>
+    <string name="fs_allowed_title">Исключения</string>
+    <string name="fs_allowed_text">Домены, которые собственные списки PBlock никогда не блокируют (например, если нужный сайт заблокирован по ошибке).</string>
+    <string name="fs_domain_hint">example.ru</string>
+    <string name="btn_add">Добавить</string>
+    <string name="btn_remove">Удалить</string>
+    <string name="fs_list_empty">Пока нет.</string>
+    <string name="fs_invalid_domain">Недопустимое доменное имя.</string>
+    <string name="fs_apps_title">Блокировка приложений</string>
+    <string name="fs_apps_switch">Блокировать выбранные приложения</string>
+    <string name="fs_apps_text">Необязательно. Выбранные приложения закрываются при открытии (используется служба специальных возможностей).</string>
+    <string name="btn_choose_apps">Выбрать приложения</string>
+    <string name="fs_apps_none">Приложения не выбраны.</string>
+    <string name="fs_suggested">%1$s (рекомендуется)</string>
+    <string name="fs_loading">Загрузка приложений…</string>
+    <string name="fs_locked_time">Действует блокировка по времени: ограничения можно добавлять, но удалить их можно только после её окончания.</string>
+    <string name="fs_locked_pin">Блокировка родительским PIN: добавлять ограничения можно свободно, для удаления нужен PIN.</string>
+    <string name="blocked_text_filter">Это приложение заблокировано фильтром контента PBlock.</string>
+    <string name="toast_settings_locked_filter">PBlock: эта настройка заблокирована. 🔒</string>
+    <string name="admin_disable_warning_filter_locked">PBlock заблокирован. Если отключить это, защиту можно будет удалить.</string>
+    <plurals name="filter_summary_custom">
+        <item quantity="one">%1$d свой заблокированный сайт</item>
+        <item quantity="few">%1$d своих заблокированных сайта</item>
+        <item quantity="many">%1$d своих заблокированных сайтов</item>
+        <item quantity="other">%1$d своих заблокированных сайта</item>
+    </plurals>
+    <plurals name="filter_summary_allowed">
+        <item quantity="one">%1$d исключение</item>
+        <item quantity="few">%1$d исключения</item>
+        <item quantity="many">%1$d исключений</item>
+        <item quantity="other">%1$d исключения</item>
+    </plurals>
+    <plurals name="filter_summary_apps">
+        <item quantity="one">Блокировка приложений: %1$d приложение</item>
+        <item quantity="few">Блокировка приложений: %1$d приложения</item>
+        <item quantity="many">Блокировка приложений: %1$d приложений</item>
+        <item quantity="other">Блокировка приложений: %1$d приложения</item>
+    </plurals>
+    <plurals name="retention_days">
+        <item quantity="one">%1$d день</item>
+        <item quantity="few">%1$d дня</item>
+        <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дня</item>
+    </plurals>
+    <plurals name="day_details_deleted">
+        <item quantity="one">%1$d более ранняя попытка (подробности удалены ради приватности)</item>
+        <item quantity="few">%1$d более ранние попытки (подробности удалены ради приватности)</item>
+        <item quantity="many">%1$d более ранних попыток (подробности удалены ради приватности)</item>
+        <item quantity="other">%1$d более ранней попытки (подробности удалены ради приватности)</item>
+    </plurals>
+    <plurals name="duration_seconds">
+        <item quantity="one">%1$d секунда</item>
+        <item quantity="few">%1$d секунды</item>
+        <item quantity="many">%1$d секунд</item>
+        <item quantity="other">%1$d секунды</item>
+    </plurals>
+    <!-- v0.5.0: bug report -->
+    <string name="bug_btn_open">Сообщить о проблеме или предложении</string>
+    <string name="bug_title">Сообщить о проблеме</string>
+    <string name="bug_intro">Опишите, что не работает или что вы хотели бы видеть. PBlock подготовит отчёт, вы его проверите, и он будет отправлен из вашего почтового приложения – ничего не отправляется автоматически. Сам отчёт на английском, но писать можно на любом языке.</string>
+    <string name="bug_category_label">О чём речь?</string>
+    <string name="bug_cat_bug">Ошибка</string>
+    <string name="bug_cat_blocking">Блокировка не работает</string>
+    <string name="bug_cat_wrong_block">Сайт заблокирован по ошибке</string>
+    <string name="bug_cat_suggestion">Предложение</string>
+    <string name="bug_cat_other">Другое</string>
+    <string name="bug_description_hint">Что произошло? (обязательно)</string>
+    <string name="bug_description_required">Пожалуйста, опишите проблему.</string>
+    <string name="bug_steps_hint">Шаги для воспроизведения (необязательно)</string>
+    <string name="bug_contact_hint">Ваш e-mail для ответа (необязательно)</string>
+    <string name="bug_contact_helper">Нужен, только если вы хотите получить ответ.</string>
+    <string name="bug_contact_invalid">Это не похоже на адрес электронной почты.</string>
+    <string name="bug_attach_diag">Приложить диагностику</string>
+    <string name="bug_attach_diag_note">Версии приложения и Android, модель устройства, языки, режим, тип блокировки (PIN – никогда), состояние защит, частный DNS и постоянный VPN, размер списка блокировки и последние внутренние ошибки. Без истории браузера.</string>
+    <string name="bug_attach_log">Приложить журнал событий</string>
+    <string name="bug_attach_log_warn">Журнал событий содержит заблокированные сайты и приложения со временем. Прикладывайте его, только если готовы этим поделиться.</string>
+    <string name="bug_preview_btn">Просмотр и отправка</string>
+    <string name="bug_preview_title">Проверьте отчёт</string>
+    <string name="bug_preview_note">Этот текст будет передан в почтовое приложение, адресат: %1$s. Там его ещё можно изменить или отменить.</string>
+    <string name="bug_preview_note_attach">Отчёт длинный, поэтому он будет передан в почтовое приложение как вложенный текстовый файл, адресат: %1$s. Там его ещё можно изменить или отменить.</string>
+    <string name="bug_preview_subject">Тема: %1$s</string>
+    <string name="bug_send">Отправить по e-mail</string>
+    <string name="bug_copy">Копировать</string>
+    <string name="bug_copied">Отчёт скопирован. Вставьте его в письмо на адрес %1$s.</string>
+    <string name="bug_no_email_title">Почтовое приложение не найдено</string>
+    <string name="bug_no_email_text">Отчёт скопирован в буфер обмена. Вставьте его в сообщение на адрес %1$s из любого приложения.</string>
+    <string name="bug_chooser_title">Отправить отчёт через</string>
+    <!-- v0.5.1: brand -->
+    <string name="saworks_logo_description">Логотип SAWorks</string>
+</resources>
