@@ -13,7 +13,7 @@ Made by **SAWorks**.
 
 ## Install
 
-Download the APK from [Releases](https://github.com/agost4002/PBlock/releases) (Android 10 or newer). On Android 13 and newer, sideloaded apps start with the accessibility switch greyed out ("Restricted setting"): open *Settings → Apps → PBlock → ⋮ → Allow restricted settings* first. Then follow the setup checklist in the app.
+Download the APK from [Releases](https://github.com/Hazelsurai/PBlock/releases) (Android 10 or newer). On Android 13 and newer, sideloaded apps start with the accessibility switch greyed out ("Restricted setting"): open *Settings → Apps → PBlock → ⋮ → Allow restricted settings* first. Then follow the setup checklist in the app.
 
 Release APKs are signed by SAWorks. Signing certificate SHA-256:
 `65:FC:AA:29:FD:73:06:1E:4B:9F:05:D0:49:34:4C:17:73:02:F7:88:A9:09:3E:07:F8:42:E3:B5:AC:A4:45:28`
