@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityService
 import android.content.Intent
 import android.net.VpnService
 import android.os.Handler
+import android.os.HandlerThread
 import android.os.Looper
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
@@ -11,15 +12,19 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Toast
 import com.saworks.pblock.R
 import com.saworks.pblock.TimeChangeReceiver
+import com.saworks.pblock.Workers
+import com.saworks.pblock.core.EventCoalescer
 import com.saworks.pblock.core.Events
 import com.saworks.pblock.core.SettingsGuard
 import com.saworks.pblock.data.AppRules
 import com.saworks.pblock.data.AttemptLog
+import com.saworks.pblock.data.ErrorLog
 import com.saworks.pblock.data.Lock
 import com.saworks.pblock.data.Prefs
 import com.saworks.pblock.data.ProtectionMonitor
 import com.saworks.pblock.ui.BlockedActivity
 import com.saworks.pblock.vpn.PBlockVpnService
+import java.util.concurrent.ConcurrentHashMap
 
 /**
  * 1) Covers a blocked app with the block screen when it comes to the foreground: the fixed list (Brave, X,
@@ -27,6 +32,11 @@ import com.saworks.pblock.vpn.PBlockVpnService
  * 2) While a lock is active (challenge, time lock, or parent PIN), bounces out of the Settings screens that could disable PBlock
  *    (App info, accessibility page, device admin, VPN disconnect, uninstall dialog).
  *    Before the lock is started nothing in Settings is touched, so setup always works.
+ *
+ * Threads: the main thread only copies the event out. App rules, logging and the watchdog run on
+ * [Workers.bg]; the Settings screen scan (one call into the other app per node) runs on its own
+ * "pblock-guard" thread, so a slow or busy Settings app can never stall the main thread, which the
+ * service's own lifecycle callbacks and PBlock's screens need.
  */
 class BlockerAccessibilityService : AccessibilityService() {
 
@@ -49,16 +59,26 @@ class BlockerAccessibilityService : AccessibilityService() {
     }
 
     private val main = Handler(Looper.getMainLooper())
+    private val bg get() = Workers.bg
+    @Volatile private var guardThread: HandlerThread? = null
+    @Volatile private var guardHandler: Handler? = null
+    private val pending = EventCoalescer()
+
+    // lastAppBlock: bg thread only; lastBounce/lastScan: guard thread only.
     private var lastAppBlock = 0L
     private var lastBounce = 0L
     private var lastScan = 0L
-    private val windowClass = HashMap<String, String>()
+    private val windowClass = ConcurrentHashMap<String, String>()
 
     private val watchdog = object : Runnable {
         override fun run() {
-            ensureVpn()
-            ProtectionMonitor.check(this@BlockerAccessibilityService)
-            main.postDelayed(this, 30_000)
+            try {
+                ensureVpn()
+                ProtectionMonitor.check(this@BlockerAccessibilityService)
+            } catch (e: Exception) {
+                ErrorLog.note(this@BlockerAccessibilityService, "acc.watchdog", e)
+            }
+            bg.postDelayed(this, 30_000)
         }
     }
 
@@ -66,8 +86,14 @@ class BlockerAccessibilityService : AccessibilityService() {
 
     override fun onServiceConnected() {
         connected = true
+        if (guardHandler == null) {
+            val t = HandlerThread("pblock-guard").apply { start() }
+            guardThread = t
+            guardHandler = Handler(t.looper)
+        }
         TimeChangeReceiver.register(this, timeReceiver)
-        main.post(watchdog)
+        bg.removeCallbacks(watchdog)
+        bg.post(watchdog)
     }
 
     override fun onUnbind(intent: Intent?): Boolean {
@@ -78,34 +104,47 @@ class BlockerAccessibilityService : AccessibilityService() {
     override fun onDestroy() {
         markDown()
         TimeChangeReceiver.unregister(this, timeReceiver)
-        main.removeCallbacks(watchdog)
-        main.removeCallbacks(rescan)
+        bg.removeCallbacks(watchdog)
+        guardHandler?.removeCallbacksAndMessages(null)
+        guardThread?.quitSafely()
+        guardHandler = null
+        guardThread = null
         super.onDestroy()
     }
 
+    /** Flags the blocker as down right away; the bookkeeping (prefs, lock checks) happens off the main thread. */
     private fun markDown() {
         if (!connected) return
         connected = false
-        try { ProtectionMonitor.markDown(this, Events.COMP_ACCESSIBILITY) } catch (_: Exception) {}
+        Workers.run("acc.markDown", this) { ProtectionMonitor.markDown(this, Events.COMP_ACCESSIBILITY) }
     }
 
     override fun onInterrupt() {}
 
     override fun onAccessibilityEvent(event: AccessibilityEvent) {
+        // The event is recycled after this returns: copy what is needed and leave the main thread.
         val pkg = event.packageName?.toString() ?: return
         if (pkg == packageName) return
         val type = event.eventType
         if (type != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED && type != AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) return
+        val windowChange = type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
+        val cls = if (windowChange) event.className?.toString() else null
+        bg.post { onWindowEvent(pkg, windowChange, cls) }
+    }
 
-        if (type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
-            event.className?.let { windowClass[pkg] = it.toString() }
+    private fun onWindowEvent(pkg: String, windowChange: Boolean, cls: String?) {
+        try {
+            if (cls != null) windowClass[pkg] = cls
+            val guarded = SettingsGuard.isGuardedPackage(pkg)
+            val appName = if (guarded) null else AppRules.blockedLabel(this, pkg)
+            if (appName != null) {
+                if (windowChange || rootPackage() == pkg) blockApp(appName)
+                return
+            }
+            if (guarded && Lock.isLocked(this)) requestGuard(pkg, windowChange)
+        } catch (e: Exception) {
+            ErrorLog.note(this, "acc.event", e)
         }
-        val appName = if (SettingsGuard.isGuardedPackage(pkg)) null else AppRules.blockedLabel(this, pkg)
-        if (appName != null) {
-            if (type == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED || rootPackage() == pkg) blockApp(appName)
-            return
-        }
-        if (SettingsGuard.isGuardedPackage(pkg) && Lock.isLocked(this)) guard(pkg, type)
     }
 
     private fun rootPackage(): String? = try { rootInActiveWindow?.packageName?.toString() } catch (_: Exception) { null }
@@ -114,7 +153,6 @@ class BlockerAccessibilityService : AccessibilityService() {
         val now = SystemClock.elapsedRealtime()
         if (now - lastAppBlock < 1500) return
         lastAppBlock = now
-        AttemptLog.log(this, AttemptLog.KIND_APP, appName)
         // The block screen covers the app; its button/back goes to the home screen.
         // (GLOBAL_ACTION_HOME before the start would race it and hide the block screen.)
         try {
@@ -126,22 +164,39 @@ class BlockerAccessibilityService : AccessibilityService() {
         } catch (_: Exception) {
             performGlobalAction(GLOBAL_ACTION_HOME)
         }
+        AttemptLog.log(this, AttemptLog.KIND_APP, appName)
     }
 
-    private fun guard(pkg: String, type: Int) {
+    /** Queues one scan for the latest guarded event; events arriving meanwhile are merged into it. */
+    private fun requestGuard(pkg: String, windowChange: Boolean) {
+        val h = guardHandler ?: return
+        if (pending.offer(pkg, windowChange)) h.post(guardJob)
+    }
+
+    private val guardJob = Runnable {
+        val r = pending.take() ?: return@Runnable
+        try { guard(r.pkg, r.windowChange) } catch (e: Exception) { ErrorLog.note(this, "acc.guard", e) }
+    }
+
+    private fun guard(pkg: String, windowChange: Boolean) {
+        val h = guardHandler ?: return
         val now = SystemClock.elapsedRealtime()
         if (now - lastBounce < 700) return
         // Throttled or still-loading screens get one more look shortly after (a page opened from inside
         // Settings can finish loading after the last event that reached us).
-        main.removeCallbacks(rescan)
-        main.postDelayed(rescan, RESCAN_DELAY_MS)
-        if (type == AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED && now - lastScan < 300) return
+        h.removeCallbacks(rescan)
+        h.postDelayed(rescan, RESCAN_DELAY_MS)
+        if (!windowChange && now - lastScan < 300) return
         scan(pkg)
     }
 
     private val rescan = Runnable {
-        val pkg = rootPackage() ?: return@Runnable
-        if (SettingsGuard.isGuardedPackage(pkg) && Lock.isLocked(this)) scan(pkg)
+        try {
+            val pkg = rootPackage() ?: return@Runnable
+            if (SettingsGuard.isGuardedPackage(pkg) && Lock.isLocked(this)) scan(pkg)
+        } catch (e: Exception) {
+            ErrorLog.note(this, "acc.rescan", e)
+        }
     }
 
     private fun scan(pkg: String) {
@@ -155,10 +210,11 @@ class BlockerAccessibilityService : AccessibilityService() {
         collect(root, text, ids, intArrayOf(0))
         val screen = SettingsGuard.Screen(pkg, windowClass[pkg], text.toString(), ids)
         if (!SettingsGuard.shouldBounce(screen, guardDateTime = Lock.isTimeLocked(this))) return
-        lastBounce = now
+        lastBounce = SystemClock.elapsedRealtime()
         performGlobalAction(GLOBAL_ACTION_BACK)
         main.postDelayed({ performGlobalAction(GLOBAL_ACTION_HOME) }, 120)
-        Toast.makeText(this, if (Prefs.isFilterMode(this)) R.string.toast_settings_locked_filter else R.string.toast_settings_locked, Toast.LENGTH_SHORT).show()
+        val msg = if (Prefs.isFilterMode(this)) R.string.toast_settings_locked_filter else R.string.toast_settings_locked
+        main.post { Toast.makeText(this, msg, Toast.LENGTH_SHORT).show() }
     }
 
     private fun collect(node: AccessibilityNodeInfo?, out: StringBuilder, ids: MutableList<String>, count: IntArray) {

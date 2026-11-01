@@ -35,6 +35,7 @@ import androidx.core.view.isVisible
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.saworks.pblock.BuildConfig
 import com.saworks.pblock.R
+import com.saworks.pblock.Workers
 import com.saworks.pblock.admin.PBlockAdminReceiver
 import com.saworks.pblock.core.CalendarLogic
 import com.saworks.pblock.core.DayCell
@@ -128,7 +129,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        try { ProtectionMonitor.check(this) } catch (_: Exception) {}
+        Workers.run("main.monitor", this) { ProtectionMonitor.check(applicationContext) }
         TrustedTime.syncAsync(this) { ok -> if (ok) handler.post { if (!isFinishing) refresh() } }
         handler.post(ticker)
     }

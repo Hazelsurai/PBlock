@@ -6,8 +6,6 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.VpnService
-import android.os.Handler
-import android.os.Looper
 import android.os.ParcelFileDescriptor
 import android.system.ErrnoException
 import android.system.Os
@@ -16,6 +14,7 @@ import android.system.StructPollfd
 import android.util.Log
 import com.saworks.pblock.R
 import com.saworks.pblock.TimeChangeReceiver
+import com.saworks.pblock.Workers
 import com.saworks.pblock.core.Events
 import com.saworks.pblock.core.DnsMessage
 import com.saworks.pblock.core.DomainMatcher
@@ -87,12 +86,11 @@ class PBlockVpnService : VpnService() {
     @Volatile private var upstreams: List<InetAddress> = emptyList()
     @Volatile private var upstreamsAt = 0L
     @Volatile private var upstreamsFamily = true
-    private val main = Handler(Looper.getMainLooper())
     private val timeReceiver = TimeChangeReceiver()
     private val monitor = object : Runnable {
         override fun run() {
             try { ProtectionMonitor.check(this@PBlockVpnService) } catch (e: Exception) { ErrorLog.note(this@PBlockVpnService, "vpn.monitor", e) }
-            main.postDelayed(this, 60_000)
+            Workers.bg.postDelayed(this, 60_000)
         }
     }
     private var monitoring = false
@@ -149,7 +147,7 @@ class PBlockVpnService : VpnService() {
         running = true
         pool = ThreadPoolExecutor(2, 16, 30, TimeUnit.SECONDS, ArrayBlockingQueue(256), ThreadPoolExecutor.DiscardPolicy())
         worker = Thread({ loop(pfd.fileDescriptor) }, "pblock-tun").also { it.start() }
-        if (!monitoring) { monitoring = true; main.post(monitor) }
+        if (!monitoring) { monitoring = true; Workers.bg.post(monitor) }
         Log.i(TAG, "VPN established (alwaysOn=$isAlwaysOn, lockdown=$isLockdownEnabled)")
     }
 
@@ -169,10 +167,10 @@ class PBlockVpnService : VpnService() {
     override fun onRevoke() {
         Log.w(TAG, "VPN revoked")
         stopVpn()
-        ProtectionMonitor.markDown(this, Events.COMP_VPN)
+        Workers.run("vpn.markDown", this) { ProtectionMonitor.markDown(this, Events.COMP_VPN) }
         if (Lock.isLocked(this)) {
             // During the challenge: come back if the consent is still valid (e.g. a manual "Disconnect").
-            main.postDelayed({ if (prepare(this) == null) startVpn() }, 1500)
+            Workers.bg.postDelayed({ if (prepare(this) == null) startVpn() }, 1500)
         } else {
             super.onRevoke()
         }
@@ -181,8 +179,8 @@ class PBlockVpnService : VpnService() {
     override fun onDestroy() {
         val wasRunning = running
         stopVpn()
-        if (wasRunning) ProtectionMonitor.markDown(this, Events.COMP_VPN)
-        main.removeCallbacks(monitor)
+        if (wasRunning) Workers.run("vpn.markDown", this) { ProtectionMonitor.markDown(this, Events.COMP_VPN) }
+        Workers.bg.removeCallbacks(monitor)
         monitoring = false
         TimeChangeReceiver.unregister(this, timeReceiver)
         super.onDestroy()
