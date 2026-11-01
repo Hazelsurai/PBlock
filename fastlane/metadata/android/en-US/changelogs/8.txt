@@ -1,0 +1,4 @@
+- Optional: the challenge can also block your own blocked apps and sites (off by default; My blocks button on the challenge card).
+- Picking apps now shows a confirmation with icons and warns about important-looking apps (bank, authenticator, maps...). Phone, Settings and emergency apps can never be blocked.
+- Anything added by mistake can be taken back within 15 minutes, even during a lock.
+- Fix: pulling down the quick settings with the VPN active no longer throws you out.

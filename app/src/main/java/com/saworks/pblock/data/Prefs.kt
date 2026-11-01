@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import android.os.SystemClock
 import androidx.appcompat.app.AppCompatDelegate
 import com.saworks.pblock.access.BlockerAccessibilityService
+import com.saworks.pblock.core.AppSafety
 import com.saworks.pblock.core.HistoryLogic
 import com.saworks.pblock.core.LockPolicy
 import com.saworks.pblock.core.PinHasher
@@ -16,6 +17,8 @@ object Prefs {
     private const val FILE = "pblock"
     private const val KEY_LOCK_AT = "lock_activated_at"
     private const val KEY_VPN_WANTED = "vpn_wanted"
+    /** Exclusive end of the running challenge, saved at the start (0 on installs that started before 0.5.3). */
+    private const val KEY_LOCK_END = "lock_end_at"
 
     const val MODE_CHALLENGE = "challenge"
     const val MODE_FILTER = "filter"
@@ -40,6 +43,11 @@ object Prefs {
     private const val K_RETENTION = "log_retention_days"
     private const val K_PURGE_AT_END = "log_purge_at_challenge_end"
     private const val K_PURGED_AT_END = "log_purged_at_challenge_end"
+    private const val K_CHALLENGE_LISTS = "challenge_use_filter_lists"
+    private const val K_ADDED_AT = "filter_added_at_"
+    const val ADDED_APP = "app"
+    const val ADDED_DOMAIN = "dom"
+    const val ADDED_SWITCH = "switch"
 
     internal fun sp(ctx: Context): SharedPreferences = ctx.applicationContext.getSharedPreferences(FILE, Context.MODE_PRIVATE)
 
@@ -49,6 +57,16 @@ object Prefs {
     fun setVpnWanted(ctx: Context, v: Boolean) { sp(ctx).edit().putBoolean(KEY_VPN_WANTED, v).apply() }
 
     internal fun setLockActivatedAt(ctx: Context, v: Long) { sp(ctx).edit().putLong(KEY_LOCK_AT, v).commit() }
+
+    /** Saved challenge end; falls back to the built-in period for challenges started before it was saved. */
+    fun lockEndAt(ctx: Context): Long = sp(ctx).getLong(KEY_LOCK_END, 0L).takeIf { it > 0 } ?: LockPolicy.LOCK_END_MILLIS
+    internal fun setLockEndAt(ctx: Context, v: Long) { sp(ctx).edit().putLong(KEY_LOCK_END, v).commit() }
+
+    /** Fills in [KEY_LOCK_END] for a challenge started by an older version (no-op otherwise). */
+    fun migrate(ctx: Context) {
+        val p = sp(ctx)
+        if (p.getLong(KEY_LOCK_AT, 0L) > 0 && !p.contains(KEY_LOCK_END)) p.edit().putLong(KEY_LOCK_END, LockPolicy.LOCK_END_MILLIS).apply()
+    }
 
     // ---- mode
     fun mode(ctx: Context): String = if (sp(ctx).getString(K_MODE, MODE_CHALLENGE) == MODE_FILTER) MODE_FILTER else MODE_CHALLENGE
@@ -79,6 +97,34 @@ object Prefs {
     fun allowedDomains(ctx: Context): Set<String> = sp(ctx).getStringSet(K_ALLOWED, emptySet())!!.toSortedSet()
     fun setBlockedDomains(ctx: Context, v: Set<String>) { sp(ctx).edit().putStringSet(K_BLOCKED, HashSet(v)).commit(); Blocklist.invalidateRules() }
     fun setAllowedDomains(ctx: Context, v: Set<String>) { sp(ctx).edit().putStringSet(K_ALLOWED, HashSet(v)).commit(); Blocklist.invalidateRules() }
+
+    /**
+     * Opt-in: the challenge also enforces the user's own blocked apps and blocked sites (never the exceptions).
+     * Off by default, also for installs updated from older versions.
+     */
+    fun challengeUsesFilterLists(ctx: Context) = sp(ctx).getBoolean(K_CHALLENGE_LISTS, false)
+    fun setChallengeUsesFilterLists(ctx: Context, v: Boolean) {
+        sp(ctx).edit().putBoolean(K_CHALLENGE_LISTS, v).commit()
+        Blocklist.invalidateRules()
+    }
+
+    /** The own lists are in force right now (content-filter mode, or the challenge with the switch on). */
+    fun filterListsEnforced(ctx: Context) = isFilterMode(ctx) || challengeUsesFilterLists(ctx)
+
+    /** When an entry was added (trusted time), for the short undo window; 0 if unknown. */
+    fun addedAt(ctx: Context, kind: String, item: String): Long = sp(ctx).getLong(K_ADDED_AT + kind + "_" + item, 0L)
+    fun markAdded(ctx: Context, kind: String, items: Collection<String>, at: Long) {
+        if (items.isEmpty()) return
+        val e = sp(ctx).edit()
+        items.forEach { e.putLong(K_ADDED_AT + kind + "_" + it, at) }
+        e.commit()
+    }
+    fun clearAdded(ctx: Context, kind: String, items: Collection<String>) {
+        if (items.isEmpty()) return
+        val e = sp(ctx).edit()
+        items.forEach { e.remove(K_ADDED_AT + kind + "_" + it) }
+        e.apply()
+    }
 
     /** Cloudflare for Families upstream. Always on in challenge mode; optional (default on) in filter mode. */
     fun familyDns(ctx: Context): Boolean = !isFilterMode(ctx) || sp(ctx).getBoolean(K_FAMILY, true)
@@ -208,6 +254,7 @@ object Lock {
         if (!LockPolicy.canActivate(now) || challengeLocked(ctx)) return false
         Prefs.setMode(ctx, Prefs.MODE_CHALLENGE)
         Prefs.setLockActivatedAt(ctx, now)
+        Prefs.setLockEndAt(ctx, LockPolicy.LOCK_END_MILLIS)
         Prefs.setVpnWanted(ctx, true)
         return true
     }
@@ -243,10 +290,27 @@ object Lock {
 object AppRules {
     /** Package -> display name of the app to block, or null. */
     fun blockedLabel(ctx: Context, pkg: String): String? {
-        if (!Prefs.isFilterMode(ctx)) return BlockerAccessibilityService.BLOCKED_APPS[pkg]
+        if (AppSafety.neverBlock(pkg, defaultDialer(ctx))) return null
+        if (!Prefs.isFilterMode(ctx)) {
+            BlockerAccessibilityService.BLOCKED_APPS[pkg]?.let { return it }
+            if (!Prefs.challengeUsesFilterLists(ctx)) return null
+        }
         if (!Prefs.appBlockingEnabled(ctx)) return null
         if (pkg !in (Prefs.blockedApps(ctx) ?: return null)) return null
         return BlockerAccessibilityService.BLOCKED_APPS[pkg] ?: labelOf(ctx, pkg)
+    }
+
+    @Volatile private var dialer: Pair<Long, String?>? = null
+
+    /** The default phone app (cached for a minute; it is checked on every window change). */
+    fun defaultDialer(ctx: Context): String? {
+        val now = SystemClock.elapsedRealtime()
+        dialer?.let { (at, pkg) -> if (now - at < 60_000) return pkg }
+        val pkg = try {
+            (ctx.getSystemService(Context.TELECOM_SERVICE) as? android.telecom.TelecomManager)?.defaultDialerPackage
+        } catch (_: Exception) { null }
+        dialer = now to pkg
+        return pkg
     }
 
     private val labels = HashMap<String, String>()

@@ -324,4 +324,36 @@
     <string name="bug_chooser_title">发送报告方式</string>
     <!-- v0.5.1: brand -->
     <string name="saworks_logo_description">SAWorks 标志</string>
+    <!-- v0.5.3: own blocks in the challenge, mis-tap safety -->
+    <string name="fs_challenge_screen_title">我的屏蔽</string>
+    <string name="fs_challenge_title">挑战中也使用</string>
+    <string name="fs_challenge_switch">挑战也屏蔽我的列表</string>
+    <string name="fs_challenge_text">默认关闭。开启后，挑战期间也会屏蔽你自己添加的网站；如果开启了应用屏蔽，也会屏蔽你选择的应用（如 TikTok、YouTube）。例外在挑战中永远不生效。挑战期间开启后将保持开启直到结束（开启后 15 分钟内除外）。</string>
+    <string name="fs_locked_challenge">挑战进行中：可以添加限制，但不能移除。最近 15 分钟内添加的内容仍可撤回。</string>
+    <string name="btn_challenge_lists">我的屏蔽（应用、网站）</string>
+    <string name="challenge_lists_off">挑战中的自定义屏蔽：关闭</string>
+    <string name="challenge_lists_on">挑战中的自定义屏蔽：开启（%1$s，%2$s）</string>
+    <string name="fs_confirm_apps_text">请检查列表：这些应用每次打开时都会被关闭。</string>
+    <string name="fs_confirm_apps_locked">请检查列表：这些应用每次打开时都会被关闭。15 分钟内仍可撤回，之后将一直屏蔽到锁定结束。</string>
+    <string name="fs_confirm_apps_ok">屏蔽</string>
+    <string name="fs_important_title">兄弟，你确定要这样吗？</string>
+    <string name="fs_important_text">%1$s 看起来是重要应用（%2$s）。如果在锁定期间屏蔽，宽限期过后将无法移除。</string>
+    <string name="fs_important_yes">是的，屏蔽</string>
+    <string name="fs_important_no">取消</string>
+    <string name="imp_kind_bank">银行 / 支付</string>
+    <string name="imp_kind_auth">身份验证 / 密码</string>
+    <string name="imp_kind_gov">政务服务</string>
+    <string name="imp_kind_health">健康</string>
+    <string name="imp_kind_maps">地图 / 导航</string>
+    <string name="imp_kind_comm">电话 / 短信 / 邮件</string>
+    <string name="imp_kind_emergency">紧急求助</string>
+    <plurals name="challenge_lists_apps">
+        <item quantity="other">%1$d 个应用</item>
+    </plurals>
+    <plurals name="challenge_lists_sites">
+        <item quantity="other">%1$d 个网站</item>
+    </plurals>
+    <plurals name="fs_confirm_apps_title">
+        <item quantity="other">屏蔽 %1$d 个应用？</item>
+    </plurals>
 </resources>

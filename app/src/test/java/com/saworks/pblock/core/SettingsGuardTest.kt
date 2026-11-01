@@ -43,6 +43,35 @@ class SettingsGuardTest {
         assertFalse(bounce("PBlock\nVPN aktiv", pkg = SettingsGuard.SYSTEMUI, cls = null))
     }
 
+    @Test fun quickSettingsShadeNeverBounces() {
+        val ui = SettingsGuard.SYSTEMUI
+        // Samsung shade: PBlock VPN footer plus a Bluetooth tile reading "Leválasztva" (disconnected).
+        val shade = "Wi-Fi\nBluetooth\nLeválasztva\nPBlock\nA VPN aktív"
+        val qsIds = listOf("com.android.systemui:id/quick_qs_panel", "com.android.systemui:id/qs_footer_text")
+        assertFalse(bounce(shade, pkg = ui, cls = null, ids = qsIds))
+        assertFalse(bounce("PBlock\nVPN\nDisconnected", pkg = ui, cls = null, ids = listOf("com.android.systemui:id/notification_panel")))
+        assertFalse(bounce("PBlock\nBluetooth\nGetrennt", pkg = ui, cls = "com.android.systemui.shade.NotificationShadeWindowView"))
+        assertFalse(bounce("PBlock\nDisconnect", pkg = ui, cls = "com.android.systemui.qs.QSPanel"))
+        assertTrue(SettingsGuard.isSystemUiShade(SettingsGuard.Screen(ui, null, shade, qsIds)))
+    }
+
+    @Test fun systemUiDialogStillBouncesEvenWithStaleShadeClass() {
+        val ui = SettingsGuard.SYSTEMUI
+        val dialogIds = listOf("android:id/alertTitle", "android:id/button1", "android:id/button2")
+        assertTrue(bounce("PBlock\nVPN\nDisconnect", pkg = ui, cls = "com.android.systemui.qs.QSPanel", ids = dialogIds))
+        assertTrue(bounce("PBlock\nVPN\nLeválasztás", pkg = ui, cls = null, ids = dialogIds))
+        assertFalse(SettingsGuard.isSystemUiShade(SettingsGuard.Screen(ui, null, "PBlock", dialogIds)))
+    }
+
+    @Test fun settingsVpnPagesStillBounce() {
+        // Reached by long-pressing a VPN tile or the shade footer.
+        assertTrue(bounce("PBlock\n???", cls = "com.android.settings.Settings\$VpnSettingsActivity"))
+        assertTrue(bounce("PBlock\n???", cls = "com.android.settings.vpn2.AppManagementFragment"))
+        assertTrue(bounce("VPN\nPBlock\nConnected", cls = "com.android.settings.vpn2.VpnSettings"))
+        assertTrue(bounce("PBlock\nAlways-on VPN\nForget VPN")) // details page, any window class
+        assertFalse(SettingsGuard.isSystemUiShade(SettingsGuard.Screen(settings, null, "PBlock", listOf("com.android.systemui:id/qs_panel"))))
+    }
+
     @Test fun leavesOtherScreensAlone() {
         assertFalse(bounce("WLAN\nNetzwerk & Internet\nDeinstallieren")) // no PBlock on screen
         assertFalse(bounce("Apps\nPBlock\n12 MB\nChrome", cls = "com.android.settings.spa.SpaActivity"))

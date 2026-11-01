@@ -346,4 +346,39 @@
     <string name="bug_chooser_title">Jelentés küldése ezzel:</string>
     <!-- v0.5.1: brand -->
     <string name="saworks_logo_description">SAWorks logó</string>
+    <!-- v0.5.3: own blocks in the challenge, mis-tap safety -->
+    <string name="fs_challenge_screen_title">Saját tiltások</string>
+    <string name="fs_challenge_title">A kihívásban is</string>
+    <string name="fs_challenge_switch">A kihívás a saját listáimat is tiltja</string>
+    <string name="fs_challenge_text">Alapból ki van kapcsolva. Bekapcsolva a kihívás a saját tiltott oldalaidat is tiltja, és ha az alkalmazástiltás be van kapcsolva, a kiválasztott appokat is (pl. TikTok, YouTube). A kivételek a kihívásban soha nem érvényesek. Ha a kihívás alatt bekapcsolod, a végéig bekapcsolva marad (a bekapcsolás utáni 15 percet kivéve).</string>
+    <string name="fs_locked_challenge">A kihívás fut: korlátozást hozzáadhatsz, de eltávolítani nem lehet. Amit az elmúlt 15 percben adtál hozzá, azt még kiveheted.</string>
+    <string name="btn_challenge_lists">Saját tiltások (appok, oldalak)</string>
+    <string name="challenge_lists_off">Saját tiltások a kihívásban: kikapcsolva</string>
+    <string name="challenge_lists_on">Saját tiltások a kihívásban: bekapcsolva (%1$s, %2$s)</string>
+    <string name="fs_confirm_apps_text">Nézd át a listát: ezek az appok megnyitáskor mindig bezáródnak.</string>
+    <string name="fs_confirm_apps_locked">Nézd át a listát: ezek az appok megnyitáskor mindig bezáródnak. 15 percen belül még kiveheted őket, utána a zár végéig tiltva maradnak.</string>
+    <string name="fs_confirm_apps_ok">Tiltás</string>
+    <string name="fs_important_title">Haver, ezt biztos ide akartad?</string>
+    <string name="fs_important_text">A(z) %1$s fontos appnak tűnik (%2$s). Ha a zár alatt tiltod, a türelmi idő után nem tudod kivenni.</string>
+    <string name="fs_important_yes">Igen, tiltsd</string>
+    <string name="fs_important_no">Mégse</string>
+    <string name="imp_kind_bank">bank / fizetés</string>
+    <string name="imp_kind_auth">hitelesítő / jelszavak</string>
+    <string name="imp_kind_gov">ügyintézés</string>
+    <string name="imp_kind_health">egészség</string>
+    <string name="imp_kind_maps">térkép / navigáció</string>
+    <string name="imp_kind_comm">telefon / üzenetek / e-mail</string>
+    <string name="imp_kind_emergency">vészhelyzet</string>
+    <plurals name="challenge_lists_apps">
+        <item quantity="one">%1$d app</item>
+        <item quantity="other">%1$d app</item>
+    </plurals>
+    <plurals name="challenge_lists_sites">
+        <item quantity="one">%1$d oldal</item>
+        <item quantity="other">%1$d oldal</item>
+    </plurals>
+    <plurals name="fs_confirm_apps_title">
+        <item quantity="one">%1$d app tiltása?</item>
+        <item quantity="other">%1$d app tiltása?</item>
+    </plurals>
 </resources>

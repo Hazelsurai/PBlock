@@ -390,4 +390,45 @@
     <string name="bug_chooser_title">Отправить отчёт через</string>
     <!-- v0.5.1: brand -->
     <string name="saworks_logo_description">Логотип SAWorks</string>
+    <!-- v0.5.3: own blocks in the challenge, mis-tap safety -->
+    <string name="fs_challenge_screen_title">Мои блокировки</string>
+    <string name="fs_challenge_title">И в челлендже</string>
+    <string name="fs_challenge_switch">Челлендж блокирует и мои списки</string>
+    <string name="fs_challenge_text">По умолчанию выключено. Если включено, челлендж блокирует и ваши собственные сайты, а при включённой блокировке приложений — выбранные приложения (например, TikTok, YouTube). Исключения в челлендже не действуют. Включённое во время челленджа остаётся включённым до конца (кроме первых 15 минут).</string>
+    <string name="fs_locked_challenge">Челлендж идёт: ограничения можно добавлять, но не удалять. Добавленное за последние 15 минут ещё можно убрать.</string>
+    <string name="btn_challenge_lists">Мои блокировки (приложения, сайты)</string>
+    <string name="challenge_lists_off">Свои блокировки в челлендже: выкл.</string>
+    <string name="challenge_lists_on">Свои блокировки в челлендже: вкл. (%1$s, %2$s)</string>
+    <string name="fs_confirm_apps_text">Проверьте список: эти приложения будут закрываться при каждом открытии.</string>
+    <string name="fs_confirm_apps_locked">Проверьте список: эти приложения будут закрываться при каждом открытии. В течение 15 минут их ещё можно убрать, потом они останутся заблокированными до конца блокировки.</string>
+    <string name="fs_confirm_apps_ok">Заблокировать</string>
+    <string name="fs_important_title">Слушай, ты точно это хотел?</string>
+    <string name="fs_important_text">%1$s похоже на важное приложение (%2$s). Если заблокировать его во время блокировки, после льготного периода убрать его не получится.</string>
+    <string name="fs_important_yes">Да, заблокировать</string>
+    <string name="fs_important_no">Отмена</string>
+    <string name="imp_kind_bank">банк / платежи</string>
+    <string name="imp_kind_auth">аутентификатор / пароли</string>
+    <string name="imp_kind_gov">госуслуги</string>
+    <string name="imp_kind_health">здоровье</string>
+    <string name="imp_kind_maps">карты / навигация</string>
+    <string name="imp_kind_comm">телефон / сообщения / почта</string>
+    <string name="imp_kind_emergency">экстренные службы</string>
+    <plurals name="challenge_lists_apps">
+        <item quantity="one">%1$d приложение</item>
+        <item quantity="few">%1$d приложения</item>
+        <item quantity="many">%1$d приложений</item>
+        <item quantity="other">%1$d приложения</item>
+    </plurals>
+    <plurals name="challenge_lists_sites">
+        <item quantity="one">%1$d сайт</item>
+        <item quantity="few">%1$d сайта</item>
+        <item quantity="many">%1$d сайтов</item>
+        <item quantity="other">%1$d сайта</item>
+    </plurals>
+    <plurals name="fs_confirm_apps_title">
+        <item quantity="one">Заблокировать %1$d приложение?</item>
+        <item quantity="few">Заблокировать %1$d приложения?</item>
+        <item quantity="many">Заблокировать %1$d приложений?</item>
+        <item quantity="other">Заблокировать %1$d приложения?</item>
+    </plurals>
 </resources>

@@ -1,0 +1,4 @@
+- Optional: Die Challenge kann auch deine eigenen gesperrten Apps und Seiten sperren (standardmäßig aus; Button „Meine Sperren“ auf der Challenge-Karte).
+- Bei der App-Auswahl gibt es jetzt eine Bestätigung mit Icons und eine Warnung bei wichtig wirkenden Apps (Bank, Authenticator, Karten...). Telefon, Einstellungen und Notruf-Apps sind nie sperrbar.
+- Versehentlich Hinzugefügtes kann 15 Minuten lang zurückgenommen werden, auch während einer Sperre.
+- Fix: Das Herunterziehen der Schnelleinstellungen bei aktivem VPN wirft dich nicht mehr raus.

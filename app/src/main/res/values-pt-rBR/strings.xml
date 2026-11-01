@@ -368,4 +368,42 @@
     <string name="bug_chooser_title">Enviar relatório com</string>
     <!-- v0.5.1: brand -->
     <string name="saworks_logo_description">Logotipo da SAWorks</string>
+    <!-- v0.5.3: own blocks in the challenge, mis-tap safety -->
+    <string name="fs_challenge_screen_title">Meus bloqueios</string>
+    <string name="fs_challenge_title">Também no desafio</string>
+    <string name="fs_challenge_switch">O desafio também bloqueia minhas listas</string>
+    <string name="fs_challenge_text">Desligado por padrão. Ligado, o desafio também bloqueia seus próprios sites bloqueados e, se o bloqueio de apps estiver ligado, os apps escolhidos (ex.: TikTok, YouTube). Exceções nunca valem no desafio. Se ligado durante o desafio, fica ligado até o fim (exceto nos primeiros 15 minutos).</string>
+    <string name="fs_locked_challenge">O desafio está em andamento: você pode adicionar restrições, mas não removê-las. O que você adicionou nos últimos 15 minutos ainda pode ser desfeito.</string>
+    <string name="btn_challenge_lists">Meus bloqueios (apps, sites)</string>
+    <string name="challenge_lists_off">Bloqueios próprios no desafio: desligado</string>
+    <string name="challenge_lists_on">Bloqueios próprios no desafio: ligado (%1$s, %2$s)</string>
+    <string name="fs_confirm_apps_text">Confira a lista: estes apps serão fechados sempre que forem abertos.</string>
+    <string name="fs_confirm_apps_locked">Confira a lista: estes apps serão fechados sempre que forem abertos. Você pode removê-los em até 15 minutos; depois disso ficam bloqueados até o fim do bloqueio.</string>
+    <string name="fs_confirm_apps_ok">Bloquear</string>
+    <string name="fs_important_title">Cara, tem certeza que era isso?</string>
+    <string name="fs_important_text">%1$s parece um app importante (%2$s). Se você bloqueá-lo durante o bloqueio, não poderá removê-lo após o período de carência.</string>
+    <string name="fs_important_yes">Sim, bloquear</string>
+    <string name="fs_important_no">Cancelar</string>
+    <string name="imp_kind_bank">banco / pagamento</string>
+    <string name="imp_kind_auth">autenticador / senhas</string>
+    <string name="imp_kind_gov">serviços públicos</string>
+    <string name="imp_kind_health">saúde</string>
+    <string name="imp_kind_maps">mapas / navegação</string>
+    <string name="imp_kind_comm">telefone / mensagens / e-mail</string>
+    <string name="imp_kind_emergency">emergência</string>
+    <plurals name="challenge_lists_apps">
+        <item quantity="one">%1$d app</item>
+        <item quantity="many">%1$d apps</item>
+        <item quantity="other">%1$d apps</item>
+    </plurals>
+    <plurals name="challenge_lists_sites">
+        <item quantity="one">%1$d site</item>
+        <item quantity="many">%1$d sites</item>
+        <item quantity="other">%1$d sites</item>
+    </plurals>
+    <plurals name="fs_confirm_apps_title">
+        <item quantity="one">Bloquear %1$d app?</item>
+        <item quantity="many">Bloquear %1$d apps?</item>
+        <item quantity="other">Bloquear %1$d apps?</item>
+    </plurals>
 </resources>

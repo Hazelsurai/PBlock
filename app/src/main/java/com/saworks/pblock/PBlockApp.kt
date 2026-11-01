@@ -13,5 +13,6 @@ class PBlockApp : Application() {
         super.onCreate()
         ErrorLog.install(this)
         Prefs.applyTheme(this)
+        try { Prefs.migrate(this) } catch (_: Exception) {}
     }
 }

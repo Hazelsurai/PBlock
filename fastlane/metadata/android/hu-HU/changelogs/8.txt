@@ -1,0 +1,4 @@
+- Opcionális: a kihívás a saját tiltott appjaidat és oldalaidat is tilthatja (alapból ki; Saját tiltások gomb a kihívás kártyán).
+- Appválasztáskor ikonos megerősítés, és figyelmeztetés fontosnak tűnő appoknál (bank, hitelesítő, térkép...). A telefon, a Beállítások és a vészhívó soha nem tiltható.
+- A tévedésből hozzáadott dolgokat 15 percen belül zár alatt is kiveheted.
+- Javítás: a gyorsbeállítások lehúzása aktív VPN mellett már nem dob ki.

@@ -42,7 +42,29 @@
             android:textSize="14sp"
             android:visibility="gone" />
 
-        <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardChallengeLists"
+            style="@style/PBlockCard"
+            android:visibility="gone">
+            <LinearLayout style="@style/PBlockCardBody">
+                <TextView style="@style/PBlockCardTitle" android:text="@string/fs_challenge_title" />
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchChallenge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fs_challenge_switch"
+                    android:textColor="@color/pb_text"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fs_challenge_text"
+                    android:textColor="@color/pb_muted"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardFamily" style="@style/PBlockCard">
             <LinearLayout style="@style/PBlockCardBody">
                 <TextView style="@style/PBlockCardTitle" android:text="@string/fs_dns_title" />
                 <TextView
@@ -114,8 +136,7 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-
-        <com.google.android.material.card.MaterialCardView style="@style/PBlockCard">
+        <com.google.android.material.card.MaterialCardView android:id="@+id/cardAllowed" style="@style/PBlockCard">
             <LinearLayout style="@style/PBlockCardBody">
                 <TextView style="@style/PBlockCardTitle" android:text="@string/fs_allowed_title" />
                 <TextView

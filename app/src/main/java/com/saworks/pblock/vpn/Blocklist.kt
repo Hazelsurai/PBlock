@@ -14,10 +14,16 @@ object Blocklist {
 
     @Volatile private var rules: FilterRules? = null
 
-    /** The user's own blocked/allowed domains (content-filter mode only; the challenge keeps the fixed list). */
+    /**
+     * The user's own blocked/allowed domains in content-filter mode. In the challenge only the own blocked
+     * domains, and only if the user opted in; exceptions never loosen the challenge.
+     */
     fun rules(ctx: Context): FilterRules = rules ?: synchronized(this) {
-        rules ?: (if (Prefs.isFilterMode(ctx)) FilterRules(Prefs.blockedDomains(ctx), Prefs.allowedDomains(ctx)) else FilterRules.EMPTY)
-            .also { rules = it }
+        rules ?: when {
+            Prefs.isFilterMode(ctx) -> FilterRules(Prefs.blockedDomains(ctx), Prefs.allowedDomains(ctx))
+            Prefs.challengeUsesFilterLists(ctx) -> FilterRules(Prefs.blockedDomains(ctx), emptyList())
+            else -> FilterRules.EMPTY
+        }.also { rules = it }
     }
 
     /** Call after the lists or the mode changed. */

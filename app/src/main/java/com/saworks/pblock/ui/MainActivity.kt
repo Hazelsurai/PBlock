@@ -112,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             if (checked && !updatingUi) onModeChosen(id == R.id.btnModeFilter)
         }
         b.btnFilterSettings.setOnClickListener { startActivity(Intent(this, FilterSettingsActivity::class.java)) }
+        b.btnChallengeLists.setOnClickListener { startActivity(Intent(this, FilterSettingsActivity::class.java)) }
         b.btnChangePin.setOnClickListener { changePin() }
         b.btnRemoveLock.setOnClickListener { removeLock() }
         b.btnTheme.setOnClickListener { chooseTheme() }
@@ -200,6 +201,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun renderChallenge(now: Long, locked: Boolean, allActive: Boolean) {
         b.btnContinueFilter.isVisible = false
+        b.tvChallengeLists.text = if (!Prefs.challengeUsesFilterLists(this)) {
+            getString(R.string.challenge_lists_off)
+        } else {
+            val apps = if (Prefs.appBlockingEnabled(this)) Prefs.blockedApps(this)?.size ?: 0 else 0
+            getString(
+                R.string.challenge_lists_on,
+                resources.getQuantityString(R.plurals.challenge_lists_apps, apps, apps),
+                resources.getQuantityString(R.plurals.challenge_lists_sites, Prefs.blockedDomains(this).size, Prefs.blockedDomains(this).size),
+            )
+        }
         when {
             locked && Lock.awaitingTrustedEnd(this) -> {
                 b.tvChallengeStatus.text = getString(R.string.challenge_awaiting_trusted_time)

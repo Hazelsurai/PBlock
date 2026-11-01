@@ -346,4 +346,39 @@
     <string name="bug_chooser_title">Bericht senden mit</string>
     <!-- v0.5.1: brand -->
     <string name="saworks_logo_description">SAWorks-Logo</string>
+    <!-- v0.5.3: own blocks in the challenge, mis-tap safety -->
+    <string name="fs_challenge_screen_title">Meine Sperren</string>
+    <string name="fs_challenge_title">Auch in der Challenge</string>
+    <string name="fs_challenge_switch">Challenge sperrt auch meine Listen</string>
+    <string name="fs_challenge_text">Standardmäßig aus. Wenn an, sperrt die Challenge auch deine eigenen gesperrten Seiten und, falls die App-Sperre an ist, deine gewählten Apps (z. B. TikTok, YouTube). Ausnahmen gelten in der Challenge nie. Einmal während der Challenge eingeschaltet, bleibt es bis zum Ende an (außer in den ersten 15 Minuten).</string>
+    <string name="fs_locked_challenge">Die Challenge läuft: Du kannst Sperren hinzufügen, aber nicht entfernen. Was du in den letzten 15 Minuten hinzugefügt hast, kannst du noch zurücknehmen.</string>
+    <string name="btn_challenge_lists">Meine Sperren (Apps, Seiten)</string>
+    <string name="challenge_lists_off">Eigene Sperren in der Challenge: aus</string>
+    <string name="challenge_lists_on">Eigene Sperren in der Challenge: an (%1$s, %2$s)</string>
+    <string name="fs_confirm_apps_text">Prüf die Liste: Diese Apps werden beim Öffnen immer geschlossen.</string>
+    <string name="fs_confirm_apps_locked">Prüf die Liste: Diese Apps werden beim Öffnen immer geschlossen. Innerhalb von 15 Minuten kannst du sie noch entfernen, danach bleiben sie bis zum Ende der Sperre gesperrt.</string>
+    <string name="fs_confirm_apps_ok">Sperren</string>
+    <string name="fs_important_title">Alter, wolltest du das wirklich?</string>
+    <string name="fs_important_text">%1$s sieht nach einer wichtigen App aus (%2$s). Wenn du sie während der Sperre sperrst, kannst du sie nach der Schonfrist nicht mehr entfernen.</string>
+    <string name="fs_important_yes">Ja, sperren</string>
+    <string name="fs_important_no">Abbrechen</string>
+    <string name="imp_kind_bank">Bank / Zahlung</string>
+    <string name="imp_kind_auth">Authenticator / Passwörter</string>
+    <string name="imp_kind_gov">Behörden</string>
+    <string name="imp_kind_health">Gesundheit</string>
+    <string name="imp_kind_maps">Karten / Navigation</string>
+    <string name="imp_kind_comm">Telefon / Nachrichten / Mail</string>
+    <string name="imp_kind_emergency">Notfall</string>
+    <plurals name="challenge_lists_apps">
+        <item quantity="one">%1$d App</item>
+        <item quantity="other">%1$d Apps</item>
+    </plurals>
+    <plurals name="challenge_lists_sites">
+        <item quantity="one">%1$d Seite</item>
+        <item quantity="other">%1$d Seiten</item>
+    </plurals>
+    <plurals name="fs_confirm_apps_title">
+        <item quantity="one">%1$d App sperren?</item>
+        <item quantity="other">%1$d Apps sperren?</item>
+    </plurals>
 </resources>

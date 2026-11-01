@@ -324,4 +324,36 @@
     <string name="bug_chooser_title">レポートの送信方法</string>
     <!-- v0.5.1: brand -->
     <string name="saworks_logo_description">SAWorks のロゴ</string>
+    <!-- v0.5.3: own blocks in the challenge, mis-tap safety -->
+    <string name="fs_challenge_screen_title">自分のブロック</string>
+    <string name="fs_challenge_title">チャレンジでも使う</string>
+    <string name="fs_challenge_switch">チャレンジ中も自分のリストをブロック</string>
+    <string name="fs_challenge_text">既定はオフ。オンにすると、チャレンジ中も自分でブロックしたサイトと、アプリのブロックがオンなら選んだアプリ（例：TikTok、YouTube）をブロックします。例外はチャレンジ中は適用されません。チャレンジ中にオンにすると、最後までオンのままです（オンにしてから15分以内を除く）。</string>
+    <string name="fs_locked_challenge">チャレンジ中：制限の追加はできますが、削除はできません。直近15分以内に追加したものは取り消せます。</string>
+    <string name="btn_challenge_lists">自分のブロック（アプリ・サイト）</string>
+    <string name="challenge_lists_off">チャレンジ中の自分のブロック：オフ</string>
+    <string name="challenge_lists_on">チャレンジ中の自分のブロック：オン（%1$s、%2$s）</string>
+    <string name="fs_confirm_apps_text">リストを確認してください。これらのアプリは開くたびに閉じられます。</string>
+    <string name="fs_confirm_apps_locked">リストを確認してください。これらのアプリは開くたびに閉じられます。15分以内なら取り消せますが、その後はロック終了までブロックされたままです。</string>
+    <string name="fs_confirm_apps_ok">ブロック</string>
+    <string name="fs_important_title">ねえ、本当にこれでいい？</string>
+    <string name="fs_important_text">%1$s は重要なアプリのようです（%2$s）。ロック中にブロックすると、猶予期間の後は外せません。</string>
+    <string name="fs_important_yes">はい、ブロック</string>
+    <string name="fs_important_no">キャンセル</string>
+    <string name="imp_kind_bank">銀行 / 支払い</string>
+    <string name="imp_kind_auth">認証 / パスワード</string>
+    <string name="imp_kind_gov">行政サービス</string>
+    <string name="imp_kind_health">健康</string>
+    <string name="imp_kind_maps">地図 / ナビ</string>
+    <string name="imp_kind_comm">電話 / メッセージ / メール</string>
+    <string name="imp_kind_emergency">緊急</string>
+    <plurals name="challenge_lists_apps">
+        <item quantity="other">%1$d 個のアプリ</item>
+    </plurals>
+    <plurals name="challenge_lists_sites">
+        <item quantity="other">%1$d 件のサイト</item>
+    </plurals>
+    <plurals name="fs_confirm_apps_title">
+        <item quantity="other">%1$d 個のアプリをブロックしますか？</item>
+    </plurals>
 </resources>

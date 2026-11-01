@@ -79,6 +79,23 @@ object SettingsGuard {
         ),
     )
 
+    /**
+     * View-ID fragments of the notification shade / quick settings panel (lowercase). The shade always shows
+     * PBlock's "VPN active" footer and tile labels such as a disconnected Bluetooth device, so its text alone must
+     * never bounce; only a real VPN dialog (a separate window without these IDs) does.
+     */
+    val SHADE_ID_HINTS = listOf(
+        "notification_shade", "notification_panel", "notification_stack", "notification_container",
+        "quick_settings", "quick_qs", "qs_frame", "qs_panel", "qs_container", "qs_footer", "qs_header",
+        "qs_tile", "qs_media", "qs_detail", "qs_edit", "shade_header", "status_bar", "statusbar", "keyguard",
+        "brightness", "header_clock", "expanded_qs", "volume_dialog",
+    )
+    private val DIALOG_IDS = listOf(":id/button1", ":id/button2", ":id/button3", ":id/alertTitle", ":id/parentPanel", ":id/buttonPanel")
+    val SHADE_CLASS_HINTS = listOf("NotificationShade", "StatusBar", "QSPanel", "QuickSettings", "Keyguard", "VolumeDialog")
+
+    /** Settings pages that list or manage VPNs (window class fragments). */
+    val VPN_CLASS_HINTS = listOf("VpnSettings", "vpn2.")
+
     val DISCONNECT_KEYWORDS = listOf(
         "disconnect", "leválaszt", "szétkapcsol", "bontás", "trennen", "отключ", "разъедин",
         "断开", "中斷", "desconectar", "切断",
@@ -149,11 +166,25 @@ object SettingsGuard {
         val t = s.text.lowercase(Locale.ROOT)
         if (guardDateTime && s.pkg in SETTINGS_PKGS && isDateTimeScreen(s, t)) return true
         if (APP_LABELS.none { t.contains(it) }) return false // only screens that show PBlock
-        if (s.pkg == SYSTEMUI) return DISCONNECT_KEYWORDS.any { t.contains(it) }
+        if (s.pkg == SYSTEMUI) return !isSystemUiShade(s) && DISCONNECT_KEYWORDS.any { t.contains(it) }
         val cls = s.windowClass.orEmpty()
         if (CLASS_HINTS.any { cls.contains(it) }) return true
+        if (VPN_CLASS_HINTS.any { cls.contains(it) }) return true
         if (s.viewIds.any { id -> val l = id.lowercase(Locale.ROOT); ID_HINTS.any { l.contains(it) } }) return true
         return ALL_KEYWORDS.any { t.contains(it) }
+    }
+
+    /**
+     * The pulled-down notification shade / quick settings panel (or the lock screen / status bar), as opposed to
+     * a dialog SystemUI shows in its own window (e.g. the VPN disconnect dialog).
+     */
+    fun isSystemUiShade(s: Screen): Boolean {
+        if (s.pkg != SYSTEMUI) return false
+        // A dialog window is never the shade, whatever the (possibly stale) window class says.
+        if (s.viewIds.any { id -> DIALOG_IDS.any { id.endsWith(it) } }) return false
+        if (s.viewIds.any { id -> val l = id.lowercase(Locale.ROOT).substringAfter(":id/"); SHADE_ID_HINTS.any { l.contains(it) } }) return true
+        val cls = s.windowClass.orEmpty()
+        return SHADE_CLASS_HINTS.any { cls.contains(it) }
     }
 
     /** Date & time settings (anything that could set the device clock), with or without PBlock on screen. */

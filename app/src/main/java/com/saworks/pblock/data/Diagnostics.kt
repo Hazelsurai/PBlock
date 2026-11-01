@@ -54,6 +54,12 @@ object Diagnostics {
                     "exceptions ${Prefs.allowedDomains(c).size}, app blocking ${onOff(Prefs.appBlockingEnabled(c))} " +
                     "(${Prefs.blockedApps(c)?.size ?: 0} apps)"
             })
+        } else {
+            add("Own lists in challenge", safe {
+                if (!Prefs.challengeUsesFilterLists(c)) "off"
+                else "on: own blocked domains ${Prefs.blockedDomains(c).size}, app blocking ${onOff(Prefs.appBlockingEnabled(c))} " +
+                    "(${Prefs.blockedApps(c)?.size ?: 0} apps)"
+            })
         }
         add("Trusted time", safe { if (TrustedTime.lowerBound(c) > 0) "synced" else "not synced" })
         return out

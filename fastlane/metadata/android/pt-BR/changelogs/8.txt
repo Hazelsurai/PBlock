@@ -1,0 +1,4 @@
+- Opcional: o desafio também pode bloquear seus próprios apps e sites bloqueados (desligado por padrão; botão Meus bloqueios no cartão do desafio).
+- Ao escolher apps, aparece uma confirmação com ícones e um aviso para apps que parecem importantes (banco, autenticador, mapas...). Telefone, Configurações e apps de emergência nunca podem ser bloqueados.
+- O que foi adicionado por engano pode ser desfeito em até 15 minutos, mesmo durante um bloqueio.
+- Correção: puxar as configurações rápidas com a VPN ativa não te expulsa mais.

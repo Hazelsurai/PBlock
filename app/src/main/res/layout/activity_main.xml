@@ -90,6 +90,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="@string/btn_start_challenge" />
+                <TextView
+                    android:id="@+id/tvChallengeLists"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/pb_muted"
+                    android:textSize="13sp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChallengeLists"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/btn_challenge_lists" />
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnContinueFilter"
                     android:layout_width="match_parent"
